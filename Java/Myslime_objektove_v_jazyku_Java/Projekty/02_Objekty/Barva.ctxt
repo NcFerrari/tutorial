@@ -1,0 +1,29 @@
+#BlueJ class context
+comment0.params=
+comment0.target=java.lang.String[]\ getZnameNazvy()
+comment0.text=\r\n\ Vrati\ vektor\ retezcu\ s\ nazvy\ definovanych\ barev.\r\n\r\n\ @return\ \ Vektror\ retezcu\ s\ nazvy\ znamych\ barev\r\n
+comment1.params=
+comment1.target=Barva[]\ getZnameBarvy()
+comment1.text=\r\n\ Vrati\ vektor\ definovanych\ barev.\r\n\r\n\ @return\ \ Vektror\ retezcu\ s\ nazvy\ znamych\ barev\r\n
+comment2.params=red\ green\ blue\ nazev\ nazevBHC
+comment2.target=Barva(int,\ int,\ int,\ java.lang.String,\ java.lang.String)
+comment2.text=\r\n\ Vytvori\ instanci\ neruhledne\ pojmenovane\ barvy\ \r\n\ se\ zadanou\ velikosti\ barevnych\ slozek.\r\n\r\n\ @param\ red\ \ \ \ \ \ \ Velikost\ cervene\ slozky\r\n\ @param\ green\ \ \ \ \ Velikost\ zelene\ slozky\r\n\ @param\ blue\ \ \ \ \ \ Velikost\ modre\ slozky\r\n\ @param\ nazev\ \ \ \ \ Nazev\ vytvorene\ barvy\r\n\ @param\ nazevBHC\ \ Nazev\ bez\ hacku\ a\ carek\r\n
+comment3.params=red\ green\ blue\ alfa\ nazev\ nazevBHC
+comment3.target=Barva(int,\ int,\ int,\ int,\ java.lang.String,\ java.lang.String)
+comment3.text=\r\n\ Vytvori\ instanci\ pojmenovane\ barvy\ se\ zadanou\ velikosti\ barevnych\ slozek\r\n\ a\ hladinou\ pruhlednosti\ nastavovanou\ v\ kanale\ alfa.\r\n\r\n\ @param\ red\ \ \ \ \ \ \ Velikost\ cervene\ slozky\r\n\ @param\ green\ \ \ \ \ Velikost\ zelene\ slozky\r\n\ @param\ blue\ \ \ \ \ \ Velikost\ modre\ slozky\r\n\ @param\ alfa\ \ \ \ \ \ Hladina\ pruhlednosti\:\ 0\=pruhledna,\ 255\=nepruhledna\r\n\ @param\ nazev\ \ \ \ \ Nazev\ vytvorene\ barvy\r\n\ @param\ nazevBHC\ \ Nazev\ bez\ hacku\ a\ carek\r\n
+comment4.params=red\ green\ blue\ alfa
+comment4.target=Barva(int,\ int,\ int,\ int)
+comment4.text=\r\n\ Vytvori\ instanci\ nepojmenovane\ barvy\ se\ zadanou\ velikosti\ barevnych\ \r\n\ slozeka\ hladinou\ pruhlednosti\ nastavovanou\ v\ kanale\ alfa.\r\n\r\n\ @param\ red\ \ \ Velikost\ cervene\ slozky\r\n\ @param\ green\ Velikost\ zelene\ slozky\r\n\ @param\ blue\ \ Velikost\ modre\ slozky\r\n\ @param\ alfa\ \ Hladina\ pruhlednosti\:\ 0\=pruhledna,\ 255\=nepruhledna\r\n
+comment5.params=nazevBarvy
+comment5.target=Barva\ getBarva(java.lang.String)
+comment5.text=\r\n\ Prevede\ nazev\ barvy\ na\ prislusny\ objekt\ typu\ Barva.\r\n\r\n\ @param\ \ nazevBarvy\ \ Nazev\ pozadovane\ barvy\ -\ lze\ si\ vybrat\ z\ hodnot\:\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ "cerna",\ \ "modra",\ \ \ "cervena",\ "fialova",\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ "zelena",\ "azurova",\ "zluta",\ \ \ "bila".\ "kremova"\r\n\r\n\ @return\ Instance\ tridy\ Barva\ reprezentujici\ zadanou\ barvu\r\n\r\n\ @throws\ IllegalArgumentException\ neni-li\ barva\ (nazev)\ mezi\ znamymi\r\n
+comment6.params=
+comment6.target=java.lang.String\ getNazev()
+comment6.text=\r\n\ Vrati\ nazev\ barvy.\r\n\r\n\ @return\ Retezec\ definujici\ zadanou\ barvu.\r\n
+comment7.params=
+comment7.target=java.awt.Color\ getColor()
+comment7.text=\r\n\ Prevede\ nami\ pouzivanou\ barvu\ na\ typ\ pouzivany\ kreslitkem.\r\n\ Metoda\ je\ pouzivana\ ve\ tride\ AktivniPlatno.\r\n\r\n\ @return\ Instance\ tridy\ Color\ reprezentujici\ zadanou\ barvu\r\n
+comment8.params=
+comment8.target=java.lang.String\ toString()
+comment8.text=\r\n\ Vrati\ nazev\ barvy.\r\n\r\n\ @return\ \ Nazev\ barvy\r\n
+numComments=9

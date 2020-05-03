@@ -1,0 +1,16 @@
+#Soubor bluej.pkg prevedeny do ASCII
+#Wed Apr 15 19:45:40 CEST 2020
+package.editor.y=27
+package.editor.x=335
+package.showExtends=true
+target1.type=PackageTarget
+target1.height=62
+target1.width=80
+package.editor.width=560
+target1.y=10
+target1.x=170
+package.numDependencies=0
+target1.name=cesky
+package.showUses=true
+package.editor.height=400
+package.numTargets=1

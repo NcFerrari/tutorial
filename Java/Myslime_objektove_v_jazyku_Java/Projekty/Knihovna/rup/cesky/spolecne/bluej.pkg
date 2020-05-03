@@ -1,0 +1,35 @@
+#Soubor bluej.pkg prevedeny do ASCII
+#Wed Apr 15 19:45:41 CEST 2020
+package.showUses=true
+target1.type=ClassTarget
+package.editor.height=400
+target3.name=P
+target2.type=ClassTarget
+package.editor.y=86
+package.editor.x=548
+target3.editor.width=759
+target3.type=ClassTarget
+target2.y=20
+target3.editor.height=512
+target2.x=280
+target3.editor.y=0
+target3.editor.x=0
+package.showExtends=true
+target3.height=50
+target1.height=50
+target2.width=80
+package.editor.width=560
+target1.width=80
+package.numDependencies=0
+target1.y=80
+target1.x=150
+package.numTargets=3
+target1.name=IO
+target3.y=20
+target3.x=170
+target1.showInterface=false
+target2.showInterface=false
+target3.width=80
+target2.name=ToASCII
+target3.showInterface=false
+target2.height=50

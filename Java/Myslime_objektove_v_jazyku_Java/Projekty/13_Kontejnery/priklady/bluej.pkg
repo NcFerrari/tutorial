@@ -1,0 +1,37 @@
+#Soubor bluej.pkg prevedeny do ASCII
+#Wed Apr 15 19:45:41 CEST 2020
+dependency2.type=UsesDependency
+package.showUses=true
+target1.type=ClassTarget
+package.editor.height=400
+target3.name=IAnimovany
+target2.type=ClassTarget
+package.editor.y=24
+package.editor.x=345
+target3.type=InterfaceTarget
+target2.y=20
+target2.x=180
+dependency1.to=IAnimovany
+package.showExtends=true
+dependency1.from=Animator
+dependency2.to=Animator
+target3.height=50
+target1.height=50
+dependency2.from=Balon_13
+target2.width=80
+target1.width=80
+package.editor.width=560
+package.numDependencies=2
+target1.y=80
+target1.x=290
+package.numTargets=3
+target1.name=Animator
+target3.y=130
+target3.x=50
+dependency1.type=UsesDependency
+target1.showInterface=false
+target2.showInterface=false
+target3.width=90
+target2.name=Balon_13
+target3.showInterface=false
+target2.height=50

@@ -1,0 +1,26 @@
+#BlueJ class context
+comment0.params=dx\ dy\ zkratka\ nazev\ nazevBHC
+comment0.target=Smer8(int,\ int,\ java.lang.String,\ java.lang.String,\ java.lang.String)
+comment0.text=\r\n\ Vytvori\ novy\ smer\ a\ zapamatuje\ si\ ruzne\ verze\ jeho\ nazvu.\r\n
+comment1.params=
+comment1.target=Smer8\ celemVzad()
+comment1.text=\r\n\ Vrati\ smer\ otoceny\ o\ 180\u00B0.\r\n\ Oproti\ metode\ celemVzad\ nepotrebuje\ pretypovavat\ vysledek\ na\ Smer8.\r\n\r\n\ @return\ Smer\ objektu\ po\ vyplneni\ prikazu\ celem\ vzad\r\n
+comment2.params=
+comment2.target=Smer8\ vlevoVbok()
+comment2.text=\r\n\ Vrati\ smer\ otoceny\ o\ 90\u00B0\ vlevo.\r\n\ Oproti\ metode\ vlevoVbok\ nepotrebuje\ pretypovavat\ vysledek\ na\ Smer8.\r\n\r\n\ @return\ Smer\ objektu\ po\ vyplneni\ prikazu\ vlevo\ v\ bok\r\n
+comment3.params=
+comment3.target=Smer8\ vpravoVbok()
+comment3.text=\r\n\ Vrati\ smer\ otoceny\ o\ 90\u00B0\ vpravo.\r\n\ Oproti\ metode\ vpravoVbok\ nepotrebuje\ pretypovavat\ vysledek\ na\ Smer8.\r\n\r\n\ @return\ Smer\ objektu\ po\ vyplneni\ prikazu\ vpravo\ v\ bok\r\n
+comment4.params=
+comment4.target=Smer8\ nalevoVpric()
+comment4.text=\r\n\ Vrati\ smer\ otoceny\ o\ 45\u00B0\ vlevo.\r\n\ Oproti\ metode\ nalevoVpric\ nepotrebuje\ pretypovavat\ vysledek\ na\ Smer8.\r\n\r\n\ @return\ Smer\ objektu\ po\ vyplneni\ prikazu\ nalevo\ vpric\r\n
+comment5.params=
+comment5.target=Smer8\ napravoVpric()
+comment5.text=\r\n\ Vrati\ smer\ otoceny\ o\ 45\u00B0\ vpravo.\r\n\ Oproti\ metode\ napravoVpric\ nepotrebuje\ pretypovavat\ vysledek\ na\ Smer8.\r\n\r\n\ @return\ Smer\ objektu\ po\ vyplneni\ prikazu\ napravo\ vpric\r\n
+comment6.params=x
+comment6.target=int\ dalsiX(int)
+comment6.text=\r\n\ Vrati\ x-vou\ souradnici\ sousedniho\ policka\ v\ danem\ smeru.\r\n\r\n\ @param\ x\ x-ova\ souradnice\ stavajiciho\ policka\r\n\r\n\ @return\ x-ova\ souradnice\ sousedniho\ policka\ v\ danem\ smeru\r\n
+comment7.params=y
+comment7.target=int\ nextY(int)
+comment7.text=\r\n\ Vrati\ y-vou\ souradnici\ sousedniho\ policka\ v\ danem\ smeru.\r\n\r\n\ @param\ y\ y-ova\ souradnice\ stavajiciho\ policka\r\n\r\n\ @return\ y-ova\ souradnice\ sousedniho\ policka\ v\ danem\ smeru\r\n
+numComments=8
