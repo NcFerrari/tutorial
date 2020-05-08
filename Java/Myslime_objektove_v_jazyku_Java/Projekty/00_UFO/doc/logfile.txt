@@ -1,0 +1,43 @@
+Class documentation
+<---- javadoc command: ---->
+C:\Program Files\Java\jdk1.8.0_151\bin\javadoc.exe
+-author
+-version
+-nodeprecated
+-package
+-noindex
+-notree
+-nohelp
+-nonavbar
+-source
+1.8
+-classpath
+C:\Program Files (x86)\BlueJ\lib\bluejcore.jar;C:\Program Files (x86)\BlueJ\lib\junit-4.8.2.jar;C:\Program Files (x86)\BlueJ\lib\userlib\pi4j-core.jar;C:\Program Files (x86)\BlueJ\lib\userlib\pi4j-device.jar;C:\Program Files (x86)\BlueJ\lib\userlib\pi4j-gpio-extension.jar;C:\Program Files (x86)\BlueJ\lib\userlib\pi4j-service.jar;P:\tutorial\Java\Myslime_objektove_v_jazyku_Java\Projekty\00_UFO
+-d
+P:\tutorial\Java\Myslime_objektove_v_jazyku_Java\Projekty\00_UFO\doc
+-encoding
+windows-1250
+-charset
+windows-1250
+-docletpath
+C:\Program Files (x86)\BlueJ\lib\bjdoclet.jar
+-doclet
+bluej.doclet.doclets.formats.html.HtmlDoclet
+P:\tutorial\Java\Myslime_objektove_v_jazyku_Java\Projekty\00_UFO\UFO.java
+<---- end of javadoc command ---->
+Loading source file P:\tutorial\Java\Myslime_objektove_v_jazyku_Java\Projekty\00_UFO\UFO.java...
+Constructing Javadoc information...
+Standard Doclet version 1.8.0_151
+Building tree for all the packages and classes...
+Generating P:\tutorial\Java\Myslime_objektove_v_jazyku_Java\Projekty\00_UFO\doc\UFO.html...
+P:\tutorial\Java\Myslime_objektove_v_jazyku_Java\Projekty\00_UFO\UFO.java:138: warning - Parameter "x" is documented more than once.
+Generating P:\tutorial\Java\Myslime_objektove_v_jazyku_Java\Projekty\00_UFO\doc\package-frame.html...
+Generating P:\tutorial\Java\Myslime_objektove_v_jazyku_Java\Projekty\00_UFO\doc\package-summary.html...
+Generating P:\tutorial\Java\Myslime_objektove_v_jazyku_Java\Projekty\00_UFO\doc\constant-values.html...
+Building index for all the packages and classes...
+Building index for all classes...
+Generating P:\tutorial\Java\Myslime_objektove_v_jazyku_Java\Projekty\00_UFO\doc\allclasses-frame.html...
+Generating P:\tutorial\Java\Myslime_objektove_v_jazyku_Java\Projekty\00_UFO\doc\allclasses-noframe.html...
+Generating P:\tutorial\Java\Myslime_objektove_v_jazyku_Java\Projekty\00_UFO\doc\index.html...
+Generating P:\tutorial\Java\Myslime_objektove_v_jazyku_Java\Projekty\00_UFO\doc\stylesheet.css...
+1 warning
