@@ -105,7 +105,7 @@ public class Strom {
         kmen.smaz();
     }
     
-    public void posunDolu(int vzdalenost) {
+    public void posunDolu(int vzdalenost) { 
         koruna.posunDolu(vzdalenost);
         kmen.posunDolu(vzdalenost);
         nakresli();
