@@ -3,6 +3,10 @@ public class Panenka {
     private static final Platno platno = Platno.getPlatno();
     
     private static int krok = 50;
+    private static int vytvorenychInstanci = 0;
+    
+    private final int poradi = ++vytvorenychInstanci;
+    private final String nazev = getClass().getName() + "_" + poradi;
     
     private Elipsa hlava;
     private Trojuhelnik telo;
@@ -70,6 +74,10 @@ public class Panenka {
     
     public Barva getBarva() {
         return hlava.getBarva();
+    }
+    
+    public String getNazev() {
+        return nazev;
     }
     
     public void nakresli() {
@@ -149,5 +157,11 @@ public class Panenka {
     public void zaramuj() {
         platno.setRozmer(getSirka(), getVyska());
         setPozice(0, 0);
+    }
+    
+    @Override
+    public String toString() {
+        return String.format("%s: x=%d, y=%d, šíøka=%d, výška=%d",
+                            getNazev(), getX(), getY(), getSirka(), getVyska());
     }
 }

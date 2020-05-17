@@ -7,6 +7,10 @@ public class Strom {
     private static final int IMPLICITNI_PODIL_VYSKY_KMENE = 3;
     
     private static int krok = 50;
+    private static int vytvorenychInstanci = 0;
+    
+    private final int poradi = ++vytvorenychInstanci;
+    private final String nazev = getClass().getName() + "_" + poradi;
     
     private Elipsa koruna;
     private Obdelnik kmen;
@@ -95,6 +99,10 @@ public class Strom {
         return kmen.getBarva();
     }
     
+    public String getNazev() {
+        return nazev;
+    }
+    
     public void nakresli() {
         koruna.nakresli();
         kmen.nakresli();
@@ -162,5 +170,11 @@ public class Strom {
     public void zaramuj() {
         platno.setRozmer(getSirka(), getVyska());
         setPozice(0, 0);
+    }
+    
+    @Override
+    public String toString() {
+        return String.format("%s: x=%d, y=%d, šíøka=%d, výška=%d",
+                            getNazev(), getX(), getY(), getSirka(), getVyska());
     }
 }
