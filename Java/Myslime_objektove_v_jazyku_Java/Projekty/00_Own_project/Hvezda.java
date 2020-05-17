@@ -52,6 +52,23 @@ public class Hvezda {
         setBarva(barva);
     }
     
+    public Hvezda(Pozice pozice) {
+        this(pozice.getX(), pozice.getY());
+    }
+    
+    public Hvezda(Rozmer rozmer) {
+        this(0, 0, rozmer.getSirka(), rozmer.getVyska());
+    }
+    
+    public Hvezda(Pozice pozice, Rozmer rozmer) {
+        this(new Oblast(pozice, rozmer));
+    }
+    
+    public Hvezda(Oblast oblast) {
+        this(oblast.getX(), oblast.getY(), oblast.getSirka(), oblast.getVyska());
+    }
+    
+    
     public int getX() {
         return x;
     }
@@ -75,6 +92,32 @@ public class Hvezda {
     public String getNazev() {
         return nazev;
     }
+    
+    public void setOblast(Oblast oblast) {
+        setPozice(oblast.getPozice());
+        setRozmer(oblast.getRozmer());
+    }
+    
+    public Oblast getOblast() {
+        return new Oblast(getPozice(), getRozmer());
+    }
+    
+    public void setPozice(Pozice pozice) {
+        setPozice(pozice.getX(), pozice.getY());
+    }
+    
+    public Pozice getPozice() {
+        return new Pozice(getX(), getY());
+    }
+    
+    public void setRozmer(Rozmer rozmer) {
+        setRozmer(rozmer.getSirka(), rozmer.getVyska());
+    }
+    
+    public Rozmer getRozmer() {
+        return new Rozmer(getSirka(), getVyska());
+    }
+    
     
     public void nakresli() {
         severniTrojuhelnik.nakresli();
