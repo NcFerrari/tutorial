@@ -1,4 +1,4 @@
-public class CinkaK implements IKresleny {
+public class CinkaK implements IKresleny, IPosuvny, INafukovaci {
     
     private static final AktivniPlatno AP = AktivniPlatno.getPlatno();
     

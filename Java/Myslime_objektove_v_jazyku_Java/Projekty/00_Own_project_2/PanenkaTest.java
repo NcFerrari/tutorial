@@ -146,4 +146,16 @@ public class PanenkaTest
         Panenka.zaramuj( 200, 300 );
         assertTrue(P.souhlas("Panenka zaramovana?"));
     }
+    
+    @Test
+    public void plynulePresun()
+    {
+        AP.odstranVse();
+        Presouvac pres1 = new Presouvac();
+        assertEquals(true, AP.pridej(panenka1));
+        pres1.presunO(panenka1, 100, 100);
+        Presouvac pres5 = new Presouvac(5);
+        pres5.presunO(panenka1, -100, -100);
+        pres5.presunNa(panenka1, 200, 150);
+    }
 }

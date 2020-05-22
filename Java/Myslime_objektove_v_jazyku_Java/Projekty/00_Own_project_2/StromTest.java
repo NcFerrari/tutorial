@@ -167,7 +167,20 @@ public class StromTest extends Strom
         Strom.zaramuj( 200, 300 );
         assertTrue(P.souhlas("Strom zaramovan?"));
     }
+
+    @Test
+    public void plynulePresun()
+    {
+        AP.odstranVse();
+        Presouvac pres1 = new Presouvac();
+        assertEquals(true, AP.pridej(strom1));
+        pres1.presunO(strom1, 100, 100);
+        Presouvac pres5 = new Presouvac(5);
+        pres5.presunO(strom1, -100, -100);
+        pres5.presunNa(strom1, 200, 150);
+    }
 }
+
 
 
 

@@ -1,4 +1,4 @@
-public class Strom implements IKresleny {
+public class Strom implements IKresleny, IPosuvny, INafukovaci {
     
     private static final AktivniPlatno AP = AktivniPlatno.getPlatno();
     private static final Barva IMPLICITNI_BARVA_KORUNY = Barva.ZELENA;

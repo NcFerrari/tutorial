@@ -1,4 +1,4 @@
-public class Hvezda implements IKresleny {
+public class Hvezda implements IKresleny, IPosuvny, INafukovaci {
     
     private static final AktivniPlatno AP = AktivniPlatno.getPlatno();
     

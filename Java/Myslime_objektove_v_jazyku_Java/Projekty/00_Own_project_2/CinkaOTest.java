@@ -147,5 +147,17 @@ public class CinkaOTest
         CinkaO.zaramuj( 200, 300 );
         assertTrue(P.souhlas("Cinka zaramovana?"));
     }
+    
+    @Test
+    public void plynulePresun()
+    {
+        AP.odstranVse();
+        Presouvac pres1 = new Presouvac();
+        assertEquals(true, AP.pridej(cinkaO1));
+        pres1.presunO(cinkaO1, 100, 100);
+        Presouvac pres5 = new Presouvac(5);
+        pres5.presunO(cinkaO1, -100, -100);
+        pres5.presunNa(cinkaO1, 200, 150);
+    }
 }
 

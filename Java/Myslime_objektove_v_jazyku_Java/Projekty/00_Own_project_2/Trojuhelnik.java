@@ -8,7 +8,7 @@
  * @author     Rudolf Pecinovsky
  * @version    2.01, duben 2004
  */
-public class Trojuhelnik implements IKresleny
+public class Trojuhelnik implements IKresleny, IPosuvny, INafukovaci
 {
 //== KONSTANTNI ATRIBUTY TRIDY =================================================
 

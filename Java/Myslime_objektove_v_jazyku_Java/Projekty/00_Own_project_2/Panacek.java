@@ -1,4 +1,4 @@
-public class Panacek implements IKresleny {
+public class Panacek implements IKresleny, IPosuvny, INafukovaci {
     
     private static final AktivniPlatno AP = AktivniPlatno.getPlatno();
     

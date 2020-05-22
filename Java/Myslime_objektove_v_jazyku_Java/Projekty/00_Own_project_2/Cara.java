@@ -8,7 +8,7 @@
  * @author     Rudolf Pecinovsky
  * @version    2.01, duben 2004
  */
-public class Cara implements IKresleny
+public class Cara implements IKresleny, IPosuvny
 {
 //== KONSTANTNI ATRIBUTY TRIDY =================================================
 

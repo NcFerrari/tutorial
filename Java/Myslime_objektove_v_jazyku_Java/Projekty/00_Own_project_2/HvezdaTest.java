@@ -146,4 +146,16 @@ public class HvezdaTest
         Hvezda.zaramuj( 200, 300 );
         assertTrue(P.souhlas("Hvezda zaramovana?"));
     }
+    
+    @Test
+    public void plynulePresun()
+    {
+        AP.odstranVse();
+        Presouvac pres1 = new Presouvac();
+        assertEquals(true, AP.pridej(hvezda1));
+        pres1.presunO(hvezda1, 100, 100);
+        Presouvac pres5 = new Presouvac(5);
+        pres5.presunO(hvezda1, -100, -100);
+        pres5.presunNa(hvezda1, 200, 150);
+    }
 }
