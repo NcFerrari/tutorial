@@ -71,12 +71,23 @@ public class PsoukTest
     @Test
     public void psouk()
     {
-        Hvezda hvezda1 = new Hvezda(100, 100, 100, 100);
+        Strom stom = new Strom(100, 100, 100, 100);
         AktivniPlatno AP = AktivniPlatno.getPlatno();
-        AP.pridej(hvezda1);
+        AP.pridej(stom);
         Psouk psouk1 = new Psouk(50);
-        psouk1.prifoukni(hvezda1);
-        psouk1.ufoukni(hvezda1);
+        psouk1.prifoukni(stom);
+        psouk1.ufoukni(stom);
+    }
+    
+    @Test
+    public void kompresor()
+    {
+        Strom stom = new Strom(100, 100, 100, 100);
+        AktivniPlatno AP = AktivniPlatno.getPlatno();
+        AP.pridej(stom);
+        Kompresor kompresor1 = new Kompresor(50);
+        kompresor1.prifoukni(stom);
+        kompresor1.ufoukni(stom);
     }
 }
 

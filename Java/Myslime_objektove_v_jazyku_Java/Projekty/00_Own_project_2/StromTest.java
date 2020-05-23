@@ -179,6 +179,18 @@ public class StromTest extends Strom
         pres5.presunO(strom1, -100, -100);
         pres5.presunNa(strom1, 200, 150);
     }
+    
+    @Test
+    public void testSetRozmer() {
+        AP.odstranVse();
+        AP.setKrokRozmer(10, 30, 30);
+        AP.pridej(strom1);
+        assertEquals(true, P.souhlas("Strom1\nx=0\ny=0\nsirka=100\nvyska=150\npodilSirkyKmene=10\npodilVyskyKmene=3"));
+        strom1.setRozmer(11, 19);
+        assertEquals(true, P.souhlas("Strom1\nx=0\ny=0\nsirka=11\nvyska=19\npodilSirkyKmene=10\npodilVyskyKmene=3"));
+        strom1.setRozmer(100, 150);
+        assertEquals(true, P.souhlas("Strom1\nx=0\ny=0\nsirka=100\nvyska=150\npodilSirkyKmene=10\npodilVyskyKmene=3"));
+    }
 }
 
 
