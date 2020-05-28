@@ -2,7 +2,7 @@ package lp.cesky.priklady;
 
 import lp.cesky.tvary.*;
 
-public class Vytah implements IPosuvny, IKresleny {
+public class Vytah implements IHybaci {
     
     public static final AktivniPlatno AP = AktivniPlatno.getPlatno();
     

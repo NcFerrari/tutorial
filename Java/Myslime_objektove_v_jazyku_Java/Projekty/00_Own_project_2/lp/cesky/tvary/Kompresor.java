@@ -2,9 +2,13 @@ package lp.cesky.tvary;
 
 import lp.cesky.spolecne.P;
 
+
 /*******************************************************************************
  * Trida Kompresor slouzi ke zmene velikosti objektu
  * implementujicich rozhrani INafukovaci.
+ * Oproti verzi z projektu _06_Rozhrani doplnuje moznost 
+ * definovat u na/vy-fukovaneho objektu smer, v nemz se predpoklada kotvici bod, 
+ * ktery se pri zmene rozmeru nehyba.
  * Trida NENI vlaknove bezpecna (thread-safe). Nepredpoklada, 
  * ze jeji instance boudou volany simultanne z ruznych vlaken.
  *
@@ -55,7 +59,7 @@ public class Kompresor
      *
      * @param sila  Sila nafukovani vytvareneho kompresoru
      */
-    public Kompresor( int sila )
+    public Kompresor(int sila)
     {
         this.sila = sila;
     }
@@ -81,7 +85,7 @@ public class Kompresor
         int x = koho.getSirka();
         int y = koho.getVyska();
         double d = delka( x, y );
-        foukej( koho, stouchu, sila*x/d, sila*y/d );
+        foukej( koho, stouchu, sila*x/d, sila*y/d, Smer8.SEVEROZAPAD );
     }
 
 
@@ -138,14 +142,8 @@ public class Kompresor
      */
     public void nafoukniNa( INafukovaci koho, int sirka, int vyska )
     {
-        int    vodorovne  = sirka - koho.getSirka();
-        int    svisle     = vyska - koho.getVyska();
-        int    kroku      = (int)(delka(vodorovne,  svisle) / sila);
-        double dx = (double)vodorovne / kroku;
-        double dy = (double)svisle    / kroku;
-        foukej( koho, kroku, dx, dy );
+        nafoukniNa( koho, sirka, vyska, Smer8.SEVEROZAPAD, 0 );
     }
-
 
 
     /***************************************************************************
@@ -158,6 +156,39 @@ public class Kompresor
     public void nafoukniNa( INafukovaci koho, Rozmer rozmer )
     {
         nafoukniNa( koho, rozmer.sirka, rozmer.vyska );
+    }
+
+
+    /***************************************************************************
+     * Nafoukne ci vyfoukne zadany objekt na pozadovanou velikost.
+     * Nejprve ale zabezpeci, aby byl objekt zobrazen na platne.     
+     *
+     * @param koho    Na(vy)fukovany objekt
+     * @param sirka   Pozadovana vysledna sirka objektu
+     * @param vyska   Pozadovana vysledna vyska objektu
+     * @param smer    Smer od stredu obrazce, v nemz se nachazi pevny bod,
+     *                ktery pri zmene rozmeru nemeni svoji pozici.
+     *                smer==null oznacuje symetricky rust vuci stredu obrazce.
+     */
+    public void nafoukniNa( IHybaci koho, int sirka, int vyska, Smer8 smer )
+    {
+        nafoukniNa( (INafukovaci)koho, sirka, vyska, smer, 0 );
+    }
+
+
+    /***************************************************************************
+     * Nafoukne ci vyfoukne zadany objekt na pozadovanou velikost.
+     * Nejprve ale zabezpeci, aby byl objekt zobrazen na platne.     
+     *
+     * @param koho    Na(vy)fukovany objekt
+     * @param rozmer  Pozadovany rozmer objektu
+     * @param smer    Smer od stredu obrazce, v nemz se nachazi pevny bod,
+     *                ktery pri zmene rozmeru nemeni svoji pozici.
+     *                smer==null oznacuje symetricky rust vuci stredu obrazce.
+     */
+    public void nafoukniNa( INafukovaci koho, Rozmer rozmer, Smer8 smer )
+    {
+        nafoukniNa( koho, rozmer.sirka, rozmer.vyska, smer, 0 );
     }
 
 
@@ -182,6 +213,26 @@ public class Kompresor
 //== SOUKROME A POMOCNE METODY INSTANCI ========================================
 
     /***************************************************************************
+     * Nafoukne ci vyfoukne zadany objekt na pozadovanou velikost.
+     * Nejprve ale zabezpeci, aby byl objekt zobrazen na platne.     
+     *
+     * @param koho    Na(vy)fukovany objekt
+     * @param sirka   Pozadovana vysledna sirka objektu
+     * @param vyska   Pozadovana vysledna vyska objektu
+     */
+    private void nafoukniNa( INafukovaci koho, int sirka, int vyska, 
+                             Smer8 smer, int zaslepka )
+    {
+        int    vodorovne  = sirka - koho.getSirka();
+        int    svisle     = vyska - koho.getVyska();
+        int    kroku      = (int)(delka(vodorovne,  svisle) / sila);
+        double dx = (double)vodorovne / kroku;
+        double dy = (double)svisle    / kroku;
+        foukej( koho, kroku, dx, dy, smer );
+    }
+
+
+    /***************************************************************************
      * Vykonna metoda, ktera zaridi vlastni nafouknuti, resp. vyfouknuti
      * zadaneho objektu na zaklade pripravenych parametru.
      *       
@@ -190,13 +241,43 @@ public class Kompresor
      * @param dx       Zvetseni sirky objektu v jednom kroku.
      * @param dy       Zvetseni vysky objektu v jednom kroku.              
      */              
-    private void foukej( INafukovaci koho, int stouchu, double dx, double dy )
+    private void foukej( INafukovaci koho, int stouchu, double dx, double dy,
+                         Smer8 smer )
     {
-        if( ! (koho instanceof IKresleny) )
-            throw new IllegalArgumentException(
-                "Nafukovat se smi jen kreslitelne objekty" );
-        IKresleny ik = (IKresleny)koho;
-        AP.pridej( ik );
+        IHybaci ih = null;
+        double dxx = 0, dyy = 0;
+        double x   = 0, y   = 0;
+        if( smer != Smer8.SEVEROZAPAD )
+        {
+            ih = (IHybaci)koho;
+            x  = ih.getX() + .4;
+            y  = ih.getY() + .4;
+            if(      (smer == Smer8.JIHOVYCHOD)   || 
+                     (smer == Smer8.VYCHOD)       || 
+                     (smer == Smer8.SEVEROVYCHOD) )
+            {
+                dxx = -dx;
+            }
+            else if( (smer == Smer8.SEVER)  || 
+                     (smer == Smer8.JIH)    || 
+                     (smer == null) )     
+            {
+                dxx = -dx/2;
+            }
+            if(      (smer == Smer8.JIHOZAPAD)  || 
+                     (smer == Smer8.JIH)        || 
+                     (smer == Smer8.JIHOVYCHOD) )
+            {
+                dyy = -dy;
+            }
+            else if( (smer == Smer8.VYCHOD)  || 
+                     (smer == Smer8.ZAPAD)   || 
+                     (smer == null) )     
+            {
+                dyy = -dy/2;
+            }
+        }
+        AP.pridej( koho );
         //Konstatnu pripocitavame proto, aby skoky byly vyrovnanejsi
         double sirka = koho.getSirka() + .4;
         double vyska = koho.getVyska() + .4;
@@ -205,7 +286,15 @@ public class Kompresor
             P.cekej(CEKANI);
             sirka += dx;
             vyska += dy;
-            koho.setRozmer( (int)sirka, (int)vyska );
+            AP.nekresli();
+                koho.setRozmer( (int)sirka, (int)vyska );
+                if( smer != Smer8.SEVEROZAPAD )
+                {
+                    x += dxx;
+                    y += dyy;
+                    ih.setPozice( (int)x, (int)y );
+                }
+            AP.vratKresli();
         }
     }
 

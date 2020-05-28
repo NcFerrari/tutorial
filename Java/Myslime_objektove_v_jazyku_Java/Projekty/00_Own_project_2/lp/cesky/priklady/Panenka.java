@@ -2,7 +2,7 @@ package lp.cesky.priklady;
 
 import lp.cesky.tvary.*;
 
-public class Panenka implements IKresleny, IPosuvny, INafukovaci {
+public class Panenka implements IHybaci {
     
     private static final AktivniPlatno AP = AktivniPlatno.getPlatno();
     
@@ -45,6 +45,7 @@ public class Panenka implements IKresleny, IPosuvny, INafukovaci {
         setPozice(x, y);
         setRozmer(sirka, vyska);
         setBarva(barva);
+        AP.pridej(this);
     }
     
     public Panenka(Pozice pozice) {

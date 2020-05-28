@@ -7,7 +7,7 @@ package lp.cesky.tvary;
  * @author     Rudolf Pecinovsky
  * @version    1.01, 28.1.2003
  */
-public interface IPosuvny 
+public interface IPosuvny extends IKresleny 
 {
 //== VEREJNE KONSTANTY =========================================================
 //== PRISTUPOVE METODY VLASTNOSTI INSTANCI =====================================

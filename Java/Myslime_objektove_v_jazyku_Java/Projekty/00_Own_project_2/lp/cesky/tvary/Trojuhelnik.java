@@ -12,7 +12,7 @@ import lp.cesky.spolecne.P;
  * @author     Rudolf Pecinovsky
  * @version    2.01, duben 2004
  */
-public class Trojuhelnik implements IKresleny, IPosuvny, INafukovaci
+public class Trojuhelnik implements IHybaci 
 {
 //== KONSTANTNI ATRIBUTY TRIDY =================================================
 

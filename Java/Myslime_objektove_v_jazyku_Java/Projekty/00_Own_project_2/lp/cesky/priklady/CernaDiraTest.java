@@ -1,0 +1,96 @@
+/* Soubor je ulozen v kodovani UTF-8.
+ * Kontrola kÛdov·nÌ: P¯Ìliö ûluùouËk˝ k˘Ú ˙pÏl Ô·belskÈ Ûdy. */
+package lp.cesky.priklady;
+
+
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
+
+import static org.junit.Assert.*;
+
+
+
+/*******************************************************************************
+ * TestovacÌ t¯Ìda {@code CernaDiraTest} slouûÌ ke komplexnÌmu otestov·nÌ
+ * t¯Ìdy {@link CernaDiraTest}.
+ *
+ * @author    jmÈno autora
+ * @version   0.00.000
+ */
+public class CernaDiraTest
+{
+    private lp.cesky.priklady.CernaDira CD;
+    private lp.cesky.priklady.Strom strom1;
+    private lp.cesky.priklady.CinkaK cinkaK1;
+    private lp.cesky.priklady.Hvezda hvezda1;
+    private lp.cesky.priklady.Panacek panacek1;
+    private lp.cesky.priklady.Panenka panenka1;
+
+    //== KONSTANTNÕ ATRIBUTY TÿÕDY =============================================
+    //== PROMÃNN… ATRIBUTY TÿÕDY ===============================================
+    //== STATICK› INICIALIZA»NÕ BLOK - STATICK› KONSTRUKTOR ====================
+    //== KONSTANTNÕ ATRIBUTY INSTANCÕ ==========================================
+    //== PROMÃNN… ATRIBUTY INSTANCÕ ============================================
+    //== PÿÕSTUPOV… METODY VLASTNOSTÕ TÿÕDY ====================================
+    //== OSTATNÕ NESOUKROM… METODY TÿÕDY =======================================
+
+    //##########################################################################
+    //== KONSTRUKTORY A TOV¡RNÕ METODY =========================================
+    //-- TestovacÌ t¯Ìda vystaËÌ s pr·zdn˝m implicitnÌm konstruktorem ----------
+    //== PÿÕPRAVA A ⁄KLID PÿÕPRAVKU ============================================
+
+    /***************************************************************************
+     * Inicializace p¯edch·zejÌcÌ spuötÏnÌ kaûdÈho testu a p¯ipravujÌcÌ tzv.
+     * p¯Ìpravek (fixture), coû je sada objekt˘, s nimiû budou testy pracovat.
+     */
+    @Before
+    public void setUp()
+    {
+        CD = lp.cesky.priklady.CernaDira.getInstance();
+        strom1 = new lp.cesky.priklady.Strom();
+        cinkaK1 = new lp.cesky.priklady.CinkaK(200, 0);
+        hvezda1 = new lp.cesky.priklady.Hvezda(0, 200);
+        panacek1 = new lp.cesky.priklady.Panacek(200, 200);
+        panenka1 = new lp.cesky.priklady.Panenka(250, 200);
+    }
+
+
+    /***************************************************************************
+     * ⁄klid po testu - tato metoda se spustÌ po vykon·nÌ kaûdÈho testu.
+     */
+    @After
+    public void tearDown()
+    {
+    }
+
+
+
+    //== PÿÕSTUPOV… METODY VLASTNOSTÕ INSTANCÕ =================================
+    //== OSTATNÕ NESOUKROM… METODY INSTANCÕ ====================================
+    //== SOUKROM… A POMOCN… METODY TÿÕDY =======================================
+    //== SOUKROM… A POMOCN… METODY INSTANCÕ ====================================
+    //== INTERNÕ DATOV… TYPY ===================================================
+    //== VLASTNÕ TESTY =========================================================
+    //
+    //     /********************************************************************
+    //      *
+    //      */
+    //     @Test
+    //     public void testXxx()
+    //     {
+    //     }
+
+    @Test
+    public void testSpolkniVse()
+    {
+        CD.spolkni(cinkaK1);
+        CD.spolkni(panacek1);
+        CD.spolkni(strom1);
+        CD.spolkni(hvezda1);
+        CD.spolkni(panenka1);
+    }
+}
+

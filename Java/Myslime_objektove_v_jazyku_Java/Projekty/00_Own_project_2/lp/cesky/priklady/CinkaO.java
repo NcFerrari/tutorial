@@ -2,7 +2,7 @@ package lp.cesky.priklady;
 
 import lp.cesky.tvary.*;
 
-public class CinkaO implements IKresleny, IPosuvny, INafukovaci {
+public class CinkaO implements IHybaci {
     
     private static final AktivniPlatno AP = AktivniPlatno.getPlatno();
     
@@ -43,6 +43,7 @@ public class CinkaO implements IKresleny, IPosuvny, INafukovaci {
         setPozice(x, y);
         setRozmer(sirka, vyska);
         setBarva(barva);
+        AP.pridej(this);
     }
     
     public CinkaO(Pozice pozice) {

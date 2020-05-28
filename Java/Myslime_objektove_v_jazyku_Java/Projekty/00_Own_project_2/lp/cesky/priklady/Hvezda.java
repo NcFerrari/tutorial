@@ -2,7 +2,7 @@ package lp.cesky.priklady;
 
 import lp.cesky.tvary.*;
 
-public class Hvezda implements IKresleny, IPosuvny, INafukovaci {
+public class Hvezda implements IHybaci {
     
     private static final AktivniPlatno AP = AktivniPlatno.getPlatno();
     
@@ -41,6 +41,7 @@ public class Hvezda implements IKresleny, IPosuvny, INafukovaci {
         setPozice(x, y);
         setRozmer(sirka, vyska);
         setBarva(barva);
+        AP.pridej(this);
     }
     
     public Hvezda(Pozice pozice) {

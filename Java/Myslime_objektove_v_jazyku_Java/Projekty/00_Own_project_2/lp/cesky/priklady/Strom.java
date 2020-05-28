@@ -2,7 +2,7 @@ package lp.cesky.priklady;
 
 import lp.cesky.tvary.*;
 
-public class Strom implements IKresleny, IPosuvny, INafukovaci {
+public class Strom implements IHybaci {
     
     private static final AktivniPlatno AP = AktivniPlatno.getPlatno();
     private static final Barva IMPLICITNI_BARVA_KORUNY = Barva.ZELENA;
@@ -64,6 +64,7 @@ public class Strom implements IKresleny, IPosuvny, INafukovaci {
         setRozmer(sirka, vyska);
         setBarvaKoruny(barvaKoruny);
         setBarvaKmene(barvaKmene);
+        AP.pridej(this);
     }
     
     public Strom(Pozice pozice) {
