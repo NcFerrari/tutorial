@@ -13,6 +13,25 @@ public class Linka {
     
     private IZastavka prvniZastavka;
     private Barva barvaLinky;
+    private int rychlost = 4;
+    
+    public static Linka vytvorVnejsi(int rychlost) {
+        Linka linka = new Linka(Barva.MODRA, new int[]{25, 25, 25, 275, 175, 325, 325, 275, 325, 25});
+        linka.setRychlost(rychlost);
+        return linka;
+    }
+    
+    public static Linka vytvorStredni(int rychlost) {
+        Linka linka = new Linka(Barva.MODRA, new int[]{75, 75, 75, 225, 175, 275, 275, 225, 275, 75});
+        linka.setRychlost(rychlost);
+        return linka;
+    }
+    
+    public static Linka vytvorVnitrni(int rychlost) {
+        Linka linka = new Linka(Barva.MODRA, new int[]{125, 125, 125, 175, 175, 225, 225, 175, 225, 125});
+        linka.setRychlost(rychlost);
+        return linka;
+    }
     
     public Linka(Barva barva, int x1, int y1, int x2, int y2) {
         this(barva, new int[]{x1, y1, x2, y2});
@@ -37,15 +56,15 @@ public class Linka {
     public IZastavka pridejZa(IZastavka zastavka, int x, int y) {
         Zastavka novaZastavka = new Zastavka(x, y, velikostZastavky, barvaLinky, this);
         novaZastavka.setPredchoziZastavka(zastavka);
-        novaZastavka.setDalsiZastavka(zastavka.getDalsiZastavka());
+        novaZastavka.setDalsiZastavka(zastavka.getNasledujici());
         ((Zastavka)zastavka).setDalsiZastavka(novaZastavka);
-        ((Zastavka)novaZastavka.getDalsiZastavka()).setPredchoziZastavka(novaZastavka);
+        ((Zastavka)novaZastavka.getNasledujici()).setPredchoziZastavka(novaZastavka);
         return novaZastavka;
     }
     
     public void odstran(IZastavka zastavka) {
         if(zastavka == prvniZastavka) {
-            prvniZastavka = zastavka.getDalsiZastavka();
+            prvniZastavka = zastavka.getNasledujici();
         }
         ((Zastavka)zastavka).odstran();
     }
@@ -62,8 +81,20 @@ public class Linka {
         IZastavka zastavka = prvniZastavka;
         do {
             ((Zastavka)zastavka).odstran();
-            zastavka = zastavka.getDalsiZastavka();
+            zastavka = zastavka.getNasledujici();
         } while(zastavka != prvniZastavka);
+    }
+    
+    public void setRychlost(int rychlost) {
+        this.rychlost = rychlost;
+    }
+    
+    public int getRychlost() {
+        return rychlost;
+    }
+    
+    public int getCekani() {
+        return 0;
     }
     
     private class Zastavka implements IKresleny, IZastavka {
@@ -95,11 +126,15 @@ public class Linka {
             return elipsa.getY();
         }
         
+        public Pozice getPozice() {
+            return new Pozice(getX(), getY());
+        }
+        
         public void setDalsiZastavka(IZastavka dalsiZastavka) {
             this.dalsiZastavka = dalsiZastavka;
         }
         
-        public IZastavka getDalsiZastavka() {
+        public IZastavka getNasledujici() {
             return dalsiZastavka;
         }
         
@@ -118,8 +153,8 @@ public class Linka {
         }
         
         public void odstran() {
-            ((Zastavka)getDalsiZastavka()).setPredchoziZastavka(getPredchoziZastavka());
-            ((Zastavka)getPredchoziZastavka()).setDalsiZastavka(getDalsiZastavka());
+            ((Zastavka)getNasledujici()).setPredchoziZastavka(getPredchoziZastavka());
+            ((Zastavka)getPredchoziZastavka()).setDalsiZastavka(getNasledujici());
             AP.odstran(this);
         }
     }

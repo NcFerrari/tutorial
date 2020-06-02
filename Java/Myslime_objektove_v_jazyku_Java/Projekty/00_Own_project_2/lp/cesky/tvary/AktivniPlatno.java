@@ -5,8 +5,13 @@ import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Image;
 import java.awt.Toolkit;
+
+import java.awt.event.KeyListener;
+import java.awt.event.MouseListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+
+import java.awt.geom.Rectangle2D;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -106,20 +111,7 @@ import java.util.ListIterator;
  */
 public class AktivniPlatno
 {
-//== SOUKROME KONSTANTY ========================================================
-
-    /** Titulek na okne animacniho platna. */
-    private static final String TITULEK  = "Animacni platno";
-
-    /** Implicitni roztec ctvercove site. */
-    private static final int KROK_0 = 50;
-
-    /** Maximalni povolena velikost roztece ctvercove site. */
-    private static final int MAX_KROK = 200;
-
-
-
-//== VEREJNE KONSTANTY =========================================================
+//== KONSTANTNI ATRIBUTY TRIDY =================================================
 
     /** Pocatecni sirka aktivni plochy platna v bodech. */
     public static final int SIRKA_0 = 6;
@@ -133,24 +125,39 @@ public class AktivniPlatno
     /** Pocatecni barva car mrizky. */
     public static final Barva BARVA_CAR_0 = Barva.CERNA;
 
+    /** Implicitni roztec ctvercove site. */
+    private static final int KROK_0 = 50;
 
-
-//== ATRIBUTY TRIDY ============================================================
+    /** Maximalni povolena velikost roztece ctvercove site. */
+    private static final int MAX_KROK = 200;
 
     /** Jedina instance tridy AktivniPlatno */
-    private static AktivniPlatno jedinacek;
+    private static final AktivniPlatno jedinacek = new AktivniPlatno();
+
+    //Pri kresleni car se pta APosuvny po aktivnim platnu.
+    //Proto se mohou cary kreslit az pote, co bude jedinacek inicializovan
+    static 
+    {
+        //Pripravi a vykresli prazdne platno
+        jedinacek.setRozmer(SIRKA_0, VYSKA_0);
+    }
 
 
-//== ATRIBUTY INSTANCI =========================================================
 
-    //Z venku neovlivnitelne Atributy pro zobrazeni platna v aplikacnim okne
+//== PROMENNE ATRIBUTY TRIDY ===================================================
+//== KONSTANTNI ATRIBUTY INSTANCI ==============================================
 
         /** Aplikacni okno animacniho platna. */
-        private JFrame okno;
+        private final JFrame okno;
 
         /** Instance lokalni tridy, ktera je zrizena proto, aby odstinila
          *  metody sveho rodice JPanel. */
-        private JPanel vlastniPlatno;
+        private final JPanel vlastniPlatno;
+        
+        
+//== PROMENNE ATRIBUTY INSTANCI ================================================
+
+    //Z venku neovlivnitelne Atributy pro zobrazeni platna v aplikacnim okne
 
         /** Vse se kresli na obraz - ten se snadneji prekresli. */
         private Image obrazPlatna;
@@ -200,9 +207,11 @@ public class AktivniPlatno
         /** Vyska aktivni plochy platna v bodech. */
         private int vyskaBodu = VYSKA_0 * krok;
 
-    /** Seznam zobrazovanych predmetu. */
+        /** Seznam zobrazovanych predmetu. */
         List<IKresleny> predmety = new LinkedList<IKresleny>();
 
+        /** Nazev v titulkove liste animacniho platna. */
+        private String nazev  = "Animacni platno";
 
 
 //== PRISTUPOVE METODY VLASTNOSTI TRIDY ========================================
@@ -217,7 +226,7 @@ public class AktivniPlatno
     private AktivniPlatno()
     {
         okno  = new JFrame();          //Vytvori nove aplikacni okno
-        okno.setTitle(TITULEK);
+        okno.setTitle(nazev);
         okno.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         okno.addWindowListener(new WindowAdapter()
         {
@@ -232,13 +241,14 @@ public class AktivniPlatno
             /** Povinne prekryvana abstraktni metoda tridy JPanel. */
             public void paint( Graphics g )
             {
-                g.drawImage( obrazPlatna, 0, 0, null );
+                synchronized( obrazPlatna )
+                {
+                    g.drawImage( obrazPlatna, 0, 0, null );
+                }
             }
 
         };//Konec definice tridy vlastniPlatno
         okno.setContentPane(vlastniPlatno);
-        jedinacek = this;
-        setRozmer(SIRKA_0, VYSKA_0);        //Pripravi a vykresli prazdne platno
     }
 
 
@@ -252,10 +262,8 @@ public class AktivniPlatno
      *
      * @return Instance tridy AktivniPlatno
      */
-    public static synchronized AktivniPlatno getPlatno()
+    public static AktivniPlatno getPlatno()
     {
-        if( jedinacek == null )
-            jedinacek = new AktivniPlatno();
         return jedinacek;
     }
 
@@ -279,8 +287,8 @@ public class AktivniPlatno
 
         Dimension obrazovka = Toolkit.getDefaultToolkit().getScreenSize();
         if( (krok  < 1)  ||
-            (sirka < 1)  ||  (obrazovka.width  < sirkaBodu) ||
-            (vyska < 1)  ||  (obrazovka.height < vyskaBodu) )
+            (sirka < 2)  ||  (obrazovka.width  < sirkaBodu) ||
+            (vyska < 2)  ||  (obrazovka.height < vyskaBodu) )
         {
             throw new IllegalArgumentException(
                 "\nSpatne zadane rozmery: krok=" + krok +
@@ -360,6 +368,17 @@ public class AktivniPlatno
 
 
     /***************************************************************************
+     * Vrati bodovou sirku platna.
+     *
+     * @return  Aktualni bodova sirka platna (pocet bodu vodorovne)
+     */
+    public synchronized int getBsirka()
+    {
+        return sirkaBodu;
+    }
+
+
+    /***************************************************************************
      * Vrati polickovou vysku platna.
      *
      * @return  Aktualni polickova vyska platna (pocet policek svisle)
@@ -367,6 +386,17 @@ public class AktivniPlatno
     public synchronized int getVyska()
     {
         return vyska;
+    }
+
+
+    /***************************************************************************
+     * Vrati bodovou vysku platna.
+     *
+     * @return  Aktualni bodova vyska platna (pocet bodu svisle)
+     */
+    public synchronized int getBVyska()
+    {
+        return vyskaBodu;
     }
 
 
@@ -485,6 +515,27 @@ public class AktivniPlatno
         return nekreslit;
     }
 
+    
+    /***************************************************************************
+     * Nastavi nazev v titulkove liste okna platna.
+     *
+     * @param nazev  Nastavovany nazev
+     */
+    public void setNazev( String nazev )
+    {
+        okno.setTitle( this.nazev = nazev );
+    }
+    
+    
+    /***************************************************************************
+     * Vrati aktualni nazev v titulkove liste okna platna.
+     *
+     * @return  Aktualni nazev okna
+     */
+    public String getNazev()
+    {
+        return okno.getTitle();
+    }
 
 
 //== PREKRYTE METODY IMPLEMENTOVANYCH ROZHRANI =================================
@@ -511,22 +562,26 @@ public class AktivniPlatno
      */
     public synchronized void prekresli()
     {
-        if( kreslim ) return;
-        if( (nekreslit == 0)  &&  isViditelne() )
+        if( kreslim )   //Prave prekresluji - volam neprimo sam sebe
+            return;
+        if( (nekreslit == 0)  &&  isViditelne() )   //Mam kreslit a je proc
         {
             kreslim = true;
-            kreslitko.vyplnRam( 0, 0, sirkaBodu, vyskaBodu, barvaPozadi );
-            if( mrizka  &&  (barvaCar != barvaPozadi) )
+            synchronized( obrazPlatna )
             {
-                for( int i=0;   i < sirka;   )
-                    svisla[i++].nakresli( kreslitko );
-                for( int i=0;   i < vyska;   )
-                    vodorovna[i++].nakresli( kreslitko ) ;
-            }
-            ListIterator it = predmety.listIterator();
-            while(it.hasNext()) {
-                ((IKresleny)it.next()).nakresli( kreslitko );
-            }
+                kreslitko.vyplnRam( 0, 0, sirkaBodu, vyskaBodu, barvaPozadi );
+                if( mrizka  &&  (barvaCar != barvaPozadi) )
+                {
+                    for( int i=0;   i < sirka;   )
+                        svisla[i++].nakresli( kreslitko );
+                    for( int i=0;   i < vyska;   )
+                        vodorovna[i++].nakresli( kreslitko ) ;
+                }
+                ListIterator it = predmety.listIterator();
+                while(it.hasNext()) {
+                    ((IKresleny)it.next()).nakresli( kreslitko );
+                }
+            }//synchronized( obrazPlatna )
             vlastniPlatno.repaint();
             kreslit = false;    //Vse, co se melo prekreslit, bylo prekresleno
             kreslim = false;
@@ -613,8 +668,9 @@ public class AktivniPlatno
      *
      * @param  obrazec  Pridavany obrazec
      *
-     * @return  true v pripade, kdyz byl obrazec opravdu pridan,
+     * @return  true  v pripade, kdyz byl obrazec opravdu pridan,
      *          false v pripade, kdyz jiz mezi zobrazovanymi byl
+     *                a pouze se presunul do jine urovne
      */
     public synchronized boolean pridej(IKresleny obrazec)
     {
@@ -641,8 +697,8 @@ public class AktivniPlatno
      * @param  pridany   Pridavany obrazec
      *
      * @return  true  v pripade, kdyz byl obrazec opravdu pridan,
-     *           false v pripade, kdyz jiz mezi zobrazovanymi byl
-     *                 a pouze se presunul do jine urovne
+     *          false v pripade, kdyz jiz mezi zobrazovanymi byl
+     *                a pouze se presunul do jine urovne
      */
     public synchronized boolean pridejNad(IKresleny soucasny, IKresleny pridany )
     {
@@ -669,8 +725,8 @@ public class AktivniPlatno
      * @param  pridany   Pridavany obrazec
      *
      * @return  true  v pripade, kdyz byl obrazec opravdu pridan,
-     *           false v pripade, kdyz jiz mezi zobrazovanymi byl
-     *                 a pouze se presunul do jine urovne
+     *          false v pripade, kdyz jiz mezi zobrazovanymi byl
+     *                a pouze se presunul do jine urovne
      */
     public synchronized boolean pridejPod(IKresleny soucasny, IKresleny pridany)
     {
@@ -682,6 +738,46 @@ public class AktivniPlatno
                 "Referencni objekt neni na platne zobrazovan!" );
         }
         predmety.add( kam, pridany );
+        prekresli();
+        return nebyl;
+    }
+
+
+    /***************************************************************************
+     * Prida obrazec do seznamu malovanych tak, aby byl kreslen
+     * nad vsemi obrazci.
+     * Pokud jiz v seznamu byl, jenom jej presune do pozadovane pozice.
+     *
+     * @param  pridany   Pridavany obrazec
+     *
+     * @return  true  v pripade, kdyz byl obrazec opravdu pridan,
+     *          false v pripade, kdyz jiz mezi zobrazovanymi byl
+     *                a pouze se presunul do jine urovne
+     */
+    public synchronized boolean pridejNavrch( IKresleny pridany)
+    {
+        boolean nebyl = ! predmety.remove(pridany);
+        predmety.add( pridany );
+        prekresli();
+        return nebyl;
+    }
+
+
+    /***************************************************************************
+     * Prida obrazec do seznamu malovanych tak, aby byl kreslen
+     * pod zadanym obrazcem.
+     * Pokud jiz v seznamu byl, jenom jej presune do zadane pozice.
+     *
+     * @param  pridany   Pridavany obrazec
+     *
+     * @return  true  v pripade, kdyz byl obrazec opravdu pridan,
+     *          false v pripade, kdyz jiz mezi zobrazovanymi byl
+     *                a pouze se presunul do jine urovne
+     */
+    public synchronized boolean pridejDospod( IKresleny pridany)
+    {
+        boolean nebyl = ! predmety.remove(pridany);
+        predmety.add( 0, pridany );
         prekresli();
         return nebyl;
     }
@@ -732,6 +828,43 @@ public class AktivniPlatno
     public List seznamKreslenych()
     {
         return Collections.unmodifiableList( predmety );
+    }
+
+
+    /***************************************************************************
+     * Prihlasi posluchace udalosti klavesnice.
+     */
+    public void prihlasKlavesnici( KeyListener posluchac )
+    {
+        okno.addKeyListener( posluchac );
+    }
+
+
+    /***************************************************************************
+     * Odhlasi posluchace klavesnice.
+     */
+    public void odhlasKlavesnici( KeyListener posluchac )
+    {
+        okno.removeKeyListener( posluchac );
+    }
+
+
+    /***************************************************************************
+     * Prihlasi posluchace udalosti mysi.
+     */
+    public void prihlasMys( MouseListener posluchac )
+    {
+        okno.addMouseListener( posluchac );
+    }
+
+
+
+    /***************************************************************************
+     * Odhlasi posluchace mysi.
+     */
+    public void odhlasMys( MouseListener posluchac )
+    {
+        okno.removeMouseListener( posluchac );
     }
 
 

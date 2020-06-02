@@ -13,7 +13,7 @@ import rup.cesky.spolecne.P;
  * @author     Rudolf Pecinovsky
  * @version    2.01, duben 2004
  */
-public class Cara  implements IKresleny, IPosuvny
+public class Cara  implements IPosuvny
 {
 //== KONSTANTNI ATRIBUTY TRIDY =================================================
 

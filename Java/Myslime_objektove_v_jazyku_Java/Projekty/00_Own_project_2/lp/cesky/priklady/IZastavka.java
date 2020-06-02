@@ -2,9 +2,7 @@
  * Kontrola kódování: Pøíliš luouèkı kùò úpìl ïábelské ódy. */
 package lp.cesky.priklady;
 
-
-
-
+import lp.cesky.tvary.Pozice;
 
 /*******************************************************************************
  * Instance rozhraní {@code IZastavka} pøedstavují ...
@@ -25,7 +23,9 @@ public interface IZastavka
     
     int getY();
     
-    IZastavka getDalsiZastavka();
+    IZastavka getNasledujici();
     
     IZastavka getPredchoziZastavka();
+    
+    Pozice getPozice();
 }

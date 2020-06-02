@@ -7,7 +7,7 @@ package rup.cesky.tvary;
  * @author     Rudolf Pecinovsky
  * @version    1.00, 3.2.2003
  */
-public interface INafukovaci 
+public interface INafukovaci extends IKresleny  
 {
 //== VEREJNE KONSTANTY =========================================================
 //== PRISTUPOVE METODY VLASTNOSTI INSTANCI =====================================

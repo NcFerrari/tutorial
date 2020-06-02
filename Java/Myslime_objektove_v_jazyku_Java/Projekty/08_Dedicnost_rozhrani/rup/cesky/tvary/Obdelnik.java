@@ -13,7 +13,7 @@ import rup.cesky.spolecne.P;
  * @author     Rudolf Pecinovsky
  * @version    2.01, duben 2004
  */
-public class Obdelnik implements IKresleny, IPosuvny, INafukovaci
+public class Obdelnik implements IHybaci
 {
 //== KONSTANTNI ATRIBUTY TRIDY =================================================
 
