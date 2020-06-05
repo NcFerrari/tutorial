@@ -22,13 +22,13 @@ public class Linka {
     }
     
     public static Linka vytvorStredni(int rychlost) {
-        Linka linka = new Linka(Barva.MODRA, new int[]{75, 75, 75, 225, 175, 275, 275, 225, 275, 75});
+        Linka linka = new Linka(Barva.CERVENA, new int[]{75, 75, 75, 225, 175, 275, 275, 225, 275, 75});
         linka.setRychlost(rychlost);
         return linka;
     }
     
     public static Linka vytvorVnitrni(int rychlost) {
-        Linka linka = new Linka(Barva.MODRA, new int[]{125, 125, 125, 175, 175, 225, 225, 175, 225, 125});
+        Linka linka = new Linka(Barva.ZELENA, new int[]{125, 125, 125, 175, 175, 225, 225, 175, 225, 125});
         linka.setRychlost(rychlost);
         return linka;
     }
@@ -80,8 +80,8 @@ public class Linka {
     public void zrus() {
         IZastavka zastavka = prvniZastavka;
         do {
-            ((Zastavka)zastavka).odstran();
             zastavka = zastavka.getNasledujici();
+            odstran(zastavka);
         } while(zastavka != prvniZastavka);
     }
     
@@ -92,9 +92,9 @@ public class Linka {
     public int getRychlost() {
         return rychlost;
     }
-    
-    public int getCekani() {
-        return 0;
+        
+    public int getVelikostZastavky() {
+        return velikostZastavky;
     }
     
     private class Zastavka implements IKresleny, IZastavka {

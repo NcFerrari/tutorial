@@ -22,7 +22,7 @@ public class Obdelnik implements IHybaci
     public static final Barva IMPLICITNI_BARVA = Barva.CERVENA;
 
     /** Aktivni platno, ktere dohlizi na spravne vykresleni instance. */
-    private static final AktivniPlatno AP = AktivniPlatno.getPlatno();
+    protected static final AktivniPlatno AP = AktivniPlatno.getPlatno();
 
 
 

@@ -179,7 +179,7 @@ public class Kabina_8a implements IMultiposuvny
         //Zastavka, kam jsme dorazili, musi znat sveho nasledovnika
         dalsi = dalsi.getNasledujici();
         
-        P.cekej( linka.getCekani() );
+//         P.cekej( linka.getCekani() );
         
         //Nechame kabinu presunout na dalsi zastavku
         Multipresouvac mp = Multipresouvac.getInstance();

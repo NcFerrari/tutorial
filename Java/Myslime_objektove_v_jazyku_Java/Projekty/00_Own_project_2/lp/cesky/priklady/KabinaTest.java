@@ -123,7 +123,7 @@ public class KabinaTest extends junit.framework.TestCase
             for( int i=skupina.length;   --i >= 0;   skupina[i].skonci() );
             //Pro pripad, ze by kabina nebyla prave v provozu (ceka ve stanici)
             //a cekala teprve na sve dalsi nasazeni.
-            P.cekej( vnejsi.getCekani() + 50 );
+//             P.cekej( vnejsi.getCekani() + 50 );
             for( int i=skupina.length;   --i >= 0;   skupina[i].skonci() );
         AP.vratKresli();
     }
