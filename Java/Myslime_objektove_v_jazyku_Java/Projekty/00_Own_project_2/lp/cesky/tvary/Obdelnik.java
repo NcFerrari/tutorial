@@ -162,7 +162,7 @@ public class Obdelnik implements IHybaci
      */
     public Pozice getPozice()
     {
-        return new Pozice( xPos, yPos );
+        return new Pozice( getX(), getY() );
     }
 
 
@@ -268,7 +268,7 @@ public class Obdelnik implements IHybaci
      */
     public Oblast getOblast()
     {
-        return new Oblast( xPos, yPos, sirka, vyska );
+        return new Oblast( getX(), getY(), getSirka(), getVyska() );
     }
 
 
@@ -363,7 +363,7 @@ public class Obdelnik implements IHybaci
      */
     public void posunVpravo(int vzdalenost)
     {
-        setPozice( xPos+vzdalenost, yPos );
+        setPozice( getX()+vzdalenost, getY() );
     }
 
 
@@ -393,7 +393,7 @@ public class Obdelnik implements IHybaci
      */
     public void posunDolu(int vzdalenost)
     {
-        setPozice( xPos, yPos+vzdalenost );
+        setPozice( getX(), getY()+vzdalenost );
     }
 
 
