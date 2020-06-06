@@ -162,7 +162,7 @@ public class Elipsa implements IHybaci
      */
     public Pozice getPozice()
     {
-        return new Pozice( xPos, yPos );
+        return new Pozice( getX(), getY() );
     }
 
 
@@ -187,7 +187,7 @@ public class Elipsa implements IHybaci
      */
     public void setPozice(Pozice pozice)
     {
-        setPozice( pozice.x, pozice.y );
+        setPozice( pozice.getX(), pozice.getY() );
     }
 
 
@@ -220,7 +220,7 @@ public class Elipsa implements IHybaci
      */
     public Rozmer getRozmer()
     {
-        return new Rozmer( sirka, vyska );
+        return new Rozmer( getSirka(), getVyska() );
     }
 
 
@@ -257,7 +257,7 @@ public class Elipsa implements IHybaci
      */
     public void setRozmer(Rozmer rozmer)
     {
-        setRozmer( rozmer.sirka, rozmer.vyska );
+        setRozmer( rozmer.getSirka(), rozmer.getVyska() );
     }
 
 
@@ -268,7 +268,7 @@ public class Elipsa implements IHybaci
      */
     public Oblast getOblast()
     {
-        return new Oblast( xPos, yPos, sirka, vyska );
+        return new Oblast( getX(), getY(), getSirka(), getVyska() );
     }
 
 
@@ -280,8 +280,8 @@ public class Elipsa implements IHybaci
     public void setOblast(Oblast o)
     {
         AP.nekresli();
-            setPozice( o.x,     o.y     );
-            setRozmer( o.sirka, o.vyska );
+            setPozice(o.getX(), o.getY());
+            setRozmer(o.getSirka(), o.getVyska());
         AP.vratKresli();
     }
 
@@ -363,7 +363,7 @@ public class Elipsa implements IHybaci
      */
     public void posunVpravo(int vzdalenost)
     {
-        setPozice( xPos+vzdalenost, yPos );
+        setPozice( getX()+vzdalenost, getY() );
     }
 
 
@@ -393,7 +393,7 @@ public class Elipsa implements IHybaci
      */
     public void posunDolu(int vzdalenost)
     {
-        setPozice( xPos, yPos+vzdalenost );
+        setPozice( getX(), getY()+vzdalenost );
     }
 
 
