@@ -13,7 +13,7 @@ import lp.cesky.spolecne.P;
  * @author     Rudolf Pecinovsky
  * @version    2.01, duben 2004
  */
-public class Cara extends Posuvny  
+public class Cara extends APosuvny  
 {
 //== KONSTANTNI ATRIBUTY TRIDY =================================================
 

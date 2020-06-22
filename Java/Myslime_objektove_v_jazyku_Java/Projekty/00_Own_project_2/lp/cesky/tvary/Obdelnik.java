@@ -12,7 +12,7 @@ import lp.cesky.spolecne.P;
  * @author     Rudolf Pecinovsky
  * @version    2.01, duben 2004
  */
-public class Obdelnik extends Posuvny 
+public class Obdelnik extends AHybaci 
 {
 //== KONSTANTNI ATRIBUTY TRIDY =================================================
 
@@ -31,16 +31,8 @@ public class Obdelnik extends Posuvny
     /** Pocet vytvorenych instanci */
     private static int pocet = 0;
 
-
-
 //== KONSTANTNI ATRIBUTY INSTANCI ==============================================
 //== PROMENNE ATRIBUTY INSTANCI ================================================
-
-    
-    private int    sirka;   //sirka v bodech
-    private int    vyska;   //Vyska v bodech
-
-
 //== PRISTUPOVE METODY VLASTNOSTI TRIDY ========================================
 //== OSTATNI METODY TRIDY ======================================================
 
@@ -112,109 +104,12 @@ public class Obdelnik extends Posuvny
      */
     public Obdelnik( int x, int y, int sirka, int vyska, Barva barva )
     {
-        super(x, y, barva);
-        this.sirka = sirka;
-        this.vyska = vyska;
+        super(x, y, sirka, vyska, barva);
         this.nazev = P.nazevTridy(this) + "_" + ++pocet;
         AP.pridej(this);
     }
 
 //== PRISTUPOVE METODY ATRIBUTU INSTANCI =======================================
-
-    /***************************************************************************
-     * Vrati sirku instance.
-     *
-     * @return  Sirka instance v bodech
-     */
-     public int getSirka()
-     {
-         return sirka;
-     }
-
-
-    /***************************************************************************
-     * Vrati vysku instance.
-     *
-     * @return  Vyska instance v bodech
-     */
-     public int getVyska()
-     {
-         return vyska;
-     }
-
-
-    /***************************************************************************
-     * Vrati instanci tridy Rozmer s rozmery instance.
-     *
-     * @return   Rozmer s rozmery instance.
-     */
-    public Rozmer getRozmer()
-    {
-        return new Rozmer( sirka, vyska );
-    }
-
-
-    /***************************************************************************
-     * Nastavi novy "ctvercovy" rozmer instance -
-     * na zadany rozmer se nastavi vyska i sirka.
-     *
-     * @param rozmer  Nove nastavovany rozmer v obou smerech; rozmer>0
-     */
-    public void setRozmer(int rozmer)
-    {
-        setRozmer( rozmer, rozmer );
-    }
-
-
-    /***************************************************************************
-     * Nastavi nove rozmery instance.
-     *
-     * @param sirka    Nove nastavovana sirka; sirka>0
-     * @param vyska    Nove nastavovana vyska; vyska>0
-     */
-    public void setRozmer(int sirka, int vyska)
-    {
-        this.sirka = sirka;
-        this.vyska = vyska;
-        AP.prekresli();
-    }
-
-
-    /***************************************************************************
-     * Nastavi nove rozmery instance.
-     *
-     * @param rozmer    Nove nastavovany rozmer.
-     */
-    public void setRozmer(Rozmer rozmer)
-    {
-        setRozmer( rozmer.sirka, rozmer.vyska );
-    }
-
-
-    /***************************************************************************
-     * Vrati instanci tridy Oblast s informacemi o pozici a rozmerech instance.
-     *
-     * @return   Oblast s informacemi o pozici a rozmere instance.
-     */
-    public Oblast getOblast()
-    {
-        return new Oblast( getX(), getY(), sirka, vyska );
-    }
-
-
-    /***************************************************************************
-     * Nastavi novou polohu a rozmery instance.
-     *
-     * @param o    Nove nastavovana oblast zaujimana instanci.
-     */
-    public void setOblast(Oblast o)
-    {
-        AP.nekresli();
-            setPozice( o.x,     o.y     );
-            setRozmer( o.sirka, o.vyska );
-        AP.vratKresli();
-    }
-
 //== PREKRYTE METODY IMPLEMENTOVANYCH ROZHRANI =================================
 
     /***************************************************************************
@@ -225,7 +120,7 @@ public class Obdelnik extends Posuvny
      */
     public void nakresli( Kreslitko kreslitko )
     {
-        kreslitko.vyplnRam( getX(), getY(), sirka, vyska, getBarva() );
+        kreslitko.vyplnRam( getX(), getY(), getSirka(), getVyska(), getBarva() );
     }
 
 
@@ -241,7 +136,7 @@ public class Obdelnik extends Posuvny
     public String toString()
     {
         return nazev + ": x=" + getX() + ", y=" + getY() + 
-               ", sirka=" + sirka + ", vyska=" + vyska +
+               ", sirka=" + getSirka() + ", vyska=" + getVyska() +
                ", barva=" + getBarva()
                ;
     }

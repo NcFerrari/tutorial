@@ -2,7 +2,7 @@ package lp.cesky.tvary;
 
 
 
-public class Posuvny implements IPosuvny {
+public class APosuvny implements IPosuvny {
     
     /** Aktivni platno, ktere dohlizi na spravne vykresleni instance. */
     protected static final AktivniPlatno AP = AktivniPlatno.getPlatno();
@@ -15,7 +15,7 @@ public class Posuvny implements IPosuvny {
     private Barva  barva;   //Barva instance
     
     
-    public Posuvny(int x, int y, Barva barva) {
+    public APosuvny(int x, int y, Barva barva) {
         xPos = x;
         yPos = y;
         this.barva = barva;

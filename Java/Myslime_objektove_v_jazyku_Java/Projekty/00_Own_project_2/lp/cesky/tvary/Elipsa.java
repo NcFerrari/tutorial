@@ -12,7 +12,7 @@ import lp.cesky.spolecne.P;
  * @author     Rudolf Pecinovsky
  * @version    2.01, duben 2004
  */
-public class Elipsa extends Posuvny 
+public class Elipsa extends AHybaci 
 {
 //== KONSTANTNI ATRIBUTY TRIDY =================================================
 
@@ -34,22 +34,7 @@ public class Elipsa extends Posuvny
 
 
 //== KONSTANTNI ATRIBUTY INSTANCI ==============================================
-
-    /** Nazev sestavajici z nazvu tridy a poradi instance */
-    private final String nazev;
-
-
-
 //== PROMENNE ATRIBUTY INSTANCI ================================================
-
-    private int    xPos;    //Bodova x-ova souradnice pocatku
-    private int    yPos;    //Bodova y-ova souradnice pocatku
-    private int    sirka;   //sirka v bodech
-    private int    vyska;   //Vyska v bodech
-    private Barva  barva;   //Barva instance
-
-
-
 //== PRISTUPOVE METODY VLASTNOSTI TRIDY ========================================
 //== OSTATNI METODY TRIDY ======================================================
 
@@ -121,208 +106,14 @@ public class Elipsa extends Posuvny
      */
     public Elipsa( int x, int y, int sirka, int vyska, Barva barva )
     {
-        super(x, y, barva);
+        super(x, y,sirka, vyska, barva);
         this.nazev = P.nazevTridy(this) + "_" + ++pocet;
-        this.xPos  = x;
-        this.yPos  = y;
-        this.sirka = sirka;
-        this.vyska = vyska;
-        this.barva = barva;
         AP.pridej(this);
     }
 
 
 
 //== PRISTUPOVE METODY ATRIBUTU INSTANCI =======================================
-
-    /***************************************************************************
-     * Vrati x-ovou souradnici pozice instance.
-     *
-     * @return  x-ova souradnice.
-     */
-    public int getX()
-    {
-        return xPos;
-    }
-
-
-    /***************************************************************************
-     * Vrati y-ovou souradnici pozice instance.
-     *
-     * @return  y-ova souradnice.
-     */
-    public int getY()
-    {
-        return yPos;
-    }
-
-
-    /***************************************************************************
-     * Vrati instanci tridy Pozice s pozici instance.
-     *
-     * @return   Pozice s pozici instance.
-     */
-    public Pozice getPozice()
-    {
-        return new Pozice( xPos, yPos );
-    }
-
-
-    /***************************************************************************
-     * Nastavi novou pozici instance.
-     *
-     * @param x   Nova x-ova pozice instance
-     * @param y   Nova y-ova pozice instance
-     */
-    public void setPozice(int x, int y)
-    {
-        xPos = x;
-        yPos = y;
-        AP.prekresli();
-    }
-
-
-    /***************************************************************************
-     * Nastavi novou pozici instance.
-     *
-     * @param pozice   Nova pozice instance
-     */
-    public void setPozice(Pozice pozice)
-    {
-        setPozice( pozice.x, pozice.y );
-    }
-
-
-    /***************************************************************************
-     * Vrati sirku instance.
-     *
-     * @return  Sirka instance v bodech
-     */
-     public int getSirka()
-     {
-         return sirka;
-     }
-
-
-    /***************************************************************************
-     * Vrati vysku instance.
-     *
-     * @return  Vyska instance v bodech
-     */
-     public int getVyska()
-     {
-         return vyska;
-     }
-
-
-    /***************************************************************************
-     * Vrati instanci tridy Rozmer s rozmery instance.
-     *
-     * @return   Rozmer s rozmery instance.
-     */
-    public Rozmer getRozmer()
-    {
-        return new Rozmer( sirka, vyska );
-    }
-
-
-    /***************************************************************************
-     * Nastavi novy "ctvercovy" rozmer instance -
-     * na zadany rozmer se nastavi vyska i sirka.
-     *
-     * @param rozmer  Nove nastavovany rozmer v obou smerech; rozmer>0
-     */
-    public void setRozmer(int rozmer)
-    {
-        setRozmer( rozmer, rozmer );
-    }
-
-
-    /***************************************************************************
-     * Nastavi nove rozmery instance.
-     *
-     * @param sirka    Nove nastavovana sirka; sirka>0
-     * @param vyska    Nove nastavovana vyska; vyska>0
-     */
-    public void setRozmer(int sirka, int vyska)
-    {
-        this.sirka = sirka;
-        this.vyska = vyska;
-        AP.prekresli();
-    }
-
-
-    /***************************************************************************
-     * Nastavi nove rozmery instance.
-     *
-     * @param rozmer    Nove nastavovany rozmer.
-     */
-    public void setRozmer(Rozmer rozmer)
-    {
-        setRozmer( rozmer.sirka, rozmer.vyska );
-    }
-
-
-    /***************************************************************************
-     * Vrati instanci tridy Oblast s informacemi o pozici a rozmerech instance.
-     *
-     * @return   Oblast s informacemi o pozici a rozmere instance.
-     */
-    public Oblast getOblast()
-    {
-        return new Oblast( xPos, yPos, sirka, vyska );
-    }
-
-
-    /***************************************************************************
-     * Nastavi novou polohu a rozmery instance.
-     *
-     * @param o    Nove nastavovana oblast zaujimana instanci.
-     */
-    public void setOblast(Oblast o)
-    {
-        AP.nekresli();
-            setPozice( o.x,     o.y     );
-            setRozmer( o.sirka, o.vyska );
-        AP.vratKresli();
-    }
-
-
-    /***************************************************************************
-     * Vrati barvu instance.
-     *
-     * @return  Instance tridy Barva definujici nastavenou barvu.
-     */
-    public Barva getBarva()
-    {
-        return barva;
-    }
-
-
-    /***************************************************************************
-     * Nastavi novou barvu instance.
-     *
-     * @param nova   Pozadovana nova barva.
-     */
-    public void setBarva(Barva nova)
-    {
-        barva = nova;
-        AP.prekresli();
-    }
-
-
-    /***************************************************************************
-     * Vrati nazev instance, tj. nazev jeji tridy nasledovany poradim.
-     *
-     * @return  Retezec s nazvem instance.
-     */
-     public String getNazev()
-     {
-        return nazev;
-     }
-
-
-
 //== PREKRYTE METODY IMPLEMENTOVANYCH ROZHRANI =================================
 
     /***************************************************************************
@@ -333,7 +124,7 @@ public class Elipsa extends Posuvny
      */
     public void nakresli( Kreslitko kreslitko )
     {
-        kreslitko.vyplnOval( xPos, yPos, sirka, vyska, barva );
+        kreslitko.vyplnOval( getX(), getY(), getSirka(), getVyska(), getBarva() );
     }
 
 
@@ -348,76 +139,14 @@ public class Elipsa extends Posuvny
      */
     public String toString()
     {
-        return nazev + ": x=" + xPos + ", y=" + yPos + 
-               ", sirka=" + sirka + ", vyska=" + vyska +
-               ", barva=" + barva;
+        return nazev + ": x=" + getX() + ", y=" + getY() + 
+               ", sirka=" + getSirka() + ", vyska=" + getVyska() +
+               ", barva=" + getBarva();
     }
 
 
 
 //== NOVE ZAVEDENE METODY INSTANCI =============================================
-
-    /***************************************************************************
-     * Presune instanci o zadany pocet bodu vpravo,
-     * pri zaporne hodnote parametru vlevo.
-     *
-     * @param vzdalenost Vzdalenost, o kterou se instance presune.
-     */
-    public void posunVpravo(int vzdalenost)
-    {
-        setPozice( xPos+vzdalenost, yPos );
-    }
-
-
-    /***************************************************************************
-     * Presune instanci o krok bodu vpravo.
-     */
-    public void posunVpravo()
-    {
-        posunVpravo( AP.getKrok() );
-    }
-
-
-    /***************************************************************************
-     * Presune instanci o krok bodu vlevo.
-     */
-    public void posunVlevo()
-    {
-        posunVpravo( -AP.getKrok() );
-    }
-
-
-    /***************************************************************************
-     * Presune instanci o zadany pocet bodu dolu,
-     * pri zaporne hodnote parametru nahoru.
-     *
-     * @param vzdalenost    Pocet bodu, o ktere se instance presune.
-     */
-    public void posunDolu(int vzdalenost)
-    {
-        setPozice( xPos, yPos+vzdalenost );
-    }
-
-
-    /***************************************************************************
-     * Presune instanci o krok bodu dolu.
-     */
-    public void posunDolu()
-    {
-        posunDolu( AP.getKrok() );
-    }
-
-
-    /***************************************************************************
-     * Presune instanci o krok bodu nahoru.
-     */
-    public void posunVzhuru()
-    {
-        posunDolu( -AP.getKrok() );
-    }
-
-
-
 //== SOUKROME A POMOCNE METODY TRIDY ===========================================
 //== SOUKROME A POMOCNE METODY INSTANCI ========================================
 //== VNORENE A VNITRNI TRIDY ===================================================
