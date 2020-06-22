@@ -2,17 +2,17 @@ package lp.cesky.tvary;
 
 import lp.cesky.spolecne.P;
 
+
 /*******************************************************************************
  * Trida pro praci s elipsou komunikujici s aktivnim platnem.
  *  
  * Oproti stejnojmenne tride z projektu 
- * 05_Vzory bylo vymeneno Platno za AktivniPlatno
- * a prislusne upraveny potrebne metody.  
+ * 06_Rozhrani se zmenilo pouze implementovane rozhrani.   
  *   
  * @author     Rudolf Pecinovsky
  * @version    2.01, duben 2004
  */
-public class Elipsa implements IHybaci 
+public class Elipsa extends Posuvny 
 {
 //== KONSTANTNI ATRIBUTY TRIDY =================================================
 
@@ -121,12 +121,14 @@ public class Elipsa implements IHybaci
      */
     public Elipsa( int x, int y, int sirka, int vyska, Barva barva )
     {
+        super(x, y, barva);
         this.nazev = P.nazevTridy(this) + "_" + ++pocet;
         this.xPos  = x;
         this.yPos  = y;
         this.sirka = sirka;
         this.vyska = vyska;
         this.barva = barva;
+        AP.pridej(this);
     }
 
 
@@ -162,7 +164,7 @@ public class Elipsa implements IHybaci
      */
     public Pozice getPozice()
     {
-        return new Pozice( getX(), getY() );
+        return new Pozice( xPos, yPos );
     }
 
 
@@ -187,7 +189,7 @@ public class Elipsa implements IHybaci
      */
     public void setPozice(Pozice pozice)
     {
-        setPozice( pozice.getX(), pozice.getY() );
+        setPozice( pozice.x, pozice.y );
     }
 
 
@@ -220,7 +222,7 @@ public class Elipsa implements IHybaci
      */
     public Rozmer getRozmer()
     {
-        return new Rozmer( getSirka(), getVyska() );
+        return new Rozmer( sirka, vyska );
     }
 
 
@@ -257,7 +259,7 @@ public class Elipsa implements IHybaci
      */
     public void setRozmer(Rozmer rozmer)
     {
-        setRozmer( rozmer.getSirka(), rozmer.getVyska() );
+        setRozmer( rozmer.sirka, rozmer.vyska );
     }
 
 
@@ -268,7 +270,7 @@ public class Elipsa implements IHybaci
      */
     public Oblast getOblast()
     {
-        return new Oblast( getX(), getY(), getSirka(), getVyska() );
+        return new Oblast( xPos, yPos, sirka, vyska );
     }
 
 
@@ -280,8 +282,8 @@ public class Elipsa implements IHybaci
     public void setOblast(Oblast o)
     {
         AP.nekresli();
-            setPozice(o.getX(), o.getY());
-            setRozmer(o.getSirka(), o.getVyska());
+            setPozice( o.x,     o.y     );
+            setRozmer( o.sirka, o.vyska );
         AP.vratKresli();
     }
 
@@ -363,7 +365,7 @@ public class Elipsa implements IHybaci
      */
     public void posunVpravo(int vzdalenost)
     {
-        setPozice( getX()+vzdalenost, getY() );
+        setPozice( xPos+vzdalenost, yPos );
     }
 
 
@@ -393,7 +395,7 @@ public class Elipsa implements IHybaci
      */
     public void posunDolu(int vzdalenost)
     {
-        setPozice( getX(), getY()+vzdalenost );
+        setPozice( xPos, yPos+vzdalenost );
     }
 
 

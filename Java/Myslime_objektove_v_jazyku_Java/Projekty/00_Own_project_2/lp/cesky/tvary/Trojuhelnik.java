@@ -2,17 +2,17 @@ package lp.cesky.tvary;
 
 import lp.cesky.spolecne.P;
 
+                                                                            /**/
 /*******************************************************************************
  * Trida pro praci s trojuhelnikem komunikujicim s aktivnim platnem.
  *
  * Oproti stejnojmenne tride z projektu
- * 05_Vzory bylo vymeneno Platno za AktivniPlatno
- * a prislusne upraveny potrebne metody.
+ * 06_Rozhrani se zmenilo pouze implementovane rozhrani.
  *
  * @author     Rudolf Pecinovsky
  * @version    2.01, duben 2004
  */
-public class Trojuhelnik implements IHybaci 
+public class Trojuhelnik extends Posuvny 
 {
 //== KONSTANTNI ATRIBUTY TRIDY =================================================
 
@@ -26,7 +26,7 @@ public class Trojuhelnik implements IHybaci
     public static final Smer8 IMPLICITNI_SMER = Smer8.SEVER;
 
     /** Aktivni platno, ktere dohlizi na spravne vykresleni instance. */
-    private static final AktivniPlatno AP = AktivniPlatno.getPlatno();
+    protected static final AktivniPlatno AP = AktivniPlatno.getPlatno();
 
 
 
@@ -165,6 +165,7 @@ public class Trojuhelnik implements IHybaci
      */
     public Trojuhelnik( int x, int y, int sirka, int vyska, Barva barva, Smer8 smer )
     {
+        super(x, y, barva);
         this.nazev = P.nazevTridy(this) + "_" + ++pocet;
         this.xPos  = x;
         this.yPos  = y;
@@ -172,6 +173,7 @@ public class Trojuhelnik implements IHybaci
         this.vyska = vyska;
         this.barva = barva;
         this.smer  = smer;
+        AP.pridej(this);
     }
 
 
@@ -325,8 +327,8 @@ public class Trojuhelnik implements IHybaci
     public void setOblast(Oblast o)
     {
         AP.nekresli();
-            setPozice( o.x,     o.y     );
-            setRozmer( o.sirka, o.vyska );
+        setPozice( o.x,     o.y     );
+        setRozmer( o.sirka, o.vyska );
         AP.vratKresli();
     }
 
@@ -552,6 +554,4 @@ public class Trojuhelnik implements IHybaci
 //== VNORENE A VNITRNI TRIDY ===================================================
 //== TESTY A METODA MAIN =======================================================
 }
-
-
 

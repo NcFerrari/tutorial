@@ -2,6 +2,7 @@ package lp.cesky.tvary;
 
 import lp.cesky.spolecne.P;
 
+                                                                            /**/
 /*******************************************************************************
  * Trida pro praci s carou komunikujici s aktivnim platnem.
  * Cara je urcena svymi krajnimi body, pricemz souradnice pocatecniho bodu
@@ -12,7 +13,7 @@ import lp.cesky.spolecne.P;
  * @author     Rudolf Pecinovsky
  * @version    2.01, duben 2004
  */
-public class Cara implements IPosuvny
+public class Cara extends Posuvny  
 {
 //== KONSTANTNI ATRIBUTY TRIDY =================================================
 
@@ -122,6 +123,7 @@ public class Cara implements IPosuvny
      */
     public Cara(int x, int y, int kx, int ky, Barva barva)
     {
+        super(x, y, barva);
         this.nazev = P.nazevTridy(this) + "_" + ++pocet;
         this.xPos = x;
         this.yPos = y;

@@ -1,6 +1,5 @@
 package lp.cesky.tvary;
 
-import lp.cesky.spolecne.P;
 import java.awt.Font;
 
 
@@ -12,7 +11,7 @@ import java.awt.Font;
  * @author     Rudolf Pecinovsky
  * @version    2.01, duben 2004
  */
-public class Text implements IPosuvny
+public class Text extends Posuvny  
 {
 //== KONSTANTNI ATRIBUTY TRIDY =================================================
 
@@ -131,11 +130,13 @@ public class Text implements IPosuvny
      */
     public Text( String text, int x, int y, Barva barva )
     {
+        super(x, y, barva);
         this.nazev = text;
         this.xPos  = x;
         this.yPos  = y;
         this.barva = barva;
         this.font = new Font( "Dialog", Font.BOLD, 12 );
+        AP.pridej(this);
     }
 
 

@@ -430,7 +430,7 @@ public class AktivniPlatno
      */
     public synchronized boolean getMrizka()
     {
-    	return mrizka;
+        return mrizka;
     }
 
 

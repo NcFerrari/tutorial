@@ -2,17 +2,17 @@ package lp.cesky.tvary;
 
 import lp.cesky.spolecne.P;
 
+
 /*******************************************************************************
  * Trida pro praci s obdelnikem komunikujicim s aktivnim platnem.
  *  
  * Oproti stejnojmenne tride z projektu 
- * 05_Vzory bylo vymeneno Platno za AktivniPlatno
- * a prislusne upraveny potrebne metody.  
+ * 06_Rozhrani se zmenilo pouze implementovane rozhrani.   
  *   
  * @author     Rudolf Pecinovsky
  * @version    2.01, duben 2004
  */
-public class Obdelnik implements IHybaci 
+public class Obdelnik extends Posuvny 
 {
 //== KONSTANTNI ATRIBUTY TRIDY =================================================
 
@@ -34,20 +34,11 @@ public class Obdelnik implements IHybaci
 
 
 //== KONSTANTNI ATRIBUTY INSTANCI ==============================================
-
-    /** Nazev sestavajici z nazvu tridy a poradi instance */
-    private final String nazev;
-
-
-
 //== PROMENNE ATRIBUTY INSTANCI ================================================
 
-    private int    xPos;    //Bodova x-ova souradnice pocatku
-    private int    yPos;    //Bodova y-ova souradnice pocatku
+    
     private int    sirka;   //sirka v bodech
     private int    vyska;   //Vyska v bodech
-    private Barva  barva;   //Barva instance
-
 
 
 //== PRISTUPOVE METODY VLASTNOSTI TRIDY ========================================
@@ -56,7 +47,7 @@ public class Obdelnik implements IHybaci
 //##############################################################################
 //== KONSTRUKTORY A TOVARNI METODY =============================================
 
-    /***************************************************************************
+/***************************************************************************
      * Vytvori novou instanci s implicitnimi rozmery, umistenim a barvou.
      * Instance bude umistena v levem hornim rohu platna 
      * a bude mit implicitni barvu, 
@@ -121,75 +112,14 @@ public class Obdelnik implements IHybaci
      */
     public Obdelnik( int x, int y, int sirka, int vyska, Barva barva )
     {
-        this.nazev = P.nazevTridy(this) + "_" + ++pocet;
-        this.xPos  = x;
-        this.yPos  = y;
+        super(x, y, barva);
         this.sirka = sirka;
         this.vyska = vyska;
-        this.barva = barva;
+        this.nazev = P.nazevTridy(this) + "_" + ++pocet;
+        AP.pridej(this);
     }
-
-
 
 //== PRISTUPOVE METODY ATRIBUTU INSTANCI =======================================
-
-    /***************************************************************************
-     * Vrati x-ovou souradnici pozice instance.
-     *
-     * @return  x-ova souradnice.
-     */
-    public int getX()
-    {
-        return xPos;
-    }
-
-
-    /***************************************************************************
-     * Vrati y-ovou souradnici pozice instance.
-     *
-     * @return  y-ova souradnice.
-     */
-    public int getY()
-    {
-        return yPos;
-    }
-
-
-    /***************************************************************************
-     * Vrati instanci tridy Pozice s pozici instance.
-     *
-     * @return   Pozice s pozici instance.
-     */
-    public Pozice getPozice()
-    {
-        return new Pozice( getX(), getY() );
-    }
-
-
-    /***************************************************************************
-     * Nastavi novou pozici instance.
-     *
-     * @param x   Nova x-ova pozice instance
-     * @param y   Nova y-ova pozice instance
-     */
-    public void setPozice(int x, int y)
-    {
-        xPos = x;
-        yPos = y;
-        AP.prekresli();
-    }
-
-
-    /***************************************************************************
-     * Nastavi novou pozici instance.
-     *
-     * @param pozice   Nova pozice instance
-     */
-    public void setPozice(Pozice pozice)
-    {
-        setPozice( pozice.x, pozice.y );
-    }
-
 
     /***************************************************************************
      * Vrati sirku instance.
@@ -268,7 +198,7 @@ public class Obdelnik implements IHybaci
      */
     public Oblast getOblast()
     {
-        return new Oblast( getX(), getY(), getSirka(), getVyska() );
+        return new Oblast( getX(), getY(), sirka, vyska );
     }
 
 
@@ -285,42 +215,6 @@ public class Obdelnik implements IHybaci
         AP.vratKresli();
     }
 
-
-    /***************************************************************************
-     * Vrati barvu instance.
-     *
-     * @return  Instance tridy Barva definujici nastavenou barvu.
-     */
-    public Barva getBarva()
-    {
-        return barva;
-    }
-
-
-    /***************************************************************************
-     * Nastavi novou barvu instance.
-     *
-     * @param nova   Pozadovana nova barva.
-     */
-    public void setBarva(Barva nova)
-    {
-        barva = nova;
-        AP.prekresli();
-    }
-
-
-    /***************************************************************************
-     * Vrati nazev instance, tj. nazev jeji tridy nasledovany poradim.
-     *
-     * @return  Retezec s nazvem instance.
-     */
-     public String getNazev()
-     {
-        return nazev;
-     }
-
-
-
 //== PREKRYTE METODY IMPLEMENTOVANYCH ROZHRANI =================================
 
     /***************************************************************************
@@ -331,7 +225,7 @@ public class Obdelnik implements IHybaci
      */
     public void nakresli( Kreslitko kreslitko )
     {
-        kreslitko.vyplnRam( xPos, yPos, sirka, vyska, barva );
+        kreslitko.vyplnRam( getX(), getY(), sirka, vyska, getBarva() );
     }
 
 
@@ -346,79 +240,18 @@ public class Obdelnik implements IHybaci
      */
     public String toString()
     {
-        return nazev + ": x=" + xPos + ", y=" + yPos + 
+        return nazev + ": x=" + getX() + ", y=" + getY() + 
                ", sirka=" + sirka + ", vyska=" + vyska +
-               ", barva=" + barva;
+               ", barva=" + getBarva()
+               ;
     }
 
 
 
 //== NOVE ZAVEDENE METODY INSTANCI =============================================
-
-    /***************************************************************************
-     * Presune instanci o zadany pocet bodu vpravo,
-     * pri zaporne hodnote parametru vlevo.
-     *
-     * @param vzdalenost Vzdalenost, o kterou se instance presune.
-     */
-    public void posunVpravo(int vzdalenost)
-    {
-        setPozice( getX()+vzdalenost, getY() );
-    }
-
-
-    /***************************************************************************
-     * Presune instanci o krok bodu vpravo.
-     */
-    public void posunVpravo()
-    {
-        posunVpravo( AP.getKrok() );
-    }
-
-
-    /***************************************************************************
-     * Presune instanci o krok bodu vlevo.
-     */
-    public void posunVlevo()
-    {
-        posunVpravo( -AP.getKrok() );
-    }
-
-
-    /***************************************************************************
-     * Presune instanci o zadany pocet bodu dolu,
-     * pri zaporne hodnote parametru nahoru.
-     *
-     * @param vzdalenost    Pocet bodu, o ktere se instance presune.
-     */
-    public void posunDolu(int vzdalenost)
-    {
-        setPozice( getX(), getY()+vzdalenost );
-    }
-
-
-    /***************************************************************************
-     * Presune instanci o krok bodu dolu.
-     */
-    public void posunDolu()
-    {
-        posunDolu( AP.getKrok() );
-    }
-
-
-    /***************************************************************************
-     * Presune instanci o krok bodu nahoru.
-     */
-    public void posunVzhuru()
-    {
-        posunDolu( -AP.getKrok() );
-    }
-
-
-
 //== SOUKROME A POMOCNE METODY TRIDY ===========================================
 //== SOUKROME A POMOCNE METODY INSTANCI ========================================
 //== VNORENE A VNITRNI TRIDY ===================================================
 //== TESTY A METODA MAIN =======================================================
-} 
+}
 
