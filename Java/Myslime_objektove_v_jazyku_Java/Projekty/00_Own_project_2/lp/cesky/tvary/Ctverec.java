@@ -10,7 +10,6 @@ public class Ctverec extends Obdelnik {
     
     public Ctverec(int x, int y, int rozmer) {
         super(x, y, rozmer, rozmer);
-        AP.pridej(this);
     }
     
     public void setRozmer(int rozmer) {

@@ -221,20 +221,17 @@ public class VytahTest2 extends junit.framework.TestCase
         if( AP.poradi( (IKresleny)o3 ) >= 0 )  
             AP.odstran( (IKresleny)o3 );
         
-        Vytah r1 = new Vytah( 1 );
-        Vytah r3 = new Vytah( 3, 4, Barva.MODRA );
+        v1.odvezAVystupVpravo( k, 3 );   
+        souradnice( v1, 1, 3 );  souradnice( k, 2, 3 );
         
-        r1.odvezAVystupVpravo( k, 3 );   
-        souradnice( r1, 1, 3 );  souradnice( k, 2, 3 );
+        v3.odvezAVystupVlevo ( t, 1 );
+        souradnice( v3, 3, 1 );  souradnice( t, 2, 1 );
         
-        r3.odvezAVystupVlevo ( t, 1 );
-        souradnice( r3, 3, 1 );  souradnice( t, 2, 1 );
+        v3.odvezAVystupVpravo( k, 0 );
+        souradnice( v3, 3, 0 );  souradnice( k, 4, 0 );
         
-        r3.odvezAVystupVpravo( k, 0 );
-        souradnice( r3, 3, 0 );  souradnice( k, 4, 0 );
-        
-        r1.odvezAVystupVlevo ( t, 0 );
-        souradnice( r1, 1, 0 );  souradnice( t, 0, 0 );
+        v1.odvezAVystupVlevo ( t, 0 );
+        souradnice( v1, 1, 0 );  souradnice( t, 0, 0 );
     }
     
 

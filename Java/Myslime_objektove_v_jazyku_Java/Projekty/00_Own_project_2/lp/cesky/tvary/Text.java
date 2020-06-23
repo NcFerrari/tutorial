@@ -136,7 +136,6 @@ public class Text extends APosuvny
         this.yPos  = y;
         this.barva = barva;
         this.font = new Font( "Dialog", Font.BOLD, 12 );
-        AP.pridej(this);
     }
 
 

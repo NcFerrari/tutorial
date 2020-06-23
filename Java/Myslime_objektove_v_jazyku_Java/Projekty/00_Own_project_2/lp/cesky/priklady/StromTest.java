@@ -22,7 +22,7 @@ import lp.cesky.spolecne.P;
  * @author    jméno autora
  * @version   0.00.000
  */
-public class StromTest extends Strom
+public class StromTest
 {
     public static final AktivniPlatno AP = AktivniPlatno.getPlatno();
     
@@ -55,10 +55,6 @@ public class StromTest extends Strom
         strom2 = new Strom(25, 150);
         strom3 = new Strom(100, 100, 100, 90);
         strom4 = new Strom(200, 0, 100, 300);
-        strom1.nakresli();
-        strom2.nakresli();
-        strom3.nakresli();
-        strom4.nakresli();
     }
 
 

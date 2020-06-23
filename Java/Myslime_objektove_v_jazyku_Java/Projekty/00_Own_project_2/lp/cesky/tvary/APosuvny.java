@@ -2,7 +2,7 @@ package lp.cesky.tvary;
 
 
 
-public class APosuvny implements IPosuvny {
+public abstract class APosuvny implements IPosuvny {
     
     /** Aktivni platno, ktere dohlizi na spravne vykresleni instance. */
     protected static final AktivniPlatno AP = AktivniPlatno.getPlatno();
@@ -170,8 +170,10 @@ public class APosuvny implements IPosuvny {
         posunDolu( -AP.getKrok() );
     }
 
-    public void nakresli(Kreslitko kreslitko) {
-        
+    public abstract void nakresli(Kreslitko kreslitko);
+    
+    public void smaz() {
+        AP.odstran(this);
     }
     
 }

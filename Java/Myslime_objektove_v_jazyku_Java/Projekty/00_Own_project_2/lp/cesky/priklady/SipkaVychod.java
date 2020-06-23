@@ -31,7 +31,6 @@ public class SipkaVychod implements ISipka {
     public SipkaVychod(int x, int y, int sirka, int vyska, Barva barva, int presouvacHodnota) {
         setRozmer(sirka, vyska);
         setPozice(x, y);
-        AP.pridej(this);
         telo.setBarva(barva);
         smer.setBarva(barva);
         smer.setSmer(Smer8.VYCHOD);

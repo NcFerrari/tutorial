@@ -121,6 +121,8 @@ public class Hvezda implements IHybaci {
     
     public void smaz() {
         AP.odstran(this);
+        AP.odstran(severniTrojuhelnik);
+        AP.odstran(jizniTrojuhelnik);
     }
         
     public void posunDolu(int vzdalenost) {

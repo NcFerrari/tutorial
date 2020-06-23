@@ -31,7 +31,6 @@ public class SipkaSever implements ISipka {
     public SipkaSever(int x, int y, int sirka, int vyska, Barva barva, int presouvacHodnota) {
         setRozmer(sirka, vyska);
         setPozice(x, y);
-        AP.pridej(this);
         telo.setBarva(barva);
         smer.setBarva(barva);
         smer.setSmer(Smer8.SEVER);

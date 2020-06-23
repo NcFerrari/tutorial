@@ -2,7 +2,7 @@ package lp.cesky.tvary;
 
 
 
-public class AHybaci extends APosuvny implements IHybaci  {
+public abstract class AHybaci extends APosuvny implements IHybaci  {
     
     private int sirka;
     private int vyska;

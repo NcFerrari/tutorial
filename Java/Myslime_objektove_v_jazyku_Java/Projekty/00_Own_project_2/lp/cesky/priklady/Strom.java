@@ -149,6 +149,8 @@ public class Strom implements IHybaci {
     
     public void smaz() {
         AP.odstran(this);
+        AP.odstran(koruna);
+        AP.odstran(kmen);
     }
     
     public void posunDolu(int vzdalenost) { 
