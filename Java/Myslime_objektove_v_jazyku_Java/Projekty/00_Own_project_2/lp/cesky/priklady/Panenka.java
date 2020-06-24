@@ -128,10 +128,6 @@ public class Panenka implements IHybaci {
     
     public void smaz() {
         AP.odstran(this);
-        AP.odstran(hlava);
-        AP.odstran(telo);
-        AP.odstran(levaNoha);
-        AP.odstran(pravaNoha);
     }
     
     public void posunDolu(int vzdalenost) {

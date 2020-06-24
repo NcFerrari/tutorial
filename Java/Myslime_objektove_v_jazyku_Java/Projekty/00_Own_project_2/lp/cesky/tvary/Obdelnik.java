@@ -106,7 +106,6 @@ public class Obdelnik extends AHybaci
     {
         super(x, y, sirka, vyska, barva);
         this.nazev = P.nazevTridy(this) + "_" + ++pocet;
-        AP.pridej(this);
     }
 
 //== PRISTUPOVE METODY ATRIBUTU INSTANCI =======================================

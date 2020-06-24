@@ -147,7 +147,6 @@ public class Trojuhelnik extends AHybaci
         super(x, y, sirka, vyska, barva);
         this.nazev = P.nazevTridy(this) + "_" + ++pocet;
         this.smer  = smer;
-        AP.pridej(this);
     }
 
 

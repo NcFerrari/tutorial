@@ -125,9 +125,6 @@ public class CinkaK implements IHybaci {
     
     public void smaz() {
         AP.odstran(this);
-        AP.odstran(leveZavazi);
-        AP.odstran(tycka);
-        AP.odstran(praveZavazi);
     }
     
     public void posunDolu(int vzdalenost) {
