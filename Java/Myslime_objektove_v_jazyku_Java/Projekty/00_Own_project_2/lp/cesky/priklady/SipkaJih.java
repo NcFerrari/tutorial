@@ -2,19 +2,7 @@ package lp.cesky.priklady;
 
 import lp.cesky.tvary.*;
 
-public class SipkaJih implements ISipka {
-    
-    private static final AktivniPlatno AP = AktivniPlatno.getPlatno();
-    
-    private final Obdelnik telo = new Obdelnik();
-    private final Trojuhelnik smer = new Trojuhelnik();
-    private final Presouvac presouvac;
-    private final Barva barva;
-    
-    private int x;
-    private int y;
-    private int sirka;
-    private int vyska;
+public class SipkaJih extends ASipka {
     
     public SipkaJih() {
         this(0, 0, AP.getKrok(), AP.getKrok(), Barva.CERNA);
@@ -29,57 +17,23 @@ public class SipkaJih implements ISipka {
     }
     
     public SipkaJih(int x, int y, int sirka, int vyska, Barva barva, int presouvacHodnota) {
-        setRozmer(sirka, vyska);
-        setPozice(x, y);
-        telo.setBarva(barva);
-        smer.setBarva(barva);
+        super(x, y, sirka, vyska, barva, presouvacHodnota);
         smer.setSmer(Smer8.JIH);
-        this.barva = barva;
-        this.presouvac = new Presouvac(presouvacHodnota);
-    }
-    
-    
-    public int getX() {
-        return x;
-    }
-    
-    public int getY() {
-        return y;
     }
     
     public void setPozice(int x, int y) {
-        this.x = x;
-        this.y = y;
+        super.setPozice(x, y);
         telo.setPozice(x + getSirka() / 2 - telo.getSirka() / 2, y);
         smer.setPozice(x, y + 2 * getVyska() / 3);
     }
     
-    public int getSirka() {
-        return sirka;
-    }
-    
-    public int getVyska() {
-        return vyska;
-    }
-    
     public void setRozmer(int sirka, int vyska) {
-        this.sirka = sirka;
-        this.vyska = vyska;
+        super.setRozmer(sirka, vyska);
         telo.setRozmer(sirka / 2, 2 * vyska / 3);
         smer.setRozmer(sirka, vyska / 3);
         setPozice(getX(), getY());
     }
-    
-    public Barva getBarva() {
-        return barva;
-    }
-    
-    
-    public void nakresli(Kreslitko kreslitko) {
-        telo.nakresli(kreslitko);
-        smer.nakresli(kreslitko);
-    }
-    
+        
     public void vpred() {
         presouvac.presunO(this, 0, AP.getKrok());
     }

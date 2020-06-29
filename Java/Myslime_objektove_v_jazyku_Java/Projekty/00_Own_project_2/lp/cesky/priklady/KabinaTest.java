@@ -264,9 +264,9 @@ public class KabinaTest extends junit.framework.TestCase
      * Demostruje vzorove reseni: vytvori tri linky, umisti na ne kabinky
      * a po potvrzeni od uzivatele pohyb kabin zrychli.
      */
-    public void testKabina_8a()
+    public void testKabina_9a()
     {
-        TKabina[] k3 = vytvorTrojici( Kabina_8a.class );
+        TKabina[] k3 = vytvorTrojici( Kabina_9a.class );
         zrychliLinky();
         ukonciSkupinu( k3 );
     }

@@ -2,7 +2,7 @@ package lp.cesky.tvary;
 
 
 
-public abstract class AHybaci extends APosuvny implements IHybaci  {
+public abstract class AHybaci extends APosuvny implements IHybaci, IPrizpusobivy  {
     
     private int sirka;
     private int vyska;
@@ -42,7 +42,7 @@ public abstract class AHybaci extends APosuvny implements IHybaci  {
      */
     public Rozmer getRozmer()
     {
-        return new Rozmer( sirka, vyska );
+        return new Rozmer( getSirka(), getVyska() );
     }
 
 
@@ -79,7 +79,7 @@ public abstract class AHybaci extends APosuvny implements IHybaci  {
      */
     public void setRozmer(Rozmer rozmer)
     {
-        setRozmer( rozmer.sirka, rozmer.vyska );
+        setRozmer( rozmer.getSirka(), rozmer.getVyska() );
     }
 
 
@@ -105,5 +105,10 @@ public abstract class AHybaci extends APosuvny implements IHybaci  {
             setPozice( o.x,     o.y     );
             setRozmer( o.sirka, o.vyska );
         AP.vratKresli();
+    }
+    
+    @Override
+    public void krokZmenen( int stary, int novy ) {
+        setRozmer((getSirka() / stary) * novy, (getVyska() / stary) * novy);
     }
 }

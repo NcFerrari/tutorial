@@ -1,7 +1,6 @@
 package lp.cesky.priklady;
 
 import lp.cesky.spolecne.P;
-
 import lp.cesky.tvary.Barva;
 import lp.cesky.tvary.AktivniPlatno;
 import lp.cesky.tvary.Elipsa;
@@ -14,46 +13,50 @@ import lp.cesky.tvary.Text;
 
 
 /*******************************************************************************
- * Instance tridy Kabina_8a predstavuji kabiny pohybujici se po linkach.
+ * Instance tridy Kabina_9b predstavuji kabiny pohybujici se po linkach.
+ *
+ * Oproti tride Kabina_9b:
+ * - pribyla tovarni mteoda getInstance(Linka)
+ * - konstruktor ma nyni pristupova prava protected
  *
  * @author  Rudolf Pecinovsky
  * @version 1.00,  29.02.2004
  */
-public class Kabina_8a implements IMultiposuvny
+public class Kabina_9c implements IMultiposuvny
 {
 //== KONSTANTNI ATRIBUTY TRIDY =================================================
     
-    private static final Barva BARVA   = Barva.CERNA;
-    private static final Barva BARVAX  = Barva.ZLUTA;
-    private static final int   PRUMER  = 20;            
-    private static final int   POLOMER = PRUMER / 2;
-    private static final int   XPOSUN  = 6;             
+    protected static final Barva BARVA   = Barva.CERNA;
+    protected static final Barva BARVAX  = Barva.ZLUTA;
+    protected static final int   PRUMER  = 20;            
+    protected static final int   POLOMER = PRUMER / 2;
+    protected static final int   XPOSUN  = 6;             
     
-    private static final AktivniPlatno  AP = AktivniPlatno.getPlatno();
-    private static final Multipresouvac mp = Multipresouvac.getInstance();
+    protected static final AktivniPlatno  AP = AktivniPlatno.getPlatno();
+    protected static final Multipresouvac mp = Multipresouvac.getInstance();
     
     
 //== PROMENNE ATRIBUTY TRIDY ===================================================
 
     /** Pocet dosud vytvorenych instanci. */
-    private static int pocet = 0;
+    protected static int pocet = 0;
 
 
 //== KONSTANTNI ATRIBUTY INSTANCI ==============================================
 
     /** Poradi vytvoreni dane instance v ramci tridy. */
-    private final int poradi = ++pocet;
+    protected final int poradi = ++pocet;
     
     /** Linka, po niz se kabina pohybuje - 
      *  od ni si pri zadosti o presun zjistuje svoji rychlost
      *  a v zastavkach pak dobu cekani. */
-    private final Linka linka;
+    protected final Linka linka;
      
     /** Obrazec, ktery predstavuje kabinu. 
      *  Obecne to muze byt libovolny posuvny obrazec */
-    private final IPosuvny kabina;
+    protected final IPosuvny kabina;
     
-    private final Text text;
+    protected final Text text;
     
 
 
@@ -61,7 +64,7 @@ public class Kabina_8a implements IMultiposuvny
     
     /** Zastavka, na kterou se kabina presouva. Az tam dojede, zjisti si od ni,
      *  kdo je jeji naslednik a ke k tomu se pak presune. */
-    private IZastavka dalsi;
+    protected IZastavka dalsi;
     
     
 //== PRISTUPOVE METODY VLASTNOSTI TRIDY ========================================
@@ -76,25 +79,30 @@ public class Kabina_8a implements IMultiposuvny
      * 
      * @param linka    Linka, po ktere se kabina pohybuje.
      */
-    public Kabina_8a(Linka linka)
+    protected Kabina_9c(Linka linka)
     {
         this.linka = linka;
-        
+
         //Souradnice jeste nezname => vytvorime kruh napr. v pocatku
         kabina = new Elipsa( 0, 0, PRUMER, PRUMER, BARVA );
         text   = new Text( ""+poradi, 0, 0, BARVAX );
-        
+
         //Kruh umistime na souradnice prvni zastavky linky
         dalsi = linka.getPrvni();
         Pozice pozice = dalsi.getPozice();
-        setPozice( pozice.x, pozice.y );
-        
+        privateSetPozice( pozice.x, pozice.y );
+
         //Kdyz je kabina umistena, muzeme ji zobrazit
         //(i kdyz bychom to mohli nechat na multipresouvaci)
         AktivniPlatno.getPlatno().pridej( this );
-
-        //Nechame kabinu presunout na dalsi zastavku
-        presunuto();
+    }
+    
+    
+    public static Kabina_9c getInstance( Linka linka )
+    {
+        Kabina_9c kabina = new Kabina_9c( linka );
+        kabina.presunuto();
+        return kabina;
     }
 
 
@@ -142,6 +150,18 @@ public class Kabina_8a implements IMultiposuvny
      */
     public void setPozice( int x, int y )
     {
+        privateSetPozice( x, y );
+    }
+    
+    
+    /***************************************************************************
+     * Soukroma, a proto neprekrytelna verze nastavovani pozice.
+     *
+     * @param x   Nova x-ova pozice instance
+     * @param y   Nova y-ova pozice instance
+     */
+    private void privateSetPozice( int x, int y )
+    {
         AP.nekresli();
             kabina.setPozice( x-POLOMER,   y-POLOMER   );
             text.setPozice  ( x-POLOMER/2, y-POLOMER/2 );
@@ -179,7 +199,7 @@ public class Kabina_8a implements IMultiposuvny
         //Zastavka, kam jsme dorazili, musi znat sveho nasledovnika
         dalsi = dalsi.getNasledujici();
         
-//         P.cekej( linka.getCekani() );
+        P.cekej( linka.getCekani() );
         
         //Nechame kabinu presunout na dalsi zastavku
         Multipresouvac mp = Multipresouvac.getInstance();

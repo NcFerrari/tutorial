@@ -12,6 +12,11 @@ public class Ctverec extends Obdelnik {
         super(x, y, rozmer, rozmer);
     }
     
+    public Ctverec(int x, int y, int rozmer, Barva barva) {
+        super(x, y, rozmer, rozmer);
+        setBarva(barva);
+    }
+    
     public void setRozmer(int rozmer) {
         super.setRozmer(rozmer, rozmer);
     }

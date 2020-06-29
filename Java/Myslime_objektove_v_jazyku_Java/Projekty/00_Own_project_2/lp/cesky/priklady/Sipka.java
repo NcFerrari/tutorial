@@ -2,7 +2,7 @@ package lp.cesky.priklady;
 
 public class Sipka {
     
-    private ISipka sipka;
+    private ASipka sipka;
     
     public Sipka() {
         sipka = new SipkaVychod(50, 62, 50, 25, lp.cesky.tvary.Barva.CERVENA, 20);

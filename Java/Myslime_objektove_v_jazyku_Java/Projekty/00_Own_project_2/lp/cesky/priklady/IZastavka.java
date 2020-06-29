@@ -25,7 +25,7 @@ public interface IZastavka
     
     IZastavka getNasledujici();
     
-    IZastavka getPredchoziZastavka();
+    IZastavka getPredchozi();
     
     Pozice getPozice();
 }

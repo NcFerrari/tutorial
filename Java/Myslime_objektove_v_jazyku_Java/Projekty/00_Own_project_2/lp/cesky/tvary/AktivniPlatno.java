@@ -19,8 +19,10 @@ import javax.swing.WindowConstants;
 
 import java.util.Collections;
 import java.util.List;
+import java.util.LinkedHashSet;
 import java.util.LinkedList;
 import java.util.ListIterator;
+import java.util.Set;
 
 
 /*******************************************************************************
@@ -132,14 +134,14 @@ public class AktivniPlatno
     private static final int MAX_KROK = 200;
 
     /** Jedina instance tridy AktivniPlatno */
-    private static final AktivniPlatno jedinacek = new AktivniPlatno();
+    public static final AktivniPlatno AP = new AktivniPlatno();
 
     //Pri kresleni car se pta APosuvny po aktivnim platnu.
     //Proto se mohou cary kreslit az pote, co bude jedinacek inicializovan
     static 
     {
         //Pripravi a vykresli prazdne platno
-        jedinacek.setRozmer(SIRKA_0, VYSKA_0);
+        AP.setRozmer(SIRKA_0, VYSKA_0);
     }
 
 
@@ -210,8 +212,14 @@ public class AktivniPlatno
         /** Seznam zobrazovanych predmetu. */
         List<IKresleny> predmety = new LinkedList<IKresleny>();
 
+        /** Seznam prihlasenych prizpusobivych predmetu. */
+        Set<IPrizpusobivy> prizpusobivy = new LinkedHashSet<IPrizpusobivy>();
+        
+        /** Zda se maji prizpusobivi upozornovat na zmeny rozmeru pole. */
+        private boolean hlasitZmenyRozmeru = true;
+
         /** Nazev v titulkove liste animacniho platna. */
-        private String nazev  = "Animacni platno";
+        private String nazev  = "Aktivni platno";
 
 
 //== PRISTUPOVE METODY VLASTNOSTI TRIDY ========================================
@@ -264,7 +272,7 @@ public class AktivniPlatno
      */
     public static AktivniPlatno getPlatno()
     {
-        return jedinacek;
+        return AP;
     }
 
 
@@ -297,10 +305,7 @@ public class AktivniPlatno
                 " bodu), obrazovka=" + obrazovka.width  + "\u00d7" +
                                        obrazovka.height + " bodu" );
         }
-        this.krok  = krok;
-        this.sirka = sirka;
-        this.vyska = vyska;
-
+        
         okno.setResizable( true );
         vlastniPlatno.setPreferredSize( new Dimension( sirkaBodu, vyskaBodu ) );
         okno.pack();
@@ -327,6 +332,18 @@ public class AktivniPlatno
             mrizka = false;
         }
 
+        int stary  = this.krok;
+        this.krok  = krok;
+        this.sirka = sirka;
+        this.vyska = vyska;
+
+        if( hlasitZmenyRozmeru  &&  (stary != krok) )
+        {
+            nekreslit++;
+                for( IPrizpusobivy ip : prizpusobivy )
+                    ip.krokZmenen( stary, krok );
+            nekreslit--;
+        }
         okno.setVisible(true);
         prekresli();
         okno.toFront();
@@ -430,7 +447,7 @@ public class AktivniPlatno
      */
     public synchronized boolean getMrizka()
     {
-        return mrizka;
+    	return mrizka;
     }
 
 
@@ -828,6 +845,35 @@ public class AktivniPlatno
     public List seznamKreslenych()
     {
         return Collections.unmodifiableList( predmety );
+    }
+
+
+    /***************************************************************************
+     * Prihlasi posluchace zmeny velikosti pole.
+     */
+    public boolean prihlasPrizpusobivy( IPrizpusobivy posluchac )
+    {
+        return prizpusobivy.add( posluchac );
+    }
+
+
+    /***************************************************************************
+     * Odhlasi posluchace zmeny velikosti pole.
+     */
+    public boolean odhlasPrizpusobivy( IPrizpusobivy posluchac )
+    {
+        return prizpusobivy.remove( posluchac );
+    }
+
+
+    /***************************************************************************
+     * Odhlasi posluchace zmeny velikosti pole.
+     */
+    public boolean hlasitZmenyRozmeru( boolean hlasit )
+    {
+        boolean ret = hlasitZmenyRozmeru;
+        hlasitZmenyRozmeru = hlasit;
+        return ret;
     }
 
 

@@ -51,7 +51,7 @@ public abstract class APosuvny implements IPosuvny {
      */
     public Pozice getPozice()
     {
-        return new Pozice( xPos, yPos );
+        return new Pozice( getX(), getY() );
     }
 
 
@@ -76,7 +76,7 @@ public abstract class APosuvny implements IPosuvny {
      */
     public void setPozice(Pozice pozice)
     {
-        setPozice( pozice.x, pozice.y );
+        setPozice( pozice.getX(), pozice.getY() );
     }
     
     /***************************************************************************
@@ -119,7 +119,7 @@ public abstract class APosuvny implements IPosuvny {
      */
     public void posunVpravo(int vzdalenost)
     {
-        setPozice( xPos+vzdalenost, yPos );
+        setPozice( getX() + vzdalenost, getY() );
     }
 
 
@@ -149,7 +149,7 @@ public abstract class APosuvny implements IPosuvny {
      */
     public void posunDolu(int vzdalenost)
     {
-        setPozice( xPos, yPos+vzdalenost );
+        setPozice( getX(), getY() + vzdalenost );
     }
 
 

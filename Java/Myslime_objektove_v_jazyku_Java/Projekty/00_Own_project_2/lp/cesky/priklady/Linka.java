@@ -55,10 +55,10 @@ public class Linka {
     
     public IZastavka pridejZa(IZastavka zastavka, int x, int y) {
         Zastavka novaZastavka = new Zastavka(x, y, velikostZastavky, barvaLinky, this);
-        novaZastavka.setPredchoziZastavka(zastavka);
+        novaZastavka.setPredchozi(zastavka);
         novaZastavka.setDalsiZastavka(zastavka.getNasledujici());
         ((Zastavka)zastavka).setDalsiZastavka(novaZastavka);
-        ((Zastavka)novaZastavka.getNasledujici()).setPredchoziZastavka(novaZastavka);
+        ((Zastavka)novaZastavka.getNasledujici()).setPredchozi(novaZastavka);
         return novaZastavka;
     }
     
@@ -74,7 +74,7 @@ public class Linka {
     }
     
     public IZastavka getPosledni() {
-        return prvniZastavka.getPredchoziZastavka();
+        return prvniZastavka.getPredchozi();
     }
     
     public void zrus() {
@@ -95,6 +95,10 @@ public class Linka {
         
     public int getVelikostZastavky() {
         return velikostZastavky;
+    }
+    
+    public int getCekani() {
+        return rychlost;
     }
     
     private class Zastavka implements IKresleny, IZastavka {
@@ -138,12 +142,12 @@ public class Linka {
             return dalsiZastavka;
         }
         
-        public void setPredchoziZastavka(IZastavka predchoziZastavka) {
+        public void setPredchozi(IZastavka predchoziZastavka) {
             this.predchoziZastavka = predchoziZastavka;
             caraKPredchoziZastavce.spoj(predchoziZastavka.getX() + s2, predchoziZastavka.getY() + s2, getX() + s2, getY() + s2);
         }
         
-        public IZastavka getPredchoziZastavka() {
+        public IZastavka getPredchozi() {
             return predchoziZastavka;
         }
         
@@ -153,8 +157,8 @@ public class Linka {
         }
         
         public void odstran() {
-            ((Zastavka)getNasledujici()).setPredchoziZastavka(getPredchoziZastavka());
-            ((Zastavka)getPredchoziZastavka()).setDalsiZastavka(getNasledujici());
+            ((Zastavka)getNasledujici()).setPredchozi(getPredchozi());
+            ((Zastavka)getPredchozi()).setDalsiZastavka(getNasledujici());
             AP.odstran(this);
         }
     }
