@@ -30,6 +30,7 @@ public class LinkaTest
     //== PROMÌNNÉ ATRIBUTY INSTANCÍ ============================================
     private Linka linka;
     private Kabina kabina;
+    private ZpetnaKabina zKabina;
     //== PØÍSTUPOVÉ METODY VLASTNOSTÍ TØÍDY ====================================
     //== OSTATNÍ NESOUKROMÉ METODY TØÍDY =======================================
 
@@ -48,6 +49,7 @@ public class LinkaTest
         linka = new Linka(Barva.CERVENA, 20, 20, 20, 250, 165, 300, 310, 250, 310, 20);
         linka.setRychlost(20);
         kabina = new Kabina(linka);
+        zKabina = new ZpetnaKabina(linka);
     }
 
 

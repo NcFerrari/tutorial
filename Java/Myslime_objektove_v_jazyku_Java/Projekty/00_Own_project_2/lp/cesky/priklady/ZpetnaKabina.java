@@ -26,6 +26,7 @@ public class ZpetnaKabina extends Kabina
 //== KONSTANTNI ATRIBUTY INSTANCI ==============================================
 //== PROMENNE ATRIBUTY INSTANCI ================================================
 //== PRISTUPOVE METODY VLASTNOSTI TRIDY ========================================
+    private Ctverec obdelnik;
 //== OSTATNI METODY TRIDY ======================================================
 
 //##############################################################################
@@ -40,6 +41,12 @@ public class ZpetnaKabina extends Kabina
     public ZpetnaKabina(Linka linka)
     {
         super( linka );
+        obdelnik = new Ctverec(getX(), getY(), 50);
+    }
+    
+    public void nakresli(Kreslitko k) {
+        obdelnik.nakresli(k);
+        super.nakresli(k);
     }
 
 
