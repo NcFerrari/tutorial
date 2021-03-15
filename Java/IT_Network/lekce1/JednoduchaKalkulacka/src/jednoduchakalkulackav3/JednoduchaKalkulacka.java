@@ -19,8 +19,8 @@ public class JednoduchaKalkulacka {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in, "Windows-1250");
         System.out.println("Vítejte v kalkulačce.");
-        boolean run = true;
-        while (run) {
+        String answer = "";
+        do {
             System.out.println("Zadejte první číslo:");
             double prvniCislo = Float.parseFloat(scanner.nextLine());
             System.out.println("Zadejte druhé číslo:");
@@ -45,15 +45,11 @@ public class JednoduchaKalkulacka {
                     System.out.println("Neplatná volba");
             }
             System.out.println("Výsledek: " + vysledek);
-            String answer = "";
-            while (!answer.equals("ano") && !answer.equals("ne")) {
+            do {
                 System.out.println("Chcete spočítat další příklad? (ano/ne)");
                 answer = scanner.nextLine();
-            }
-            if (answer.equals("ne")) {
-                run = false;
-            }
-        }
+            } while (!answer.equals("ano") && !answer.equals("ne"));
+        } while (answer.equals("ano"));
         System.out.println("Děkuji za použití kalkulačky");
     }
 
