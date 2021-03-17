@@ -10,11 +10,12 @@ public class Bojovnik {
     private Kostka kostka;
     private String zprava;
 
-    public Bojovnik(String jmeno, int maxHp, int utok, int obrana) {
+    public Bojovnik(String jmeno, int maxHp, int utok, int obrana, Kostka kostka) {
         this.jmeno = jmeno;
         this.maxHp = this.hp = maxHp;
         this.utok = utok;
         this.obrana = obrana;
+        this.kostka = kostka;
     }
 
     public String getJmeno() {
@@ -43,10 +44,6 @@ public class Bojovnik {
 
     public void setHp(int hp) {
         this.hp = hp;
-    }
-
-    public void setKostka(Kostka kostka) {
-        this.kostka = kostka;
     }
 
     public boolean isNaZivu() {

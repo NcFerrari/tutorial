@@ -12,16 +12,10 @@ package tahovyboj;
 public class TahovyBoj {
 
     public static void main(String[] args) {
-        Kostka kostka = new Kostka();
-        Bojovnik lubor = new Bojovnik("Lubor", 100, 20, 10);
-        lubor.setKostka(kostka);
-        System.out.println(lubor);
-        Bojovnik magda = new Bojovnik("Magda", 150, 30, 80);
-        magda.setKostka(kostka);
-        magda.utoc(lubor);
-        System.out.println(magda.getZprava());
-        System.out.println(lubor.getZprava());
-
-        System.out.println(lubor);
+        Kostka kostka = new Kostka(10);
+        Bojovnik lubor = new Bojovnik("Lubor", 100, 20, 10, kostka);
+        Bojovnik magda = new Bojovnik("Magda", 60, 18, 15, kostka);
+        Arena arena = new Arena(lubor, magda, kostka);
+        arena.zapas();
     }
 }
