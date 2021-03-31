@@ -14,7 +14,7 @@ public class TahovyBoj {
     public static void main(String[] args) {
         Kostka kostka = new Kostka(10);
         Bojovnik lubor = new Bojovnik("Lubor", 100, 20, 10, kostka);
-        Bojovnik magda = new Bojovnik("Magda", 60, 18, 15, kostka);
+        Mag magda = new Mag("Magda", 60, 100, 18, 50, 15, kostka);
         Arena arena = new Arena(lubor, magda, kostka);
         arena.zapas();
     }

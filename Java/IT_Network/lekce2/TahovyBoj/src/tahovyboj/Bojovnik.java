@@ -2,13 +2,13 @@ package tahovyboj;
 
 public class Bojovnik {
 
-    private final String jmeno;
-    private final int maxHp;
-    private int hp;
-    private int utok;
-    private int obrana;
-    private Kostka kostka;
-    private String zprava;
+    protected final String jmeno;
+    protected final int maxHp;
+    protected int hp;
+    protected int utok;
+    protected int obrana;
+    protected Kostka kostka;
+    protected String zprava;
 
     public Bojovnik(String jmeno, int maxHp, int utok, int obrana, Kostka kostka) {
         this.jmeno = jmeno;
@@ -54,17 +54,24 @@ public class Bojovnik {
         return zprava;
     }
 
-    public String zobrazZdravi() {
-        String hpBar = "(";
-        for (int i = 0; i < getMaxHp(); i += 10) {
-            if (i < getHp()) {
-                hpBar += "#";
-            } else {
-                hpBar += " ";
-            }
+    public String grafickyUkazatel(int aktualni, int maximalni) {
+        String result = "";
+        int celkem = 20;
+        double pocet = Math.round(((double) aktualni / maximalni) * celkem);
+        if ((pocet == 0) && (isNaZivu())) {
+            pocet = 1;
         }
-        hpBar += ") [" + getHp() + "/" + getMaxHp() + "]";
-        return hpBar;
+        for (int i = 0; i < pocet; i++) {
+            result += "█";
+        }
+        for (int i = 0; i < celkem - pocet; i++) {
+            result += " ";
+        }
+        return result;
+    }
+
+    public String zobrazZdravi() {
+        return grafickyUkazatel(hp, maxHp);
     }
 
     public void branSe(int uder) {
@@ -74,10 +81,12 @@ public class Bojovnik {
             zprava = String.format("%s utrpěl poškození %s hp", getJmeno(), zraneni);
             if (hp < 0) {
                 hp = 0;
+                zprava += " a zemřel";
             }
         } else {
             zprava = String.format("%s odrazil útok", getJmeno());
         }
+        nastavZpravu(zprava);
     }
 
     public void utoc(Bojovnik bojovnik) {
@@ -86,7 +95,7 @@ public class Bojovnik {
         bojovnik.branSe(uder);
     }
 
-    private void nastavZpravu(String zprava) {
+    protected void nastavZpravu(String zprava) {
         this.zprava = zprava;
     }
 

@@ -1,25 +1,28 @@
 package tahovyboj;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 public class Arena {
 
     private Bojovnik bojovnik1;
-    private Bojovnik bojovnik2;
+    private Bojovnik mag;
     private Kostka kostka;
 
-    public Arena(Bojovnik bojovnik1, Bojovnik bojovnik2, Kostka kostka) {
+    public Arena(Bojovnik bojovnik1, Bojovnik mag, Kostka kostka) {
         this.bojovnik1 = bojovnik1;
-        this.bojovnik2 = bojovnik2;
+        this.mag = mag;
         this.kostka = kostka;
     }
 
     private void vykresli() {
-        System.out.println("-------------------- Aréna --------------------");
-        System.out.println("Zdraví bojovníků:\n");
-        System.out.printf("%s %s\n", bojovnik1.getJmeno(), bojovnik1.zobrazZdravi());
-        System.out.printf("%s %s\n", bojovnik2.getJmeno(), bojovnik2.zobrazZdravi());
+        System.out.println(""
+                + "   __    ____  ____  _  _    __   \n"
+                + "  /__\\  (  _ \\( ___)( \\( )  /__\\  \n"
+                + " /(__)\\  )   / )__)  )  (  /(__)\\ \n"
+                + "(__)(__)(_)\\_)(____)(_)\\_)(__)(__)\n");
+        System.out.println("Bojovníci: \n");
+        vypisBojovnika(bojovnik1);
+        System.out.println();
+        vypisBojovnika(mag);
+        System.out.println();
     }
 
     private void vypisZpravu(String zprava) {
@@ -32,28 +35,39 @@ public class Arena {
     }
 
     public void zapas() {
+        Bojovnik b1 = bojovnik1;
+        Bojovnik b2 = mag;
         System.out.println("Vítejte v aréně!");
-        System.out.printf("Dnes se utkají %s a %s!\n\n", bojovnik1.getJmeno(), bojovnik2.getJmeno());
+        System.out.printf("Dnes se utkají %s a %s!\n\n", bojovnik1.getJmeno(), mag.getJmeno());
         System.out.println("Zápas může začít...");
         boolean zacinaBojovnik2 = (kostka.hod() <= kostka.getPocetSten() / 2);
         if (zacinaBojovnik2) {
-            Bojovnik prohazovaciBojovnik = bojovnik1;
-            bojovnik1 = bojovnik2;
-            bojovnik2 = prohazovaciBojovnik;
+            b1 = mag;
+            b2 = bojovnik1;
         }
 
-        while (bojovnik1.isNaZivu() && bojovnik2.isNaZivu()) {
-            bojovnik1.utoc(bojovnik2);
+        while (b1.isNaZivu() && b2.isNaZivu()) {
+            b1.utoc(b2);
             vykresli();
-            vypisZpravu(bojovnik1.getZprava());
-            vypisZpravu(bojovnik2.getZprava());
-            if (bojovnik2.isNaZivu()) {
-                bojovnik2.utoc(bojovnik1);
+            vypisZpravu(b1.getZprava());
+            vypisZpravu(b2.getZprava());
+            if (b2.isNaZivu()) {
+                b2.utoc(b1);
                 vykresli();
-                vypisZpravu(bojovnik2.getZprava());
-                vypisZpravu(bojovnik1.getZprava());
+                vypisZpravu(b2.getZprava());
+                vypisZpravu(b1.getZprava());
             }
             System.out.println();
+        }
+    }
+
+    private void vypisBojovnika(Bojovnik b) {
+        System.out.println(b.getJmeno());
+        System.out.print("Život: ");
+        System.out.println(b.zobrazZdravi());
+        if (b instanceof Mag) {
+            System.out.print("Mana: ");
+            System.out.println(((Mag) b).zobrazManu());
         }
     }
 }
