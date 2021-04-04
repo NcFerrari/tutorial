@@ -12,8 +12,8 @@ package zdravic;
  */
 public class Zdravic {
 
-    /** 
-    * Text pozdravu
+    /**
+     * Text pozdravu
      */
     private String volaciText;
 
@@ -27,6 +27,14 @@ public class Zdravic {
         return String.format("%s %s\n", volaciText, jmeno);
     }
 
+    public String pozdrav2(String... lide) {
+        String s = "Ahoj ";
+        for (String clovek : lide) {
+            s += clovek + ", ";
+        }
+        return s;
+    }
+
     /**
      * @param args the command line arguments
      */
@@ -37,6 +45,7 @@ public class Zdravic {
         System.out.println(zdravic.pozdrav("Petr"));
         zdravic.volaciText = "Vítám tě tu programátore";
         System.out.println(zdravic.pozdrav("Richard"));
+        System.out.println(zdravic.pozdrav2("Hynku", "Viléme", "Jarmilo"));
     }
 
 }
