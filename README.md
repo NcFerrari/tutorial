@@ -1,7 +1,7 @@
 Languages used:
  - Java
  - JavaScript
- - TapeScript
+ - TypeScript
  - HTML
  - SQL
  - C#
