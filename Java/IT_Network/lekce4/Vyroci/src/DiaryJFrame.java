@@ -2,7 +2,10 @@
 import elements.Date;
 import elements.Person;
 import elements.PersonManager;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.time.LocalDate;
+import javax.swing.JOptionPane;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -24,10 +27,16 @@ public class DiaryJFrame extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null);
         todayLabel.setText(Date.zformatuj(LocalDate.now()));
+        try {
+            personManager.load();
+        } catch (IOException exp) {
+            JOptionPane.showMessageDialog(null, "Chyba: " + exp.getMessage());
+        }
         persons.setModel(personManager.getModel());
         if (personManager.getPersons().isEmpty()) {
             persons.setSelectedIndex(0);
         }
+        getNextBirthDay();
     }
 
     /**
@@ -67,6 +76,11 @@ public class DiaryJFrame extends javax.swing.JFrame {
 
         ageLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
 
+        persons.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
+            public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
+                personsValueChanged(evt);
+            }
+        });
         jScrollPane1.setViewportView(persons);
 
         addButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sources/add.png"))); // NOI18N
@@ -136,11 +150,9 @@ public class DiaryJFrame extends javax.swing.JFrame {
                             .addComponent(jLabel5)
                             .addComponent(birthLabel))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel7)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(ageLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(16, 16, 16))))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(ageLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -160,14 +172,47 @@ public class DiaryJFrame extends javax.swing.JFrame {
         Person person = personDialog.getPerson();
         if (person != null) {
             personManager.addPerson(person);
+            getNextBirthDay();
+            try {
+                personManager.save();
+            } catch (IOException exp) {
+                JOptionPane.showMessageDialog(null, "Chyba: " + exp.getMessage());
+            }
         }
     }//GEN-LAST:event_addButtonActionPerformed
 
     private void removeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeButtonActionPerformed
         if (!persons.isSelectionEmpty()) {
             personManager.removePerson(persons.getSelectedValue());
+            getNextBirthDay();
+            try {
+                personManager.save();
+            } catch (IOException exp) {
+                JOptionPane.showMessageDialog(null, "Chyba: " + exp.getMessage());
+            }
         }
     }//GEN-LAST:event_removeButtonActionPerformed
+
+    private void personsValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_personsValueChanged
+        if (!persons.isSelectionEmpty()) {
+            Person person = persons.getSelectedValue();
+            birthLabel.setText(Date.zformatuj(person.getBirthDate()));
+            ageLabel.setText("" + person.countAge());
+        }
+    }//GEN-LAST:event_personsValueChanged
+
+    private void getNextBirthDay() {
+        if (!personManager.getPersons().isEmpty()) {
+            Person person = personManager.getNext();
+            int age = person.countAge();
+            if (person.getDaysToNextBirth() != 0) {
+                age++;
+            }
+            nextBirthLabel.setText(String.format("%s (%d let) za %d dní", person.getName(), age, person.getDaysToNextBirth()));
+        } else {
+            nextBirthLabel.setText("Žádné osoby v seznamu");
+        }
+    }
 
     /**
      * @param args the command line arguments
