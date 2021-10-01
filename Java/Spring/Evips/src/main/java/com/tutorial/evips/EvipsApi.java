@@ -1,7 +1,7 @@
 package com.tutorial.evips;
 
-import com.tutorial.evips.user.Administrator;
 import com.tutorial.evips.user.IUser;
+import com.tutorial.evips.user.Moderator;
 
 public class EvipsApi {
 
@@ -27,7 +27,7 @@ public class EvipsApi {
     //================================================== MAIN METODA ===================================================
     public static void main(String[] args) {
         //create object
-        IUser user = new Administrator();
+        IUser user = new Moderator();
         //use object
         System.out.println(user.getAuthorization());
     }
