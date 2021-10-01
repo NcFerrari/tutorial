@@ -1,11 +1,6 @@
-package com.tutorial.evips;
+package com.tutorial.evips.user;
 
-import com.tutorial.evips.user.IUser;
-import com.tutorial.evips.user.Moderator;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
-import org.springframework.web.context.WebApplicationContext;
-
-public class EvipsApi {
+public class Visitor implements IUser {
 
     /******************************************************************************************************************/
     //=========================================== KONSTANTNI ATRIBUTY TRIDY ============================================
@@ -22,21 +17,15 @@ public class EvipsApi {
     /******************************************************************************************************************/
     //============================================ KONECNE METODY INSTANCE =============================================
     //========================================== PRISTUPOVE METODY INSTANCE ============================================
+    @Override
+    public String getAuthorization() {
+        return "Jsem návštěvník a můžu jen koukat, případně se někam hlásit";
+    }
     //================================================ METODY INSTANCE =================================================
 
     /******************************************************************************************************************/
     //================================================ SOUKROME METODY =================================================
     //================================================== MAIN METODA ===================================================
-    public static void main(String[] args) {
-        // lead the spring configuration file
-        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
-        // retrive bean from spring container
-        IUser user = context.getBean("firstUser", IUser.class);
-        // call method on the bean
-        System.out.println(user.getAuthorization());
-        // close context
-        context.close();
-    }
 
     /******************************************************************************************************************/
     //=============================================== TESTOVACI METODY =================================================
