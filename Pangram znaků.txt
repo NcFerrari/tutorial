@@ -1,0 +1,99 @@
+Pangram pro test všech znaků české abecedy
+*******************************************
+Nechť již hříšné saxofony ďáblů rozezvučí síň úděsnými tóny waltzu, tanga a quickstepu.
+
+Pangram pro test všech diagritických písmen
+*******************************************
+Příliš žluťoučký kůň úpěl ďábelské ódy.
+
+Pangram pro test anglické abecedy
+*******************************************
+The quick brown fox jumps over the lazy dog
+
+Česká abeceda má 42 písmen
+*******************************************
+AÁBCČDĎEÉĚFGHChIÍJKLMNŇOÓPQRŘSŠTŤUÚŮVWXYÝZŽ
+
+Anglická (světová) pouze 26
+*******************************************
+ABCDEFGHIJKLMNOPQRSTUVWXYZ
+
+
+Jednoduchý prográmek:
+
+package com.tutorial.evips;
+
+import javax.swing.*;
+import java.awt.*;
+import java.util.HashMap;
+import java.util.Map;
+
+public class FunnyTest extends JFrame {
+
+    private String alphabet = "aábcčdďeéěfghiíjklmnňoópqrřsštťuúůvwxyýzž";
+    private String[] fieldAlphabet;
+    private Map<String, JButton> buttons = new HashMap<>();
+
+    public FunnyTest() {
+        fieldAlphabet = new String[alphabet.length() + 1];
+        boolean chUsed = false;
+        int index = 0;
+        for (int i = 0; i < alphabet.split("").length; i++) {
+            if (i == 13 && !chUsed) {
+                fieldAlphabet[index++] = "CH";
+                chUsed = true;
+                i--;
+            } else {
+                fieldAlphabet[index++] = alphabet.split("")[i].toUpperCase();
+            }
+        }
+        setSize(600, 1000);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setLocationRelativeTo(null);
+        JPanel panel = new JPanel();
+        setLayout(null);
+        panel.setSize(105, 1000);
+        panel.setBackground(Color.gray);
+        add(panel);
+        panel.setLayout(new FlowLayout());
+        for (String letter : fieldAlphabet) {
+            JButton button = new JButton(letter);
+            panel.add(button);
+            buttons.put(letter, button);
+        }
+
+        JTextArea textArea = new JTextArea();
+        textArea.setSize(500, 500);
+        add(textArea);
+        textArea.setLocation(105, 0);
+        textArea.setLineWrap(true);
+
+        JButton button = new JButton("Start");
+        button.setSize(100, 20);
+        add(button);
+        button.setLocation(300, 500);
+        button.addActionListener(e -> {
+            new Thread(() -> {
+                String text = textArea.getText().toUpperCase().trim();
+                if (text.contains("CH")) {
+                    buttons.get("CH").setBackground(Color.yellow);
+                    text = text.replace("CH", "");
+                }
+                for (String letter : text.split("")) {
+                    if (buttons.containsKey(letter)) {
+                        try {
+                            Thread.sleep(100);
+                        } catch (InterruptedException e1) {
+                            e1.printStackTrace();
+                        }
+                        buttons.get(letter).setBackground(Color.yellow);
+                    }
+                }
+            }).start();
+        });
+    }
+
+    public static void main(String[] args) {
+        new FunnyTest().setVisible(true);
+    }
+}
