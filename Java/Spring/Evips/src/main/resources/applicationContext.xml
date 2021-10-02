@@ -7,8 +7,22 @@
        http://www.springframework.org/schema/context
        http://www.springframework.org/schema/context/spring-context.xsd">
 
+    <context:property-placeholder location="classpath:data.properties"/>
 
-    <bean id="firstUser" class="com.tutorial.evips.user.Administrator">
+    <bean id="adminRole"
+          class="com.tutorial.evips.authorization.Admin">
+    </bean>
+
+    <bean id="firstUser"
+          class="com.tutorial.evips.user.Administrator">
+        <constructor-arg ref="adminRole"/>
+    </bean>
+
+    <bean id="secondUser"
+          class="com.tutorial.evips.user.Visitor">
+        <property name="IRoleService" ref="adminRole"/>
+        <property name="email" value="${user1.email}"/>
+        <property name="address" value="${user1.address}"/>
     </bean>
 
 </beans>

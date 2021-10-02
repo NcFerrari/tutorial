@@ -1,9 +1,8 @@
 package com.tutorial.evips;
 
 import com.tutorial.evips.user.IUser;
-import com.tutorial.evips.user.Moderator;
+import com.tutorial.evips.user.Visitor;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import org.springframework.web.context.WebApplicationContext;
 
 public class EvipsApi {
 
@@ -31,9 +30,16 @@ public class EvipsApi {
         // lead the spring configuration file
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
         // retrive bean from spring container
-        IUser user = context.getBean("firstUser", IUser.class);
+        IUser firstUser = context.getBean("firstUser", IUser.class);
+        Visitor secondUser = context.getBean("secondUser", Visitor.class);
         // call method on the bean
-        System.out.println(user.getAuthorization());
+        System.out.println(firstUser.getAuthorization());
+        System.out.println(secondUser.getAuthorization());
+        // let's call our new method for role
+        System.out.println(firstUser.getRole());
+        System.out.println(secondUser.getRole());
+        System.out.println(secondUser.getEmail());
+        System.out.println(secondUser.getAddress());
         // close context
         context.close();
     }
