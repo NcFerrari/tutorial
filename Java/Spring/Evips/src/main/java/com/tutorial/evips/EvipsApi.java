@@ -33,7 +33,7 @@ public class EvipsApi {
         IUser firstUser = context.getBean("firstUser", IUser.class);
         Visitor secondUser = context.getBean("secondUser", Visitor.class);
         // call method on the bean
-        System.out.println(firstUser.getAuthorization());
+        System.out.println("*******************\n" + firstUser.getAuthorization());
         System.out.println(secondUser.getAuthorization());
         // let's call our new method for role
         System.out.println(firstUser.getRole());

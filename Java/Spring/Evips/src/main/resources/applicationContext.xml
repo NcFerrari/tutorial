@@ -10,7 +10,7 @@
     <context:property-placeholder location="classpath:data.properties"/>
 
     <bean id="adminRole"
-          class="com.tutorial.evips.authorization.Admin">
+          class="com.tutorial.evips.authorization.Role">
     </bean>
 
     <bean id="firstUser"
