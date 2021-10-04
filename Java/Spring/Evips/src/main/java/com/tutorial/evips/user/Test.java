@@ -1,13 +1,20 @@
-package com.tutorial.evips.authorization;
+package com.tutorial.evips.user;
 
-public class Role implements IRoleService {
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
+
+@Component
+public class Test {
 
     /******************************************************************************************************************/
     //=========================================== KONSTANTNI ATRIBUTY TRIDY ============================================
     //================================================ ATRIBUTY TRIDY ==================================================
     //========================================= KONSTANTNI ATRIBUTY INSTANCE ===========================================
     //============================================== ATRIBUTY INSTANCE =================================================
-    private String[] roles = {"Administrator", "Uživatel", "Host"};
+    @Autowired
+    @Qualifier(value="visitor")
+    private IUser iUser;
 
     /******************************************************************************************************************/
     //============================================ PRISTUPOVE METODY TRIDY =============================================
@@ -18,12 +25,10 @@ public class Role implements IRoleService {
     /******************************************************************************************************************/
     //============================================ KONECNE METODY INSTANCE =============================================
     //========================================== PRISTUPOVE METODY INSTANCE ============================================
-    @Override
-    public String getRole() {
-        return roles[(int) (Math.random() * 3)];
-    }
-
     //================================================ METODY INSTANCE =================================================
+    public void run() {
+        System.out.println(iUser.getRole());
+    }
 
     /******************************************************************************************************************/
     //================================================ SOUKROME METODY =================================================

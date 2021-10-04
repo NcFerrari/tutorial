@@ -1,8 +1,9 @@
 package com.tutorial.evips.user;
 
-public interface IUser {
+import org.springframework.stereotype.Component;
 
-    String getAuthorization();
+@Component
+public interface IUser {
 
     String getRole();
 }

@@ -1,7 +1,8 @@
 package com.tutorial.evips.user;
 
-import com.tutorial.evips.authorization.IRoleService;
+import org.springframework.stereotype.Component;
 
+@Component
 public class Administrator implements IUser {
 
     /******************************************************************************************************************/
@@ -9,30 +10,20 @@ public class Administrator implements IUser {
     //================================================ ATRIBUTY TRIDY ==================================================
     //========================================= KONSTANTNI ATRIBUTY INSTANCE ===========================================
     //============================================== ATRIBUTY INSTANCE =================================================
-    private IRoleService iRoleService;
+    private String role = "Administrator";
 
     /******************************************************************************************************************/
     //============================================ PRISTUPOVE METODY TRIDY =============================================
     //================================================= METODY TRIDY ===================================================
     //================================================== KONSTRUKTOR ===================================================
-    public Administrator(IRoleService iRoleService) {
-        this.iRoleService = iRoleService;
-    }
-
-
     //================================================ TOVARNI METODA ==================================================
 
     /******************************************************************************************************************/
     //============================================ KONECNE METODY INSTANCE =============================================
     //========================================== PRISTUPOVE METODY INSTANCE ============================================
     @Override
-    public String getAuthorization() {
-        return "Můžu naprosto všechno";
-    }
-
-    @Override
     public String getRole() {
-        return iRoleService.getRole();
+        return role;
     }
 
     //================================================ METODY INSTANCE =================================================
