@@ -1,0 +1,31 @@
+h1 {
+    color: #fd7f01;
+    text-align: center;
+    margin: 20px;
+}
+
+p {
+    padding-left: 80px;
+}
+
+img {
+    position: absolute;
+}
+
+.leftup {
+    left: 0;
+    top: 0;
+}
+
+.rightup {
+    right: 0;
+    top: 0;
+}
+.leftdown {
+    left: 0;
+    bottom: 0;
+}
+.rightdown {
+    right: 0;
+    bottom: 0;
+}

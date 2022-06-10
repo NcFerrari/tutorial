@@ -1,0 +1,90 @@
+@font-face {
+    font-family: Poppins;
+    src: url(../fonts/Poppins-Regular.ttf);
+    font-weight: normal;
+}
+@font-face {
+    font-family: Poppins;
+    src: url(../fonts/Poppins-ExtraBold.ttf);
+    font-weight: bold;
+}
+
+article h2 {
+    font-size: 2em;
+}
+
+article h1 {
+    margin: 0;
+    font-size: 2.3em;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-bottom: 4px solid #EF6534;
+    text-shadow: 3px 3px 7px #666666;
+}
+article h1, h2, h3, h4, h5, h6 {
+    padding: 10px 0;
+    color: #8218a9;
+    width: max-content;
+}
+
+article header {
+    height: 100px;
+    background: none;
+}
+
+article section {
+    margin: 0;
+}
+
+article section p {
+    margin-bottom: 1.5em;
+    line-height: 1em;
+}
+
+article section a {
+    color: #EF6534;
+}
+
+#centrovac {
+    margin: 0 auto;
+    max-width: 960px;
+}
+
+body {
+    font-family: "Poppins";
+    font-size: 14px;
+    background-color: #f9f9f9;
+    display: flex;
+    flex-direction: column;
+}
+
+article {
+    padding: 80px 50px;
+    flex: 1;
+}
+
+.domu-article {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: 100px max-content;
+    box-shadow: 2px 2px 7px #1c2228;
+}
+
+.domu-article img {
+    width: 300px;
+    grid-row-start: 1;
+    grid-row-end: span 2;
+    grid-column: 2;
+    filter: grayscale(1);
+}
+
+.reference-tlacitko {
+    background: #70B73A;
+    color: white;
+    font-size: 0.9em;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 12px 25px;
+    border-radius: 25px;
+    box-shadow: 4px 4px 7px r
+}

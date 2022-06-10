@@ -1,0 +1,16 @@
+.vlak {
+    list-style-type: none;
+    background: url("../img/lokomotiva.png") no-repeat;
+    padding-left: 90px;
+    height: 64px;
+}
+
+.vlak li {
+    background: url("../img/vagon.png") no-repeat;
+    text-align: center;
+    height: 40px;
+    width: 75px;
+    float: left;
+    color: white;
+    padding-top: 25px;
+}

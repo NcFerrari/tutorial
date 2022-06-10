@@ -1,0 +1,12 @@
+.tag {
+    color: blue;
+}
+
+pre {
+    background: #e9e9ea;
+    border-left: 4px solid blue;
+}
+
+#odkazy {
+    text-align: center;
+}
