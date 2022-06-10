@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Test</title>
+    <style>
+        .class1 {
+            background: red;
+            color: white;
+            padding: 50px;
+        }
+
+        .container {
+            --divider-height: 4rem;
+            position: relative;
+            top: calc(var(--divider-height) / 2 * -1);
+            height: var(--divider-height);
+            width: 100%;
+            float: left;
+            z-index: 1;
+        }
+
+        svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        path {
+            fill: red;
+        }
+
+        .class2 {
+            padding: 50px;
+            background: black;
+        }
+    </style>
+</head>
+
+
+<body>
+<div class="class1">
+
+</div>
+
+<div class="container">
+    <svg viewBox="0 70 500 60" preserveAspectRatio="none">
+        <rect x="0" y="0" width="500" height="500" style="stroke: none"/>
+        <path d="M0,100 C150, 200 350, 0 500, 100 L500, 00 L0, 0 Z" style="stroke: none"></path>
+    </svg>
+</div>
+
+<div class="class2">
+
+</div>
+</body>
+</html>
