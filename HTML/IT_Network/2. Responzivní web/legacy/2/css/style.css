@@ -1,0 +1,29 @@
+article {
+    box-sizing: border-box;
+    width: 100%;
+    height: 200px;
+    margin: 20px 0;
+    padding: 15px;
+    background: aqua;
+}
+
+aside {
+    box-sizing: border-box;
+    width: 100%;
+    height: 100px;
+    margin: 20px 0;
+    padding: 10px;
+    background: darkcyan;
+}
+
+@media screen and (min-width: 900px) {
+    article {
+        width: 79%;
+        float: left;
+    }
+
+    aside {
+        width: 19%;
+        float: right;
+    }
+}

@@ -1,0 +1,133 @@
+* {
+    box-sizing: border-box;
+}
+
+.wrapper {
+    position: relative;
+}
+
+.scrollable_table {
+    margin-left: 150px;
+    overflow-x: auto;
+    width: auto;
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+}
+
+th, td {
+    font-size: 1rem;
+}
+
+.header {
+    position: absolute;
+    left: 0;
+    width: 150px;
+    padding: 5px;
+    color: blue;
+    border-right: 1px solid #f2f2f2;
+}
+
+tbody tr {
+    white-space: nowrap;
+}
+
+.scrollable_table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #355bb1;
+    color: white;
+}
+
+.scrollable_table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.scrollable_table td, .scrollable_table th {
+    padding: 8px;
+}
+
+.scrollable_table tr:hover {
+    background-color: #ddd;
+}
+
+table {
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+
+@media (max-width: 800px) {
+    /* veškeré blokové elementy musí být srovnány do bloku */
+    table, thead, tbody, th, td, tr {
+        display: block;
+        font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    }
+
+    /* neviditelnost původní hlavicky */
+    thead tr {
+        display: none;
+    }
+
+    /* odsazení mezi jednotlivými sloty */
+    tr {
+        margin: 1rem 1rem;
+        padding: 1rem 1rem;
+    }
+
+    td:nth-child(odd) {
+        background-color: #f2f2f2;
+        color: black;
+    }
+
+    td {
+        border: none;
+        position: relative;
+        padding-left: 53%;
+        background-color: #355bb1;
+        color: white;
+    }
+
+    td:before {
+        /* stylování nové hlavicky */
+        position: absolute;
+        top: 0;
+        left: 10px;
+        width: 50%;
+        padding-right: 10px;
+        white-space: nowrap;
+        font-weight: bold;
+    }
+
+    /* Vytvoření nové hlavičky */
+    td:nth-of-type(1):before { content: "Programming language"; }
+    td:nth-of-type(2):before { content: "First appeared"; }
+    td:nth-of-type(3):before { content: "Author"; }
+    td:nth-of-type(4):before { content: "Utilization"; }
+    td:nth-of-type(5):before { content: "Open Source"; }
+    td:nth-of-type(6):before { content: "Last update"; }
+    td:nth-of-type(7):before { content: "Developer"; }
+}
+
+/* styly, ať vypadá pěkně na desktopu */
+@media only screen and (min-width: 800px) {
+    .scrollable_table th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: left;
+        background-color: #355bb1;
+        color: white;
+    }
+    .scrollable_table tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+    .scrollable_table td, .scrollable_table th {
+        padding: 8px;
+    }
+    .scrollable_table tr:hover {
+        background-color: #ddd;
+    }
+    table {
+        border-spacing: 0;
+        border-collapse: collapse;
+        font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    }
+}

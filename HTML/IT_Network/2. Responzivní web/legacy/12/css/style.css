@@ -1,0 +1,33 @@
+* {
+    box-sizing: border-box;
+}
+
+.scrollable_table {
+    overflow-x: auto;
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+}
+
+th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #355bb1;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+td, th {
+    padding: 8px;
+}
+
+tr:hover {
+    background-color: #ddd;
+}
+
+table {
+    border-spacing: 0;
+    border-collapse: collapse;
+}

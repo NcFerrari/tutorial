@@ -1,0 +1,12 @@
+.row * {
+    text-align: center;
+    color: white;
+}
+
+.row .q {
+    background: red;
+}
+
+.row .h {
+    background: green;
+}

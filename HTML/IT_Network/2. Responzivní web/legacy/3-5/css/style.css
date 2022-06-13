@@ -1,0 +1,72 @@
+nav.menu {
+    display: block;
+    width: 100%;
+    background: blue;
+    font-size: 0;
+}
+
+nav.menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav.menu ul li {
+    width: 100%;
+}
+
+nav.menu ul li a {
+    display: block;
+    text-decoration: none;
+    color: white;
+    font-family: sans-serif;
+    line-height: 2em;
+    padding: 0 15px;
+    font-size: 16px;
+}
+
+nav.menu ul li a:hover {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+@media (min-width: 600px) {
+    nav.menu {
+        background: #5cba40;
+    }
+
+    nav.menu ul {
+        width: 100%;
+        text-align: center;
+    }
+
+    nav.menu ul li {
+        width: auto;
+        display: inline-block;
+    }
+
+    nav.menu ul li a {
+        line-height: 50px;
+        position: relative;
+    }
+
+    nav.menu ul li a:hover::after {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 3px;
+        background: rgba(0, 0, 0, 0.15);
+        bottom: 0;
+        left: 0;
+        position: absolute;
+    }
+}
