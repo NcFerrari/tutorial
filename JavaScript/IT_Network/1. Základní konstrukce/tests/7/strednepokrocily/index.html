@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="cs-cz">
+<head>
+    <meta charset="UTF-8">
+    <title>Datum slovy</title>
+</head>
+<body>
+
+<script>
+    let months = ["ledna", "února", "března", "dubna", "května", "června", "července", "srpna", "září", "října", "listopadu", "prosince"];
+    let date = new Date();
+
+    function dateWithLongMonth(date) {
+        document.write("Dnes je: " + date.getDate() + ". " + months[date.getMonth()] + " " + date.getFullYear());
+    }
+
+    dateWithLongMonth(date);
+</script>
+
+</body>
+</html>

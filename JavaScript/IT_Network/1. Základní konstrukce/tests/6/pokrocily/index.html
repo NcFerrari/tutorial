@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="cs-cz">
+<head>
+    <meta charset="UTF-8">
+    <title>Ovoce a zelenina</title>
+</head>
+<body>
+<h1>Rozpoznávač ovoce a zeleniny</h1>
+<script>
+    let fruit = ["jablko", "hruška", "třešně", "višně", "švestka", "bluma", "slíva", "mirabelka", "trnka", "meruňka", "broskev", "jeřabiny", "oskeruše", "mandle", "lískový ořech", "vlašský ořech", "kaštan jedlý", "borůvka", "brusinka", "černý rybíz", "ribíz červený", "bílý hrozen", "angrešt", "hrozny", "malina", "ostružina", "jahoda"];
+    let tropicalFruit = ["ananas", "citron", "grapefruit", "mandarinka", "pomelo", "pomeranč", "banán", "datle", "durian", "fík", "granátové jablko", "kaki", "karambola", "kiwi", "kdoule", "liči", "mango", "naši", "papája", "avokádo", "oliva", "kokosový ořech"];
+    let vegetables = ["artyčok", "brambory", "brokolice", "celer", "cibule", "cuketa", "čekanka", "černý kořen", "česnek", "dýně", "špargl", "kapusta", "kedlubna", "křen", "květák", "lilek", "mrkev", "okurka", "paprika", "pastinák", "petržel", "pažitka", "pórek", "rajče", "rebarbora", "ředkvička", "řepa červená", "salát", "špenát", "tuřím", "zelí hlávkové"];
+    fruit = fruit.concat(tropicalFruit);
+
+    let input = prompt("Zadej název libovolného ovoce nebo zeleniny:");
+    input = input.toLowerCase().trim();
+
+    let answer = "Zadal jsi ";
+    if (fruit.includes(input)) {
+        answer += "ovoce";
+    } else if (vegetables.includes(input)) {
+        answer += "zeleninu";
+    } else {
+        answer = "Tento druh neznám, nevím, jestli je to ovoce nebo zelenina";
+    }
+    document.write(answer);
+</script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="cs-cz">
+<head>
+    <meta charset="UTF-8">
+    <title>Kvadratická rovnice</title>
+    <style>
+        p {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<h1>Kvadratická rovnice</h1>
+<script>
+    let inputText = "Zadejte postupně koeficienty kvadratické rovnice ax^2 + bx + c = 0, teď koeficient ";
+    let a = prompt(inputText + "a:");
+    let b = prompt(inputText + "b:");
+    let c = prompt(inputText + "c:");
+    let diskr = b * b - (4 * a * c);
+    let result;
+    if (diskr < 0) {
+        result = "Rovnice nemá řešení";
+    } else if (diskr === 0) {
+        result = "Rovnice má jeden kořen x = " + (-b / (2 * a));
+    } else {
+        let x1 = (-b + Math.sqrt(diskr)) / (2 * a);
+        let x2 = (-b - Math.sqrt(diskr)) / (2 * a);
+        result = "Rovnice má dva kořeny x1 = " + x1 + ", x2 = " + x2;
+    }
+    document.write("<p>" + result + "</p>");
+</script>
+
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="cs-cz">
+<head>
+    <meta charset="UTF-8">
+    <title>Funkce v JavaScriptu</title>
+</head>
+<body>
+<script>
+    function greeting() {
+        document.write("Ahoj, vřele tě tu vítám!");
+    }
+
+    greeting();
+</script>
+
+<br>
+
+<script>
+    function greeting(name) {
+        document.write("Ahoj, vřele tě tu vítám, " + name + "!");
+    }
+
+    greeting("Lubore");
+</script>
+
+<br>
+
+<script>
+    function greeting2(name) {
+        return "Ahoj, vřele tě tu vítám, " + name + "!";
+    }
+
+    let text = greeting2("Lubore");
+    document.write(text);
+</script>
+
+<br>
+
+<script>
+    //funkcionální paradigma
+    function output(text) {
+        return text;
+    }
+
+    let f = output;
+    let text2 = f("To mi ho vyndej");
+    document.write(text2);
+</script>
+
+<br>
+
+<script>
+    //anonymní funkce
+    let promennaSFunkci = function (text) {
+        return text;
+    }
+    let text3 = promennaSFunkci("To mi ho fakt vyndej");
+    document.write(text3);
+</script>
+
+<br>
+
+<script>
+    //callback
+    let soucet = function (a, b) {
+        return a + b;
+    }
+
+    let rozdil = function (a, b) {
+        return a - b;
+    }
+
+    function soucin(soucetFCE, rozdilFCE) {
+        let result = soucetFCE * rozdilFCE;
+        document.write(result);
+    }
+
+    function soucinSouctuARozdilu(a, b) {
+        soucin(soucet(a, b), rozdil(a, b));
+    }
+
+    soucinSouctuARozdilu(324, 4679);
+</script>
+
+<br>
+
+<script>
+
+</script>
+</body>
+</html>

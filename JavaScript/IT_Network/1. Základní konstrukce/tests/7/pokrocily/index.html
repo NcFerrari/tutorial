@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="cs-cz">
+<head>
+    <meta charset="UTF-8">
+    <title>Největší 3 čísla</title>
+</head>
+<body>
+<p>
+    Pole čísel:
+</p>
+<script>
+    let testovaciData = [15, 8, 12, 16, 4, 1, 5, 14];
+    let countOfNumbersToCount = 3;
+    output(testovaciData);
+    document.write("Součet největších 3 čísel: " + getSumOfHighestNumbers(testovaciData, countOfNumbersToCount));
+
+    function getSumOfHighestNumbers(array, countOfHighestNumbers) {
+        array.sort(function (a, b) {
+            return b - a;
+        });
+        let sum = 0;
+        for (let i = 0; i < countOfHighestNumbers; i++) {
+            sum += array[i];
+        }
+        return sum;
+    }
+
+    function output(array) {
+        document.write("<ul>");
+        for (let number of array) {
+            document.write("<li>" + number + "</li>");
+        }
+        document.write("</ul>");
+    }
+</script>
+
+</body>
+</html>

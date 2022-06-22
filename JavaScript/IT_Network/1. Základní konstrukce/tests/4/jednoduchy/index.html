@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="cs-cz">
+<head>
+    <meta charset="UTF-8">
+    <title>Délka jména</title>
+    <style>
+        h1 {
+            margin: 20px;
+            font-family: Verdana;
+        }
+
+        p {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<script>
+    let name = prompt("Jak se jmenuješ?");
+    document.write("<h1>Délka jména</h1>");
+    if (name.length > 2 && name.length < 11) {
+        document.write("<p>Máš normální jméno</p>");
+    } else {
+        document.write("<p>Máš moc krátké nebo dlouhé jméno!</p>");
+    }
+</script>
+</body>
+</html>

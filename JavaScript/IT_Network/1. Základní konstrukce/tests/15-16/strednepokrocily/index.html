@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="cs-cz">
+<head>
+    <meta charset="UTF-8">
+    <title>Graf lineární funkce</title>
+    <script src="js/script.js"></script>
+    <style>
+        canvas {
+            box-shadow: 3px 3px 7px gray;
+        }
+
+        input[type=button] {
+            background: #3a3ade;
+            color: white;
+            font-size: 21px;
+            font-family: Verdana;
+            box-shadow: 3px 3px 7px gray;
+            border-bottom: 4px solid orange;
+            border-radius: 15px;
+        }
+
+        input[type=button]:hover {
+            background: rgba(119, 119, 234, 80%);
+        }
+
+        input[type=button]:active {
+            background: black;
+        }
+    </style>
+</head>
+<body>
+<p>
+    y = <input type="text" id="kValueText" size="5"/>x + <input type="text" id="qValueText" size="5"/>
+</p>
+<p>
+    <input type="button" id="drawGraphButton" value="Překreslit"/>
+</p>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="cs-cz">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+        <script src="js/script.js"></script>
+    <style>
+        table, td {
+            border: 1px solid black;
+        }
+
+        th {
+            background: #9bbb59;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+<script>
+    document.write("<table>");
+    document.write("<thead>");
+    document.write("<tr>");
+    document.write("<th>alfa</th>");
+    document.write("<th>beta</th>");
+    document.write("<th>gama</th>");
+    document.write("<th>delta</th>");
+    document.write("</tr>");
+    document.write("</thead>");
+    document.write("<tbody>");
+    for (let i = 0; i < 1_000; i++) {
+        document.write("<tr>");
+        document.write("<td>" + Math.random() * 1000 + "</td>");
+        document.write("<td>" + Math.random() * 1000 + "</td>");
+        document.write("<td>" + Math.random() * 1000 + "</td>");
+        document.write("<td>" + Math.random() * 1000 + "</td>");
+        document.write("</tr>");
+    }
+    document.write("</tbody>");
+    document.write("</table>");
+</script>
+
+</body>
+</html>

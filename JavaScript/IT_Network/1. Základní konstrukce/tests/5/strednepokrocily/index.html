@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+
+<html lang="cs-cz">
+<head>
+<meta charset="UTF-8">
+<title>Láhve</title>
+</head>
+
+<body>
+<script>
+	let commonText = "stojí na stole a jedna láhev spadne";
+	let bottleText;
+	for(let i = 10; i>0; i--) {
+		switch(i) {
+			case 4:
+			case 3:
+			case 2: bottleText = i + " zelené láhve ";
+				break;
+			case 1: bottleText = i + " zelená láhev ";
+				break;
+			default: bottleText = i + " zelených láhví ";
+		}
+		document.write(bottleText + commonText + "<br>");
+	}
+</script>
+</body>
+
+</html>

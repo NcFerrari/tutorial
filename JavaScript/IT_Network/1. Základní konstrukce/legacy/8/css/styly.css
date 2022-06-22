@@ -1,0 +1,39 @@
+h1 {
+    text-align: center;
+    font-family: Verdana;
+    background: burlywood;
+    border-bottom: 4px solid orange;
+}
+
+input {
+    width: 100px;
+    height: 30px;
+    box-shadow: 3px 3px 7px gray;
+    text-align: right;
+    font-size: 21px;
+    font-family: "Comic Sans MS";
+}
+
+button {
+    background: blue;
+    color: white;
+    font-family: Verdana;
+    height: 25px;
+    width: 75px;
+    margin: 10px;
+    box-shadow: 3px 3px 7px gray;
+    font-weight: bold;
+    border: 2px solid black;
+    border-bottom: 4px solid orange;
+    border-radius: 15px;
+    height: 30px;
+}
+
+button:hover {
+    background: rgba(0, 0, 255, 40%);
+}
+
+.panel {
+    box-shadow: 3px 3px 7px gray;
+    text-align: center;
+}

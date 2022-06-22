@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="cs-cz">
+<head>
+    <meta charset="UTF-8">
+    <title>Blikač</title>
+</head>
+<body>
+<script>
+    let body;
+    window.onload = function () {
+        body = document.getElementsByTagName("body");
+        achJo();
+        setInterval(achJo, 3000);
+    }
+
+    function achJo() {
+        body[0].style.background = "rgb(" + Math.random() * 256 + ", " + Math.random() * 256 + "," + Math.random() * 256 + ")";
+    }
+</script>
+</body>
+</html>

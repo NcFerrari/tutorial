@@ -1,0 +1,43 @@
+h1 {
+    background: darkviolet;
+    color: yellow;
+    box-shadow: 3px 3px 7px gray;
+    text-align: center;
+}
+
+ul {
+    display: flex;
+    list-style: none;
+}
+
+li {
+    font-size: 18px;
+    padding: 5px;
+    margin: 0 5px;
+    background: blue;
+    width: 120px;
+    border-radius: 15px;
+    text-align: center;
+    font-family: "Bodoni MT";
+    font-weight: bold;
+    border-bottom: 5px solid orange;
+    text-transform: uppercase;
+    box-shadow: 3px 3px 8px gray;
+    cursor: default;
+    user-select: none;
+    color: white;
+}
+
+li:hover {
+    background: rgba(0, 0, 255, 50%);
+    color: black;
+}
+
+li:active {
+    background: rgba(0, 0, 255, 20%);
+    color: black;
+}
+
+canvas {
+    box-shadow: 3px 3px 7px gray;
+}

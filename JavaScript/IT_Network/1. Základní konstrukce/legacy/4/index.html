@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="cs-cz">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/styly.css" type="text/css"/>
+    <title>JavaScript</title>
+</head>
+<body>
+<h1>Welcome to JavaScript</h1>
+<p>
+    <a href="#">First Alert</a>
+</p>
+<p>
+    <script>
+        let greetings = ["Dobré ráno", "Dobré dopoledne", "Dobré poledne", "Dobré odpoledne", "Dobrý večer", "Dobrou noc"];
+        let date = new Date();
+        let answer;
+        if (date.getHours() > 21) {
+            answer = greetings[5];
+        } else if (date.getHours() > 17) {
+            answer = greetings[4];
+        } else if (date.getHours() > 12) {
+            answer = greetings[3];
+        } else if (date.getHours() == 12) {
+            answer = greetings[2];
+        } else if (date.getHours() > 8) {
+            answer = greetings[1];
+        } else {
+            answer = greetings[0];
+        }
+        document.write(answer);
+    </script>
+    <br>
+    <script>
+        let number = 3;
+        let answer2;
+        switch (number) {
+            case 0:
+                answer2 = "nula";
+                break;
+            case 1:
+                answer2 = "jedna";
+                break;
+            case 2:
+                answer2 = "dvě";
+                break;
+            case 3:
+                answer2 = "tři";
+                break;
+            case 4:
+                answer2 = "čtyry";
+                break;
+            case 5:
+                answer2 = "pět";
+                break;
+            default:
+                answer2 = "nevím";
+        }
+        document.write(answer2);
+    </script>
+    <script>
+        let age = prompt("Zadejte svůj věk");
+        if(age > 17) {
+            alert("Jste Zletilý/á!")
+        } else {
+            alert("NEJSTE ZLETILÝ/Á")
+        }
+    </script>
+</p>
+</body>
+</html>

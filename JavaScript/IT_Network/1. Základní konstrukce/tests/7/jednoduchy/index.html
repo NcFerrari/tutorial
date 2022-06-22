@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="cs-cz">
+<head>
+    <meta charset="UTF-8">
+    <title>Zkrácení textu</title>
+</head>
+<body>
+<script>
+    let pText = "Původní text: ";
+    let zText = "Zkrácený text: ";
+
+    function zkraceni(text, length) {
+        let points = "";
+        if (text.length > length) {
+            points = "...";
+        }
+        document.write(pText + text + "<br>");
+        document.write(zText + text.slice(0, length - points.length) + points + "<br>");
+    }
+
+    zkraceni("Černé díry jsou tam, kde bůh dělil nulou", 16);
+</script>
+</body>
+</html>

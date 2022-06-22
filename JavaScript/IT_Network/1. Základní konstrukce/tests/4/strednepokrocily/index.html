@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="cs-cz">
+<head>
+    <meta charset="UTF-8">
+    <title>Smajlík</title>
+    <style>
+        p {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<h1>Smajlík</h1>
+<script>
+    let smile = prompt("Zadejte smajlu");
+    let smileInString;
+    smile = smile.trim().toLowerCase().replace("-", "");
+    switch (smile) {
+        case ":)":
+            smileInString = "Tvůj smajlík je veselý";
+            break;
+        case ":(":
+            smileInString = "Tvůj smajlík je smutný";
+            break;
+        case ":*":
+            smileInString = "Tvůj smajlík ti dává pusu";
+            break;
+        case ":p":
+            smileInString = "Tvůj smajlík na tebe vyplazuje jazyk";
+            break;
+        default:
+            smileInString = "Neznám takového smajlíka";
+    }
+    document.write("<p>" + smileInString + "</p>");
+</script>
+</body>
+</html>

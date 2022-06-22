@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="cs-cz">
+<head>
+    <meta charset="UTF-8">
+    <title>Pole</title>
+</head>
+<body>
+
+<script>
+    let array = [];
+    for (let i = 0; i < 10; i++) {
+        array[i] = i + 1;
+    }
+
+    for (let i = 0; i < array.length; i++) {
+        document.write(array[i] + " ");
+    }
+
+    document.write("<br>");
+
+    for (let i of array) {
+        document.write(i + " ");
+    }
+
+    document.write("<br>");
+
+    let days = ["Pondělí", "Úterý", "Středa", "Čtvrtek", "Pátek", "Sobota", "Neděle"];
+    let date = new Date();
+    document.write("Dnes je " + days[date.getDay() - 1]);
+
+    document.write("<br>");
+
+    let dny = ["Úterý", "Středa", "Čtvrtek", "Pátek", "Sobota"];
+    dny.push("Neděle"); // přidá nový prvek na konec pole
+    dny.unshift("Pondělí"); // přidá nový prvek na začátek pole
+    document.write(dny);
+    document.write("<br>");
+    dny.splice(2, 3); // smaže 3 prvky od 3. prvku dále (indexy jsou od nuly)
+    document.write(dny);
+
+    document.write("<br>");
+
+    let slova = ['Dálava', 'Blýskavice', 'Erb', 'Cílovníci', 'Akát'];
+    document.write(slova);
+    document.write("<br>");
+    slova.sort(); // Změní slova na ["Akát", "Blýskavice", "Cílovníci", "Dálava", "Erb"]
+    document.write(slova);
+
+    document.write("<br>");
+
+    // třízení čísel - špatně
+    let numbers = [5, 6, -3, -33, 1, 2, -4, 70, 22, 7, 0];
+    document.write(numbers);
+    document.write("<br>");
+    numbers.sort();
+    document.write(numbers);
+
+    document.write("<br>");
+
+    // třízení čísel - správně
+    document.write(numbers);
+    document.write("<br>");
+    numbers.sort(function (a, b) {
+        return a - b;
+    })
+    document.write(numbers);
+
+    document.write("<br>");
+
+
+</script>
+
+</body>
+</html>

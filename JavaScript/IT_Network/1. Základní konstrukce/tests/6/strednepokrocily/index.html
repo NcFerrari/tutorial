@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="cs-cz">
+<head>
+    <meta charset="UTF-8">
+    <title>Produkty</title>
+</head>
+<body>
+
+<script>
+    let array = [3500, 2800, 1280, 1920, 4320];
+    let sum = 0;
+    for (let prvek of array) {
+        sum += prvek;
+    }
+    let avarange = sum / array.length;
+    let prvekProOdchylku = 3;
+    document.write(prvekProOdchylku + ". produkt se od průměrné ceny odlišuje o " + Math.abs((array[prvekProOdchylku - 1] - avarange)) + " Kč");
+</script>
+
+</body>
+</html>

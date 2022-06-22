@@ -1,0 +1,29 @@
+table {
+    border: 1px solid black;
+    box-shadow: 3px 3px 7px gray;
+    width: 500px;
+}
+
+table, table td {
+    padding: 0;
+    margin: 0;
+}
+
+table td {
+    border: 1px solid black;
+}
+
+table td input {
+    padding: 0;
+    margin: 0;
+    border: 0px solid transparent;
+    font-family: Verdana;
+    font-size: 18px;
+    font-weight: normal;
+    text-align: right;
+    width: 100%;
+}
+
+button {
+    margin: 20px 0;
+}

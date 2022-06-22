@@ -1,0 +1,26 @@
+th {
+    background: #9bbb59;
+    color: white;
+    text-align: left;
+    padding: 10px;
+}
+
+th button {
+    margin: 0 0 0 5px;
+}
+
+table {
+    border-collapse: collapse;
+    font-family: Arial;
+    font-size: 14px;
+    width: 600px;
+    height: 150px;
+}
+
+tr:nth-child(even) {
+    background-color: #e9efdd;
+}
+
+tr:hover {
+    background-color: #dc9595;
+}

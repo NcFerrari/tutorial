@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="cs-cz">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/styly.css" type="text/css"/>
+    <title>JavaScript</title>
+</head>
+<body>
+<h1>Welcome to JavaScript</h1>
+<p>
+    <a href="#">First Alert</a>
+</p>
+<p>
+    <script>
+        let a = 900;
+        let b = 59;
+        let datum = new Date();
+        document.write(a + "<br>");
+        document.write(a + b + "<br>");
+        document.write(a - b + "<br>");
+        document.write(a * b + "<br>");
+        document.write(a / b + "<br>");
+        document.write(a % b + "<br>");
+        document.write("Dnes je " + datum.getDate() + "." + (datum.getMonth() + 1) + "." + datum.getFullYear() + "<br>");
+        document.write("Je " + ("0" + datum.getHours()).slice(-2) + ":" + ("0" + datum.getMinutes()).slice(-2) + "<br>");
+        document.write("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut" +
+            " labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi " +
+            "ut aliquip ex ea commodo consequat");
+    </script>
+</p>
+</body>
+</html>
