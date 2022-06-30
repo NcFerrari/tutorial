@@ -1,0 +1,54 @@
+body {
+    background: #a9c8ff;
+}
+
+h1 {
+    background: greenyellow;
+    font-family: Verdana;
+    text-align: center;
+    font-size: 28px;
+    color: #5a1e77;
+    font-weight: bold;
+    padding: 15px;
+}
+
+h2 {
+    font-family: Verdana;
+    font-style: italic;
+    background: #acfd30;
+    display: inline-block;
+    border: 2px solid red;
+    text-transform: uppercase;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li, action input {
+    font-size: 14px;
+    font-family: verdana;
+    background: #0080C0;
+    padding: 5px 12px;
+    border-radius: 20px;
+    color: white;
+    border-bottom: 4px solid fuchsia;
+    box-shadow: 3px 3px 7px gray;
+    font-weight: bold;
+    user-select: none;
+    margin: 0 5px;
+}
+
+nav ul li:hover, .active, action input:hover {
+    background: yellow;
+    color: purple;
+}
+
+nav ul li:active, action input:active {
+    background: #12445d;
+    color: white;
+}
+

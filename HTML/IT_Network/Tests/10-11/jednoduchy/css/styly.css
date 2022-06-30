@@ -1,0 +1,14 @@
+.tlacitko {
+    background: #5895ef;
+    color: white;
+    padding: 10px 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 15px;
+    box-shadow: 2px 2px 7px green;
+}
+
+.tlacitko:hover {
+    background: #353dd2;
+}
+

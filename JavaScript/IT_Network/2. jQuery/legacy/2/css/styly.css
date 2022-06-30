@@ -1,0 +1,32 @@
+body {
+    background: #eee;
+    color: #3d3d3d;
+    margin: 0px;
+    font-family: 'Advent pro';
+}
+
+#vkladani div {
+    margin: 15px 0 15px 4%;
+    padding: 2%;
+    background: #fff;
+    width: 40%;
+    float: left;
+}
+
+#vkladani .gray {
+    background: #cacaca;
+    width: 300px;
+    padding: 20px;
+    min-height: 100px;
+}
+
+#vkladani .red {
+    background: red;
+    width: 80%;
+    margin: 8%;
+    padding: 2%;
+}
+
+span * {
+    background: yellow;
+}

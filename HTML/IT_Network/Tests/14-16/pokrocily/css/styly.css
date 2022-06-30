@@ -1,0 +1,82 @@
+body {
+    background: #bdf876;
+}
+
+#header {
+    background: #2b9223;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#header h1 {
+    font-weight: normal;
+    font-family: Verdana;
+}
+
+#menu {
+    list-style: none;
+    display: flex;
+}
+
+#menu li {
+    padding: 1em;
+    width: 75px;
+    height: 75px;
+    text-align: center;
+    background: url("../img/menuitem.png");
+    background-size: 100% 100%;
+}
+
+#menu .aktivni, #menu li:hover {
+    background: url("../img/aktivni.png");
+    background-size: 100% 100%;
+}
+
+#menu li a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+article h1 {
+    font-weight: normal;
+    font-family: Verdana;
+    background: #2b9223;
+    padding: 5px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    color: white;
+}
+
+article {
+    background: white;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    font-family: Verdana;
+}
+
+footer, footer a {
+    background: #2b9223;
+    text-decoration: none;
+    color: white;
+    text-align: center;
+    padding: 5px;
+}
+
+#menu li div {
+    padding-top: 25px;
+}
+
+article h2 {
+    margin: 15px 0;
+    font-size: 18px;
+    color: #82d60d;
+    font-weight: normal;
+}
+
+.aktualizace {
+    text-align: center;
+    font-size: 10px;
+}

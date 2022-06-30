@@ -1,0 +1,52 @@
+#menu, #menu ul {
+    margin: 0;
+    padding: 0;
+}
+
+#menu ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+}
+
+#menu ul li {
+    padding: 10px 20px;
+    background: darkblue;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 5px;
+    border-radius: 20px;
+    box-shadow: 3px 3px 7px gray;
+    border-bottom: 4px solid orange;
+}
+
+#menu ul li:hover, #menu ul li.selected {
+    background: rgba(0, 0, 139, 40%);
+    cursor: default;
+    user-select: none;
+    color: rgb(230, 255, 0);
+}
+
+#menu ul li:active {
+    background: orange;
+    color: black;
+    border-bottom: 2px solid rgb(0, 0, 139);
+}
+
+week ul {
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+week ul li {
+    font-family: 'Open Sans';
+    font-size: 18px;
+    margin: 10px 20px;
+    padding: 5px 10px;
+    background: #0080C0;
+    width: 100px;
+    color: #ededed;
+    text-align: center;
+}

@@ -1,0 +1,21 @@
+nav a {
+    background: #5895ef;
+    color: white;
+    padding: 10px 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 15px;
+    box-shadow: 2px 2px 7px green;
+    margin: 15px;
+}
+
+nav a:hover {
+    background: yellow;
+    color: black;
+}
+
+nav {
+    background: #a4ccf7;
+    padding: 25px 25px;
+    text-align: center;
+}
