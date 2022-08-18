@@ -1,0 +1,53 @@
+* {
+    font-family: Segoe UI Light, "Calibri Light", sans-serif;
+}
+
+button {
+    padding: 10px 16px;
+    font-weight: 600;
+    background: #2792e0;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: 1s;
+}
+
+button:hover {
+    background: #2954c2;
+}
+
+button:active {
+    background: #5a2099;
+}
+
+input {
+    min-width: 250px;
+    padding: 8px;
+    border: 1px solid #909090;
+    height: 20px;
+}
+
+button, input {
+    margin-top: 1rem;
+    outline: none;
+}
+
+.ukol {
+    width: 75%;
+    padding: 2rem;
+    margin: 1rem auto;
+    border: 1px solid #c5c5c5;
+    box-shadow: 2px 2px 4px #b1b1b1;
+}
+
+.zelene {
+    color: green;
+}
+
+.cervene {
+    color: red;
+}
+
+.tucne {
+    font-weight: bold;
+}

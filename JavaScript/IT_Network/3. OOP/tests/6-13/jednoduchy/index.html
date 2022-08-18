@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="cs-cz">
+<head>
+    <meta charset="UTF-8">
+    <title>Autobazar</title>
+    <script src="js/obsluha.js"></script>
+    <style>
+        input[type=button] {
+            background: lightblue;
+            font-family: Verdana;
+            font-size: 18px;
+            padding: 8px;
+            border: none;
+            border-bottom: 4px solid orange;
+            box-shadow: 3px 3px 7px yellow;
+            border-radius: 15px;
+            transition: 1s;
+        }
+
+        input[type=button]:hover {
+            background: blue;
+            color: white;
+            transition: 1s;
+        }
+
+        input[type=button]:active {
+            background: purple;
+            color: white;
+            transition: 0s;
+        }
+    </style>
+</head>
+<body>
+<h1>Nabídka autobazaru</h1>
+<div id="buttons">
+    <input type="button" id="ascButton" value="Řadit od nejnižší ceny">
+    <input type="button" id="descButton" value="Řadit od nejvyšší ceny">
+</div>
+<ul id="list">
+
+</ul>
+</body>
+</html>

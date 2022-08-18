@@ -1,0 +1,17 @@
+h1 {
+    text-align: center;
+}
+
+h1, #locationView, #arrowsView {
+    width: 640px;
+}
+
+#locationView p {
+    padding: 0;
+    margin: 0;
+    height: 50px;
+}
+
+#arrowsView {
+    text-align: center;
+}

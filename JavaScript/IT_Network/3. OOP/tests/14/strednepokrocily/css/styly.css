@@ -1,0 +1,19 @@
+.life {
+    margin: 5px 5px 0 5px;
+    padding: 5px 5px 0 5px;
+    font-size: 25px;
+    width: 300px;
+    border: 1px solid gray;
+}
+
+.mana {
+    margin: 0 5px 5px 5px;
+    padding: 0 5px 5px 5px;
+    font-size: 25px;
+    width: 300px;
+    border: 1px solid gray;
+}
+
+.fightStatus {
+    margin: 25px 0 0 0;
+}

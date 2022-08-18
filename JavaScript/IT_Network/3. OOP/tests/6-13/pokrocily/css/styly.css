@@ -1,0 +1,54 @@
+#inputs {
+    background: #c9c9ca;
+    border-bottom: 4px solid #7f7f80;
+    padding: 30px;
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+#inputText {
+    width: 50%;
+    padding: 15px;
+    font-size: 20px;
+}
+
+#colorChooser {
+    margin: 0 20px;
+    width: 57px;
+    height: 57px;
+}
+
+#createNoteButton {
+    font-size: 20px;
+}
+
+#notes {
+    margin: 150px 0 0 0;
+}
+
+.note {
+    width: 320px;
+    min-height: 300px;
+    border-radius: 10px;
+    margin: 20px;
+    float: left;
+}
+
+.note h2 {
+    padding: 20px 20px 0 20px;
+    width: 60%
+}
+
+.note p {
+    padding: 0 20px;
+    margin: 0;
+    white-space: pre;
+    overflow: auto;
+}
+
+.xButton {
+    float: right;
+}
