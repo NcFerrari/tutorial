@@ -13,3 +13,20 @@ puts i
 i += 1
 puts i
 # i++ doesnt exists in ruby
+
+
+a = 5
+b = 3
+puts a, b
+
+# prohození proměnných
+c = a
+a = b
+b = c
+puts a, b
+
+d = 8
+e = 1
+puts d, e
+d = d + e - (e = d)
+puts d, e

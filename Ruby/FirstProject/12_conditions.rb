@@ -83,10 +83,16 @@ def operators7(x)
   if x < 5 && x > 0
     puts "&& ok"
   end
+  if x < 5 and x > 0
+    puts "&& ok"
+  end
 end
 
 def operators8(x)
   if x == 3 || x == 1
+    puts "|| ok"
+  end
+  if x == 3 or x == 1
     puts "|| ok"
   end
 end
