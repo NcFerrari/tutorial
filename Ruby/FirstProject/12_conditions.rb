@@ -1,8 +1,8 @@
 # KLASICKÝ IF
 
-ismale = true
+is_male = true
 
-if ismale
+if is_male
   puts "You are male"
 else
   puts "You are female"
