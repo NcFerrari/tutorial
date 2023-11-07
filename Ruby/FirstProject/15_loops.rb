@@ -23,3 +23,11 @@ while i < 100
     break
   end
 end
+
+# opakem while cyklu je until
+
+j = 0
+until j == 100
+  print j
+  j += 1
+end
