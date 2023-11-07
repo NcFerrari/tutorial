@@ -26,3 +26,8 @@ puts formatted_string
 
 formatted_string = "desetinná čísla lze psát klasicky jako třeba %.2f" %[Math::PI]
 puts formatted_string
+
+# jak vložit proměnnou do textu - druhý způsob, oproti formátovanému textu
+
+variable = "nějaký text"
+puts "tady bude text a ještě k tomu #{variable}"
