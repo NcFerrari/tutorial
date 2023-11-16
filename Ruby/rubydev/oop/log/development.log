@@ -1,0 +1,1026 @@
+Started GET "/" for 127.0.0.1 at 2023-11-16 11:48:31 +0100
+  [1m[35m (5.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering C:/Softwares/Ruby32-x64/lib/ruby/gems/3.2.0/gems/railties-7.1.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered C:/Softwares/Ruby32-x64/lib/ruby/gems/3.2.0/gems/railties-7.1.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 1.0ms | Allocations: 364)
+Completed 200 OK in 117ms (Views: 22.6ms | ActiveRecord: 0.0ms | Allocations: 9014)
+
+
+Started GET "/home" for 127.0.0.1 at 2023-11-16 11:49:56 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/home"):
+  
+Started GET "/" for 127.0.0.1 at 2023-11-16 11:50:42 +0100
+  
+ArgumentError (Missing :controller key on routes definition, please check your routes.):
+  
+config/routes.rb:2:in `block in <main>'
+config/routes.rb:1:in `<main>'
+Started GET "/" for 127.0.0.1 at 2023-11-16 11:50:55 +0100
+  
+ArgumentError (Missing :controller key on routes definition, please check your routes.):
+  
+config/routes.rb:2:in `block in <main>'
+config/routes.rb:1:in `<main>'
+Started GET "/" for 127.0.0.1 at 2023-11-16 11:51:32 +0100
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 79)
+  Rendered layout layouts/application.html.erb (Duration: 416.7ms | Allocations: 89682)
+Completed 500 Internal Server Error in 428ms (ActiveRecord: 0.0ms | Allocations: 90637)
+
+
+  
+ActionView::Template::Error (Permission denied @ rb_file_s_rename - (C:/Users/lpesek/Documents/Projekty/tutorial/Ruby/rubydev/oop/tmp/cache/assets/sprockets/v4.0.0/cH/cHSXtg7cIj-jzK5Ay1yr9X4d7eM8NR3Liwv--5Z5F1M.cache.35760.4412.992403, C:/Users/lpesek/Documents/Projekty/tutorial/Ruby/rubydev/oop/tmp/cache/assets/sprockets/v4.0.0/cH/cHSXtg7cIj-jzK5Ay1yr9X4d7eM8NR3Liwv--5Z5F1M.cache)):
+  
+sprockets (4.2.1) lib/sprockets/path_utils.rb:362:in `rename'
+sprockets (4.2.1) lib/sprockets/path_utils.rb:362:in `atomic_write'
+sprockets (4.2.1) lib/sprockets/cache/file_store.rb:112:in `set'
+sprockets (4.2.1) lib/sprockets/cache.rb:227:in `set'
+sprockets (4.2.1) lib/sprockets/cache.rb:143:in `set'
+sprockets (4.2.1) lib/sprockets/loader.rb:265:in `store_asset'
+sprockets (4.2.1) lib/sprockets/loader.rb:228:in `load_from_unloaded'
+sprockets (4.2.1) lib/sprockets/loader.rb:59:in `block in load'
+sprockets (4.2.1) lib/sprockets/loader.rb:339:in `fetch_asset_from_dependency_cache'
+sprockets (4.2.1) lib/sprockets/loader.rb:43:in `load'
+sprockets (4.2.1) lib/sprockets/cached_environment.rb:44:in `block in load'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/map.rb:207:in `block in fetch_or_store'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/map.rb:187:in `fetch'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/map.rb:206:in `fetch_or_store'
+sprockets (4.2.1) lib/sprockets/cached_environment.rb:44:in `load'
+sprockets (4.2.1) lib/sprockets/context.rb:117:in `load'
+sprockets (4.2.1) lib/sprockets/context.rb:145:in `depend_on_asset'
+sprockets (4.2.1) lib/sprockets/context.rb:185:in `link_asset'
+sprockets-rails (3.4.2) lib/sprockets/rails/context.rb:27:in `compute_asset_path'
+actionview (7.1.2) lib/action_view/helpers/asset_url_helper.rb:204:in `asset_path'
+sprockets-rails (3.4.2) lib/sprockets/rails/sourcemapping_url_processor.rb:41:in `sourcemap_asset_path'
+sprockets-rails (3.4.2) lib/sprockets/rails/sourcemapping_url_processor.rb:34:in `resolved_sourcemap_comment'
+sprockets-rails (3.4.2) lib/sprockets/rails/sourcemapping_url_processor.rb:15:in `block in call'
+sprockets-rails (3.4.2) lib/sprockets/rails/sourcemapping_url_processor.rb:11:in `gsub'
+sprockets-rails (3.4.2) lib/sprockets/rails/sourcemapping_url_processor.rb:11:in `call'
+sprockets (4.2.1) lib/sprockets/processor_utils.rb:84:in `call_processor'
+sprockets (4.2.1) lib/sprockets/processor_utils.rb:66:in `block in call_processors'
+sprockets (4.2.1) lib/sprockets/processor_utils.rb:65:in `reverse_each'
+sprockets (4.2.1) lib/sprockets/processor_utils.rb:65:in `call_processors'
+sprockets (4.2.1) lib/sprockets/loader.rb:184:in `load_from_unloaded'
+sprockets (4.2.1) lib/sprockets/loader.rb:59:in `block in load'
+sprockets (4.2.1) lib/sprockets/loader.rb:339:in `fetch_asset_from_dependency_cache'
+sprockets (4.2.1) lib/sprockets/loader.rb:43:in `load'
+sprockets (4.2.1) lib/sprockets/cached_environment.rb:44:in `block in load'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/map.rb:207:in `block in fetch_or_store'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/map.rb:187:in `fetch'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/map.rb:206:in `fetch_or_store'
+sprockets (4.2.1) lib/sprockets/cached_environment.rb:44:in `load'
+sprockets (4.2.1) lib/sprockets/bundle.rb:27:in `call'
+sprockets (4.2.1) lib/sprockets/processor_utils.rb:84:in `call_processor'
+sprockets (4.2.1) lib/sprockets/processor_utils.rb:66:in `block in call_processors'
+sprockets (4.2.1) lib/sprockets/processor_utils.rb:65:in `reverse_each'
+sprockets (4.2.1) lib/sprockets/processor_utils.rb:65:in `call_processors'
+sprockets (4.2.1) lib/sprockets/loader.rb:184:in `load_from_unloaded'
+sprockets (4.2.1) lib/sprockets/loader.rb:59:in `block in load'
+sprockets (4.2.1) lib/sprockets/loader.rb:339:in `fetch_asset_from_dependency_cache'
+sprockets (4.2.1) lib/sprockets/loader.rb:43:in `load'
+sprockets (4.2.1) lib/sprockets/cached_environment.rb:44:in `block in load'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/map.rb:207:in `block in fetch_or_store'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/map.rb:187:in `fetch'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/map.rb:206:in `fetch_or_store'
+sprockets (4.2.1) lib/sprockets/cached_environment.rb:44:in `load'
+sprockets (4.2.1) lib/sprockets/base.rb:81:in `find_asset'
+sprockets (4.2.1) lib/sprockets/base.rb:88:in `find_all_linked_assets'
+sprockets (4.2.1) lib/sprockets/manifest.rb:125:in `each'
+sprockets (4.2.1) lib/sprockets/manifest.rb:125:in `to_a'
+sprockets (4.2.1) lib/sprockets/manifest.rb:125:in `block (2 levels) in find'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/executor/safe_task_executor.rb:24:in `block in execute'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/synchronization/mutex_lockable_object.rb:48:in `block in synchronize'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/synchronization/mutex_lockable_object.rb:48:in `synchronize'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/synchronization/mutex_lockable_object.rb:48:in `synchronize'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/executor/safe_task_executor.rb:22:in `execute'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/promise.rb:564:in `block in realize'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:352:in `run_task'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:343:in `block (3 levels) in create_worker'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:334:in `loop'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:334:in `block (2 levels) in create_worker'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:333:in `catch'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:333:in `block in create_worker'
+Started GET "/" for 127.0.0.1 at 2023-11-16 11:53:53 +0100
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 6)
+  Rendered layout layouts/application.html.erb (Duration: 103.5ms | Allocations: 36231)
+Completed 200 OK in 107ms (Views: 104.6ms | ActiveRecord: 0.0ms | Allocations: 36503)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-16 11:54:09 +0100
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 81)
+  Rendered layout layouts/application.html.erb (Duration: 65.7ms | Allocations: 17457)
+Completed 200 OK in 77ms (Views: 72.2ms | ActiveRecord: 0.0ms | Allocations: 18369)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-16 11:54:16 +0100
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 81)
+  Rendered layout layouts/application.html.erb (Duration: 27.9ms | Allocations: 14343)
+Completed 200 OK in 38ms (Views: 33.7ms | ActiveRecord: 0.0ms | Allocations: 15251)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-16 12:30:35 +0100
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.4ms | Allocations: 93)
+  Rendered layout layouts/application.html.erb (Duration: 87.9ms | Allocations: 14367)
+Completed 200 OK in 112ms (Views: 106.3ms | ActiveRecord: 0.0ms | Allocations: 15275)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-16 12:30:53 +0100
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 8.3ms | Allocations: 2194)
+Completed 200 OK in 12ms (Views: 9.3ms | ActiveRecord: 0.0ms | Allocations: 2453)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-16 12:30:56 +0100
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 6.5ms | Allocations: 2194)
+Completed 200 OK in 10ms (Views: 7.4ms | ActiveRecord: 0.0ms | Allocations: 2453)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-16 12:31:13 +0100
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 93)
+  Rendered layout layouts/application.html.erb (Duration: 30.8ms | Allocations: 14349)
+Completed 200 OK in 41ms (Views: 36.7ms | ActiveRecord: 0.0ms | Allocations: 15260)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-16 12:31:26 +0100
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.4ms | Allocations: 75)
+  Rendered layout layouts/application.html.erb (Duration: 29.5ms | Allocations: 14342)
+Completed 200 OK in 39ms (Views: 35.2ms | ActiveRecord: 0.0ms | Allocations: 15250)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-16 12:57:51 +0100
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 75)
+  Rendered layout layouts/application.html.erb (Duration: 32.9ms | Allocations: 14349)
+Completed 200 OK in 43ms (Views: 38.6ms | ActiveRecord: 0.0ms | Allocations: 15257)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-16 12:58:06 +0100
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.4ms | Allocations: 75)
+  Rendered layout layouts/application.html.erb (Duration: 30.8ms | Allocations: 14339)
+Completed 200 OK in 59ms (Views: 40.2ms | ActiveRecord: 0.0ms | Allocations: 15408)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-16 13:01:10 +0100
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.4ms | Allocations: 75)
+  Rendered layout layouts/application.html.erb (Duration: 39.7ms | Allocations: 14335)
+Completed 200 OK in 58ms (Views: 48.9ms | ActiveRecord: 0.0ms | Allocations: 15400)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-16 13:02:45 +0100
+Processing by HomeController#index as HTML
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms | Allocations: 523)
+
+
+  
+ArgumentError (wrong number of arguments (given 0, expected 1)):
+  
+app/controllers/zvire.rb:4:in `initialize'
+app/controllers/home_controller.rb:3:in `new'
+app/controllers/home_controller.rb:3:in `index'
+Started GET "/" for 127.0.0.1 at 2023-11-16 13:02:58 +0100
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 75)
+  Rendered layout layouts/application.html.erb (Duration: 28.0ms | Allocations: 14357)
+Completed 200 OK in 41ms (Views: 34.2ms | ActiveRecord: 0.0ms | Allocations: 15350)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-16 13:07:25 +0100
+Processing by HomeController#index as HTML
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms | Allocations: 598)
+
+
+  
+NoMethodError (undefined method `attr_reader' for main:Object):
+  
+app/controllers/zvire.rb:2:in `<main>'
+app/controllers/home_controller.rb:3:in `index'
+Started GET "/" for 127.0.0.1 at 2023-11-16 13:08:26 +0100
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.4ms | Allocations: 75)
+  Rendered layout layouts/application.html.erb (Duration: 27.8ms | Allocations: 14322)
+Completed 200 OK in 43ms (Views: 34.7ms | ActiveRecord: 0.0ms | Allocations: 15380)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-16 13:10:22 +0100
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 75)
+  Rendered layout layouts/application.html.erb (Duration: 32.1ms | Allocations: 14334)
+Completed 200 OK in 48ms (Views: 38.3ms | ActiveRecord: 0.0ms | Allocations: 15406)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-16 13:12:51 +0100
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 75)
+  Rendered layout layouts/application.html.erb (Duration: 29.2ms | Allocations: 14339)
+Completed 200 OK in 90ms (Views: 35.5ms | ActiveRecord: 0.0ms | Allocations: 15422)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-16 13:13:07 +0100
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.4ms | Allocations: 75)
+  Rendered layout layouts/application.html.erb (Duration: 30.1ms | Allocations: 14335)
+Completed 200 OK in 48ms (Views: 38.0ms | ActiveRecord: 0.0ms | Allocations: 15415)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-16 13:16:32 +0100
+Processing by HomeController#index as HTML
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms | Allocations: 657)
+
+
+  
+NameError (uninitialized constant HomeController::Pes):
+  
+app/controllers/home_controller.rb:8:in `index'
+Started GET "/" for 127.0.0.1 at 2023-11-16 13:16:48 +0100
+Processing by HomeController#index as HTML
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms | Allocations: 628)
+
+
+  
+NameError (uninitialized constant HomeController::Pes):
+  
+app/controllers/home_controller.rb:8:in `index'
+Started GET "/" for 127.0.0.1 at 2023-11-16 13:16:55 +0100
+Processing by HomeController#index as HTML
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms | Allocations: 474)
+
+
+  
+NameError (uninitialized constant HomeController::Pes):
+  
+app/controllers/home_controller.rb:8:in `index'
+Started GET "/" for 127.0.0.1 at 2023-11-16 13:17:10 +0100
+Processing by HomeController#index as HTML
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms | Allocations: 570)
+
+
+  
+NameError (uninitialized constant HomeController::Pes):
+  
+app/controllers/home_controller.rb:8:in `index'
+Started GET "/" for 127.0.0.1 at 2023-11-16 13:17:19 +0100
+Processing by HomeController#index as HTML
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms | Allocations: 628)
+
+
+  
+NameError (uninitialized constant HomeController::Pes):
+  
+app/controllers/home_controller.rb:8:in `index'
+Started GET "/" for 127.0.0.1 at 2023-11-16 13:17:45 +0100
+Processing by HomeController#index as HTML
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 0.0ms | Allocations: 651)
+
+
+  
+NameError (uninitialized constant HomeController::Pes):
+  
+app/controllers/home_controller.rb:8:in `index'
+Started GET "/" for 127.0.0.1 at 2023-11-16 13:17:49 +0100
+Processing by HomeController#index as HTML
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms | Allocations: 474)
+
+
+  
+NameError (uninitialized constant HomeController::Pes):
+  
+app/controllers/home_controller.rb:8:in `index'
+Started GET "/" for 127.0.0.1 at 2023-11-16 13:19:31 +0100
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 75)
+  Rendered layout layouts/application.html.erb (Duration: 31.8ms | Allocations: 14355)
+Completed 200 OK in 53ms (Views: 38.3ms | ActiveRecord: 0.0ms | Allocations: 15478)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-16 13:21:04 +0100
+Processing by HomeController#index as HTML
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms | Allocations: 651)
+
+
+  
+TypeError (superclass mismatch for class Pes):
+  
+app/controllers/zvire.rb:12:in `<main>'
+app/controllers/home_controller.rb:3:in `index'
+Started GET "/" for 127.0.0.1 at 2023-11-16 13:22:30 +0100
+Processing by HomeController#index as HTML
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms | Allocations: 901)
+
+
+  
+SyntaxError (C:/Users/lpesek/Documents/Projekty/tutorial/Ruby/rubydev/oop/app/controllers/zvire.rb:15: syntax error, unexpected local variable or method, expecting ';' or '\n'
+  def initialize barva zvuk
+                       ^~~~
+C:/Users/lpesek/Documents/Projekty/tutorial/Ruby/rubydev/oop/app/controllers/zvire.rb:19: syntax error, unexpected `end'):
+  
+app/controllers/zvire.rb:15: syntax error, unexpected local variable or method, expecting ';' or '\n'
+app/controllers/zvire.rb:19: syntax error, unexpected `end'
+app/controllers/home_controller.rb:3:in `index'
+Started GET "/" for 127.0.0.1 at 2023-11-16 13:22:44 +0100
+Processing by HomeController#index as HTML
+Completed 500 Internal Server Error in 54ms (ActiveRecord: 0.0ms | Allocations: 702)
+
+
+  
+TypeError (superclass mismatch for class Pes):
+  
+app/controllers/zvire.rb:12:in `<main>'
+app/controllers/home_controller.rb:3:in `index'
+Started GET "/" for 127.0.0.1 at 2023-11-16 13:23:42 +0100
+Processing by HomeController#index as HTML
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 0.0ms | Allocations: 643)
+
+
+  
+TypeError (superclass mismatch for class Pes):
+  
+app/controllers/zvire.rb:12:in `<main>'
+app/controllers/home_controller.rb:3:in `index'
+Started GET "/" for 127.0.0.1 at 2023-11-16 13:24:05 +0100
+Processing by HomeController#index as HTML
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms | Allocations: 701)
+
+
+  
+TypeError (superclass mismatch for class Pes):
+  
+app/controllers/zvire.rb:12:in `<main>'
+app/controllers/home_controller.rb:3:in `index'
+Started GET "/" for 127.0.0.1 at 2023-11-16 13:24:32 +0100
+Processing by HomeController#index as HTML
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms | Allocations: 643)
+
+
+  
+TypeError (superclass mismatch for class Pes):
+  
+app/controllers/zvire.rb:12:in `<main>'
+app/controllers/home_controller.rb:3:in `index'
+Started GET "/" for 127.0.0.1 at 2023-11-16 13:24:52 +0100
+Processing by HomeController#index as HTML
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms | Allocations: 614)
+
+
+  
+TypeError (superclass mismatch for class Pes):
+  
+app/controllers/zvire.rb:12:in `<main>'
+app/controllers/home_controller.rb:3:in `index'
+Started GET "/" for 127.0.0.1 at 2023-11-16 13:29:51 +0100
+Processing by HomeController#index as HTML
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.0ms | Allocations: 667)
+
+
+  
+NameError (undefined local variable or method `s' for #<HomeController:0x00000000072290>):
+  
+app/controllers/home_controller.rb:9:in `index'
+Started GET "/" for 127.0.0.1 at 2023-11-16 13:30:06 +0100
+Processing by HomeController#index as HTML
+Completed 500 Internal Server Error in 39ms (ActiveRecord: 0.0ms | Allocations: 701)
+
+
+  
+TypeError (superclass mismatch for class Pes):
+  
+app/controllers/zvire.rb:12:in `<main>'
+app/controllers/home_controller.rb:3:in `index'
+Started GET "/" for 127.0.0.1 at 2023-11-16 13:30:32 +0100
+Processing by HomeController#index as HTML
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.0ms | Allocations: 643)
+
+
+  
+TypeError (superclass mismatch for class Pes):
+  
+app/controllers/zvire.rb:12:in `<main>'
+app/controllers/home_controller.rb:3:in `index'
+Started GET "/" for 127.0.0.1 at 2023-11-16 13:30:40 +0100
+Processing by HomeController#index as HTML
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 0.0ms | Allocations: 700)
+
+
+  
+TypeError (superclass mismatch for class Pes):
+  
+app/controllers/zvire.rb:12:in `<main>'
+app/controllers/home_controller.rb:3:in `index'
+Started GET "/" for 127.0.0.1 at 2023-11-16 13:30:49 +0100
+Processing by HomeController#index as HTML
+Completed 500 Internal Server Error in 43ms (ActiveRecord: 0.0ms | Allocations: 701)
+
+
+  
+TypeError (superclass mismatch for class Pes):
+  
+app/controllers/zvire.rb:12:in `<main>'
+app/controllers/home_controller.rb:3:in `index'
+Started GET "/" for 127.0.0.1 at 2023-11-16 13:31:00 +0100
+Processing by HomeController#index as HTML
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.0ms | Allocations: 699)
+
+
+  
+TypeError (superclass mismatch for class Pes):
+  
+app/controllers/zvire.rb:12:in `<main>'
+app/controllers/home_controller.rb:3:in `index'
+Started GET "/" for 127.0.0.1 at 2023-11-16 13:31:10 +0100
+Processing by HomeController#index as HTML
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 0.0ms | Allocations: 644)
+
+
+  
+TypeError (superclass mismatch for class Pes):
+  
+app/controllers/zvire.rb:12:in `<main>'
+app/controllers/home_controller.rb:3:in `index'
+Started GET "/" for 127.0.0.1 at 2023-11-16 13:31:41 +0100
+Processing by HomeController#index as HTML
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms | Allocations: 556)
+
+
+  
+TypeError (superclass mismatch for class Pes):
+  
+app/controllers/zvire.rb:12:in `<main>'
+app/controllers/home_controller.rb:3:in `index'
+Started GET "/" for 127.0.0.1 at 2023-11-16 13:32:02 +0100
+Processing by HomeController#index as HTML
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms | Allocations: 614)
+
+
+  
+TypeError (superclass mismatch for class Pes):
+  
+app/controllers/zvire.rb:12:in `<main>'
+app/controllers/home_controller.rb:3:in `index'
+Started GET "/" for 127.0.0.1 at 2023-11-16 13:33:07 +0100
+Processing by HomeController#index as HTML
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms | Allocations: 639)
+
+
+  
+TypeError (superclass mismatch for class Pes):
+  
+app/controllers/zvire.rb:12:in `<main>'
+app/controllers/home_controller.rb:3:in `index'
+Started GET "/" for 127.0.0.1 at 2023-11-16 13:33:31 +0100
+Processing by HomeController#index as HTML
+Completed 500 Internal Server Error in 41ms (ActiveRecord: 0.0ms | Allocations: 702)
+
+
+  
+TypeError (superclass mismatch for class Pes):
+  
+app/controllers/zvire.rb:12:in `<main>'
+app/controllers/home_controller.rb:3:in `index'
+Started GET "/" for 127.0.0.1 at 2023-11-16 13:35:08 +0100
+Processing by HomeController#index as HTML
+Completed 500 Internal Server Error in 38ms (ActiveRecord: 0.0ms | Allocations: 639)
+
+
+  
+TypeError (superclass mismatch for class Pes):
+  
+app/controllers/zvire.rb:10:in `<main>'
+app/controllers/home_controller.rb:3:in `index'
+Started GET "/" for 127.0.0.1 at 2023-11-16 13:35:21 +0100
+Processing by HomeController#index as HTML
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms | Allocations: 701)
+
+
+  
+TypeError (superclass mismatch for class Pes):
+  
+app/controllers/zvire.rb:12:in `<main>'
+app/controllers/home_controller.rb:3:in `index'
+Started GET "/" for 127.0.0.1 at 2023-11-16 13:36:55 +0100
+Processing by HomeController#index as HTML
+Completed 500 Internal Server Error in 108ms (ActiveRecord: 0.0ms | Allocations: 9245)
+
+
+  
+TypeError (superclass mismatch for class Pes):
+  
+app/controllers/zvire.rb:12:in `<main>'
+app/controllers/home_controller.rb:3:in `index'
+Started GET "/" for 127.0.0.1 at 2023-11-16 13:37:25 +0100
+Processing by HomeController#index as HTML
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.0ms | Allocations: 636)
+
+
+  
+NameError (undefined local variable or method `s' for #<HomeController:0x000000000a1e78>):
+  
+app/controllers/home_controller.rb:9:in `index'
+Started GET "/" for 127.0.0.1 at 2023-11-16 13:37:35 +0100
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.5ms | Allocations: 75)
+  Rendered layout layouts/application.html.erb (Duration: 29.6ms | Allocations: 14346)
+Completed 200 OK in 42ms (Views: 35.5ms | ActiveRecord: 0.0ms | Allocations: 15364)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-16 13:37:42 +0100
+Processing by HomeController#index as HTML
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms | Allocations: 701)
+
+
+  
+TypeError (superclass mismatch for class Pes):
+  
+app/controllers/zvire.rb:12:in `<main>'
+app/controllers/home_controller.rb:3:in `index'
+Started GET "/" for 127.0.0.1 at 2023-11-16 13:37:57 +0100
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.4ms | Allocations: 75)
+  Rendered layout layouts/application.html.erb (Duration: 32.5ms | Allocations: 14339)
+Completed 200 OK in 49ms (Views: 39.1ms | ActiveRecord: 0.0ms | Allocations: 15460)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-16 13:38:22 +0100
+Processing by HomeController#index as HTML
+Completed 500 Internal Server Error in 57ms (ActiveRecord: 0.0ms | Allocations: 687)
+
+
+  
+TypeError (superclass mismatch for class Pes):
+  
+app/controllers/zvire.rb:13:in `<main>'
+app/controllers/home_controller.rb:3:in `index'
+Started GET "/" for 127.0.0.1 at 2023-11-16 13:38:46 +0100
+Processing by HomeController#index as HTML
+Completed 500 Internal Server Error in 46ms (ActiveRecord: 0.0ms | Allocations: 639)
+
+
+  
+TypeError (superclass mismatch for class Pes):
+  
+app/controllers/zvire.rb:13:in `<main>'
+app/controllers/home_controller.rb:3:in `index'
+Started GET "/" for 127.0.0.1 at 2023-11-16 13:38:53 +0100
+Processing by HomeController#index as HTML
+Completed 500 Internal Server Error in 48ms (ActiveRecord: 0.0ms | Allocations: 697)
+
+
+  
+TypeError (superclass mismatch for class Pes):
+  
+app/controllers/zvire.rb:13:in `<main>'
+app/controllers/home_controller.rb:3:in `index'
+Started GET "/" for 127.0.0.1 at 2023-11-16 13:39:06 +0100
+Processing by HomeController#index as HTML
+Completed 500 Internal Server Error in 50ms (ActiveRecord: 0.0ms | Allocations: 697)
+
+
+  
+TypeError (superclass mismatch for class Pes):
+  
+app/controllers/zvire.rb:13:in `<main>'
+app/controllers/home_controller.rb:3:in `index'
+Started GET "/" for 127.0.0.1 at 2023-11-16 13:39:16 +0100
+Processing by HomeController#index as HTML
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms | Allocations: 697)
+
+
+  
+TypeError (superclass mismatch for class Pes):
+  
+app/controllers/zvire.rb:13:in `<main>'
+app/controllers/home_controller.rb:3:in `index'
+Started GET "/" for 127.0.0.1 at 2023-11-16 13:41:03 +0100
+Processing by HomeController#index as HTML
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 444)
+
+
+  
+NameError (uninitialized constant HomeController::Car):
+  
+app/controllers/home_controller.rb:4:in `index'
+Started GET "/" for 127.0.0.1 at 2023-11-16 13:42:12 +0100
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 75)
+  Rendered layout layouts/application.html.erb (Duration: 27.1ms | Allocations: 14340)
+Completed 200 OK in 40ms (Views: 33.4ms | ActiveRecord: 0.0ms | Allocations: 15271)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-16 13:42:33 +0100
+  
+Zeitwerk::NameError (expected file C:/Users/lpesek/Documents/Projekty/tutorial/Ruby/rubydev/oop/app/controllers/zvire.rb to define constant Zvire, but didn't):
+  
+app/controllers/home_controller.rb:15:in `<main>'
+Started GET "/" for 127.0.0.1 at 2023-11-16 13:43:05 +0100
+  
+TypeError (superclass mismatch for class Pes):
+  
+app/controllers/home_controller.rb:18:in `<main>'
+Started GET "/" for 127.0.0.1 at 2023-11-16 13:44:12 +0100
+Processing by HomeController#index as HTML
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms | Allocations: 635)
+
+
+  
+TypeError (superclass mismatch for class Pes):
+  
+app/controllers/zvire.rb:11:in `<main>'
+app/controllers/home_controller.rb:3:in `index'
+Started GET "/" for 127.0.0.1 at 2023-11-16 13:45:38 +0100
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 75)
+  Rendered layout layouts/application.html.erb (Duration: 28.5ms | Allocations: 14341)
+Completed 200 OK in 44ms (Views: 34.4ms | ActiveRecord: 0.0ms | Allocations: 15425)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-16 13:45:50 +0100
+Processing by HomeController#index as HTML
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms | Allocations: 617)
+
+
+  
+NameError (undefined local variable or method `s' for #<HomeController:0x000000000d92d8>):
+  
+app/controllers/home_controller.rb:9:in `index'
+Started GET "/" for 127.0.0.1 at 2023-11-16 13:46:20 +0100
+Processing by HomeController#index as HTML
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms | Allocations: 558)
+
+
+  
+NameError (undefined local variable or method `s' for #<HomeController:0x000000000dcfc8>):
+  
+app/controllers/home_controller.rb:9:in `index'
+Started GET "/" for 127.0.0.1 at 2023-11-16 13:46:40 +0100
+Processing by HomeController#index as HTML
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms | Allocations: 616)
+
+
+  
+ArgumentError (malformed format string - %n):
+  
+app/controllers/home_controller.rb:9:in `%'
+app/controllers/home_controller.rb:9:in `index'
+Started GET "/" for 127.0.0.1 at 2023-11-16 13:46:56 +0100
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.8ms | Allocations: 75)
+  Rendered layout layouts/application.html.erb (Duration: 36.5ms | Allocations: 14354)
+Completed 200 OK in 50ms (Views: 42.8ms | ActiveRecord: 0.0ms | Allocations: 15379)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-16 14:06:56 +0100
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 75)
+  Rendered layout layouts/application.html.erb (Duration: 28.9ms | Allocations: 14334)
+Completed 200 OK in 86ms (Views: 34.9ms | ActiveRecord: 0.0ms | Allocations: 15424)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-16 14:11:49 +0100
+Processing by HomeController#index as HTML
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.0ms | Allocations: 644)
+
+
+  
+NoMethodError (undefined method `metoda' for #<Pes:0x000002482fe07aa8 @barva="modrá", @zvuk="haf">):
+  
+app/controllers/home_controller.rb:11:in `index'
+Started GET "/" for 127.0.0.1 at 2023-11-16 14:12:05 +0100
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 75)
+  Rendered layout layouts/application.html.erb (Duration: 27.4ms | Allocations: 14343)
+Completed 200 OK in 41ms (Views: 33.7ms | ActiveRecord: 0.0ms | Allocations: 15372)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-16 14:12:41 +0100
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.5ms | Allocations: 75)
+  Rendered layout layouts/application.html.erb (Duration: 38.6ms | Allocations: 14343)
+Completed 200 OK in 63ms (Views: 48.0ms | ActiveRecord: 0.0ms | Allocations: 15446)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-16 14:14:17 +0100
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 75)
+  Rendered layout layouts/application.html.erb (Duration: 31.7ms | Allocations: 14346)
+Completed 200 OK in 49ms (Views: 37.7ms | ActiveRecord: 0.0ms | Allocations: 15452)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-16 14:16:53 +0100
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 6)
+  Rendered layout layouts/application.html.erb (Duration: 7.5ms | Allocations: 2187)
+Completed 200 OK in 15ms (Views: 8.6ms | ActiveRecord: 0.0ms | Allocations: 2464)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-16 14:17:28 +0100
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 6)
+  Rendered layout layouts/application.html.erb (Duration: 9.7ms | Allocations: 2184)
+Completed 200 OK in 15ms (Views: 10.7ms | ActiveRecord: 0.0ms | Allocations: 2461)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-16 14:17:41 +0100
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 75)
+  Rendered layout layouts/application.html.erb (Duration: 28.0ms | Allocations: 14347)
+Completed 200 OK in 106ms (Views: 36.2ms | ActiveRecord: 0.0ms | Allocations: 15453)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-16 14:19:02 +0100
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 75)
+  Rendered layout layouts/application.html.erb (Duration: 43.1ms | Allocations: 14372)
+Completed 200 OK in 61ms (Views: 49.8ms | ActiveRecord: 0.0ms | Allocations: 15401)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-16 14:19:25 +0100
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 6)
+  Rendered layout layouts/application.html.erb (Duration: 6.8ms | Allocations: 2184)
+Completed 200 OK in 12ms (Views: 7.8ms | ActiveRecord: 0.0ms | Allocations: 2461)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-16 14:20:19 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.5ms | Allocations: 160)
+  Rendered layout layouts/application.html.erb (Duration: 596.4ms | Allocations: 38132)
+Completed 200 OK in 857ms (Views: 661.2ms | ActiveRecord: 0.0ms | Allocations: 43270)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-16 14:20:53 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 2.6ms | Allocations: 160)
+  Rendered layout layouts/application.html.erb (Duration: 151.4ms | Allocations: 38349)
+Completed 200 OK in 266ms (Views: 175.0ms | ActiveRecord: 0.0ms | Allocations: 43479)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-16 14:21:21 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 160)
+  Rendered layout layouts/application.html.erb (Duration: 207.2ms | Allocations: 38267)
+Completed 200 OK in 320ms (Views: 233.2ms | ActiveRecord: 0.0ms | Allocations: 43406)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-16 14:21:36 +0100
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 6)
+  Rendered layout layouts/application.html.erb (Duration: 7.8ms | Allocations: 2211)
+Completed 200 OK in 15ms (Views: 9.4ms | ActiveRecord: 0.0ms | Allocations: 2495)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-16 14:23:21 +0100
+Processing by HomeController#index as HTML
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.0ms | Allocations: 818)
+
+
+  
+NoMethodError (protected method `metoda' called for #<Pes:0x000001c9fc871f50 @barva="modrá", @zvuk="haf">):
+  
+app/controllers/home_controller.rb:10:in `index'
+Started GET "/" for 127.0.0.1 at 2023-11-16 14:23:34 +0100
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.4ms | Allocations: 75)
+  Rendered layout layouts/application.html.erb (Duration: 33.2ms | Allocations: 14371)
+Completed 200 OK in 70ms (Views: 40.6ms | ActiveRecord: 0.0ms | Allocations: 15570)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-16 14:23:41 +0100
+Processing by HomeController#index as HTML
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms | Allocations: 792)
+
+
+  
+NoMethodError (private method `metoda' called for #<Pes:0x000001c9fe357540 @barva="modrá", @zvuk="haf">):
+  
+app/controllers/home_controller.rb:10:in `index'
+Started GET "/" for 127.0.0.1 at 2023-11-16 14:28:00 +0100
+Processing by HomeController#index as HTML
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 0.0ms | Allocations: 814)
+
+
+  
+NoMethodError (undefined method `metoda' for #<Pes:0x000001c9fe6f7ce0 @barva="modrá", @zvuk="haf">):
+  
+app/controllers/home_controller.rb:10:in `index'
+Started GET "/" for 127.0.0.1 at 2023-11-16 14:28:12 +0100
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.4ms | Allocations: 75)
+  Rendered layout layouts/application.html.erb (Duration: 35.5ms | Allocations: 14349)
+Completed 200 OK in 53ms (Views: 42.5ms | ActiveRecord: 0.0ms | Allocations: 15475)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-16 14:34:02 +0100
+Processing by HomeController#index as HTML
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 0.0ms | Allocations: 600)
+
+
+  
+NoMethodError (undefined method `barva' for #<Zvire:0x000001c9fe484990 @barva="fialová">):
+  
+app/controllers/home_controller.rb:4:in `index'
+Started GET "/" for 127.0.0.1 at 2023-11-16 14:34:25 +0100
+Processing by HomeController#index as HTML
+Completed 500 Internal Server Error in 61ms (ActiveRecord: 0.0ms | Allocations: 653)
+
+
+  
+NoMethodError (undefined method `barva' for #<Zvire:0x000001c9fe3e9a80 @barva="fialová">):
+  
+app/controllers/home_controller.rb:4:in `index'
+Started GET "/" for 127.0.0.1 at 2023-11-16 14:34:30 +0100
+Processing by HomeController#index as HTML
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 469)
+
+
+  
+NoMethodError (undefined method `barva' for #<Zvire:0x000001c9fa9ec670 @barva="fialová">):
+  
+app/controllers/home_controller.rb:4:in `index'
+Started GET "/" for 127.0.0.1 at 2023-11-16 14:35:15 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.0ms | Allocations: 1539)
+
+
+  
+NoMethodError (undefined method `barva' for #<Zvire:0x000002515396cb88 @barva="fialová">):
+  
+app/controllers/home_controller.rb:4:in `index'
+Started GET "/" for 127.0.0.1 at 2023-11-16 14:35:41 +0100
+Processing by HomeController#index as HTML
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.0ms | Allocations: 604)
+
+
+  
+NoMethodError (undefined method `barva=' for #<Zvire:0x0000025154ecec10 @barva="fialová">):
+  
+app/controllers/home_controller.rb:5:in `index'
+Started GET "/" for 127.0.0.1 at 2023-11-16 14:36:13 +0100
+Processing by HomeController#index as HTML
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.0ms | Allocations: 616)
+
+
+  
+NoMethodError (undefined method `set_barva=' for #<Zvire:0x0000025153774b28 @barva="fialová">):
+  
+app/controllers/home_controller.rb:5:in `index'
+Started GET "/" for 127.0.0.1 at 2023-11-16 14:36:22 +0100
+Processing by HomeController#index as HTML
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.0ms | Allocations: 840)
+
+
+  
+ArgumentError (wrong number of arguments (given 2, expected 1)):
+  
+app/controllers/pes.rb:2:in `initialize'
+app/controllers/home_controller.rb:8:in `new'
+app/controllers/home_controller.rb:8:in `index'
+Started GET "/" for 127.0.0.1 at 2023-11-16 14:36:48 +0100
+Processing by HomeController#index as HTML
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms | Allocations: 708)
+
+
+  
+NoMethodError (undefined method `barva' for #<Pes:0x00000251550878e0 @zvire=#<Zvire:0x0000025155087868 @barva="modrá">, @zvuk="haf">):
+  
+app/controllers/home_controller.rb:9:in `index'
+Started GET "/" for 127.0.0.1 at 2023-11-16 14:37:17 +0100
+Processing by HomeController#index as HTML
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.0ms | Allocations: 772)
+
+
+  
+NoMethodError (undefined method `pejsek' for #<Pes:0x0000025154e1f210 @zvire=#<Zvire:0x0000025154e1f198 @barva="modrá">, @zvuk="haf">):
+  
+app/controllers/home_controller.rb:10:in `index'
+Started GET "/" for 127.0.0.1 at 2023-11-16 14:37:24 +0100
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 76)
+  Rendered layout layouts/application.html.erb (Duration: 107.6ms | Allocations: 36762)
+Completed 200 OK in 124ms (Views: 114.8ms | ActiveRecord: 0.0ms | Allocations: 38016)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-16 14:38:11 +0100
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.4ms | Allocations: 88)
+  Rendered layout layouts/application.html.erb (Duration: 36.7ms | Allocations: 14405)
+Completed 200 OK in 54ms (Views: 44.1ms | ActiveRecord: 0.0ms | Allocations: 15505)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-16 14:38:29 +0100
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.4ms | Allocations: 88)
+  Rendered layout layouts/application.html.erb (Duration: 28.9ms | Allocations: 14411)
+Completed 200 OK in 46ms (Views: 35.8ms | ActiveRecord: 0.0ms | Allocations: 15509)
+
+
+Started GET "/green" for 127.0.0.1 at 2023-11-16 14:38:31 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/green"):
+  
+Started GET "/" for 127.0.0.1 at 2023-11-16 14:38:54 +0100
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 84)
+  Rendered layout layouts/application.html.erb (Duration: 31.8ms | Allocations: 14441)
+Completed 200 OK in 49ms (Views: 37.5ms | ActiveRecord: 0.0ms | Allocations: 15539)
+
+
