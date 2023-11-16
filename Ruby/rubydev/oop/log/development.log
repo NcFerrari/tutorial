@@ -1024,3 +1024,222 @@ Processing by HomeController#index as HTML
 Completed 200 OK in 49ms (Views: 37.5ms | ActiveRecord: 0.0ms | Allocations: 15539)
 
 
+Started GET "/statika_vs_instance" for 127.0.0.1 at 2023-11-16 14:51:11 +0100
+  
+ArgumentError (Missing :controller key on routes definition, please check your routes.):
+  
+config/routes.rb:2:in `block in <main>'
+config/routes.rb:1:in `<main>'
+Started GET "/statika_vs_instance/index" for 127.0.0.1 at 2023-11-16 14:51:57 +0100
+  [1m[35m (6.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StatikaVsInstanceController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering statika_vs_instance/index.html.erb within layouts/application
+  Rendered statika_vs_instance/index.html.erb within layouts/application (Duration: 0.4ms | Allocations: 83)
+  Rendered layout layouts/application.html.erb (Duration: 943.2ms | Allocations: 107699)
+Completed 200 OK in 968ms (Views: 949.5ms | ActiveRecord: 0.0ms | Allocations: 110214)
+
+
+Started GET "/statika_vs_instance/index" for 127.0.0.1 at 2023-11-16 14:55:53 +0100
+  
+SyntaxError (C:/Users/lpesek/Documents/Projekty/tutorial/Ruby/rubydev/oop/app/controllers/statika_vs_instance_controller.rb:4: syntax error, unexpected class variable
+    puts Car.@@count
+             ^~~~~~~
+):
+  
+app/controllers/statika_vs_instance_controller.rb:4: syntax error, unexpected class variable
+Started GET "/statika_vs_instance/index" for 127.0.0.1 at 2023-11-16 14:56:19 +0100
+Processing by StatikaVsInstanceController#index as HTML
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms | Allocations: 681)
+
+
+  
+NoMethodError (undefined method `get_count' for Car:Class):
+  
+app/controllers/statika_vs_instance_controller.rb:4:in `index'
+Started GET "/statika_vs_instance/index" for 127.0.0.1 at 2023-11-16 14:57:54 +0100
+Processing by StatikaVsInstanceController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering statika_vs_instance/index.html.erb within layouts/application
+  Rendered statika_vs_instance/index.html.erb within layouts/application (Duration: 0.4ms | Allocations: 83)
+  Rendered layout layouts/application.html.erb (Duration: 28.2ms | Allocations: 14404)
+Completed 200 OK in 45ms (Views: 35.2ms | ActiveRecord: 0.0ms | Allocations: 15491)
+
+
+Started GET "/statika_vs_instance/index" for 127.0.0.1 at 2023-11-16 14:58:08 +0100
+Processing by StatikaVsInstanceController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering statika_vs_instance/index.html.erb within layouts/application
+  Rendered statika_vs_instance/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 83)
+  Rendered layout layouts/application.html.erb (Duration: 27.5ms | Allocations: 14419)
+Completed 200 OK in 41ms (Views: 33.3ms | ActiveRecord: 0.0ms | Allocations: 15427)
+
+
+Started GET "/statika_vs_instance/index" for 127.0.0.1 at 2023-11-16 14:58:36 +0100
+Processing by StatikaVsInstanceController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering statika_vs_instance/index.html.erb within layouts/application
+  Rendered statika_vs_instance/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 83)
+  Rendered layout layouts/application.html.erb (Duration: 28.3ms | Allocations: 14397)
+Completed 200 OK in 44ms (Views: 34.1ms | ActiveRecord: 0.0ms | Allocations: 15413)
+
+
+Started GET "/statika_vs_instance/index" for 127.0.0.1 at 2023-11-16 15:02:22 +0100
+  
+SyntaxError (C:/Users/lpesek/Documents/Projekty/tutorial/Ruby/rubydev/oop/app/controllers/statika_vs_instance_controller.rb:18: syntax error, unexpected integer literal, expecting `end' or dummy end
+    puts Math.sum 5 3
+                    ^
+):
+  
+app/controllers/statika_vs_instance_controller.rb:18: syntax error, unexpected integer literal, expecting `end' or dummy end
+Started GET "/statika_vs_instance/index" for 127.0.0.1 at 2023-11-16 15:02:47 +0100
+Processing by StatikaVsInstanceController#index as HTML
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms | Allocations: 605)
+
+
+  
+NoMethodError (undefined method `sum' for Math:Module):
+  
+app/controllers/statika_vs_instance_controller.rb:18:in `index'
+Started GET "/statika_vs_instance/index" for 127.0.0.1 at 2023-11-16 15:02:54 +0100
+Processing by StatikaVsInstanceController#index as HTML
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.0ms | Allocations: 480)
+
+
+  
+NoMethodError (undefined method `sum' for Math:Module):
+  
+app/controllers/statika_vs_instance_controller.rb:18:in `index'
+Started GET "/statika_vs_instance/index" for 127.0.0.1 at 2023-11-16 15:03:19 +0100
+  
+LoadError (cannot load such file -- Math):
+  
+app/controllers/statika_vs_instance_controller.rb:2:in `<class:StatikaVsInstanceController>'
+app/controllers/statika_vs_instance_controller.rb:1:in `<main>'
+Started GET "/statika_vs_instance/index" for 127.0.0.1 at 2023-11-16 15:03:30 +0100
+  
+LoadError (cannot load such file -- Math):
+  
+app/controllers/statika_vs_instance_controller.rb:2:in `<class:StatikaVsInstanceController>'
+app/controllers/statika_vs_instance_controller.rb:1:in `<main>'
+Started GET "/statika_vs_instance/index" for 127.0.0.1 at 2023-11-16 15:03:39 +0100
+Processing by StatikaVsInstanceController#index as HTML
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms | Allocations: 603)
+
+
+  
+NoMethodError (undefined method `sum' for Math:Module):
+  
+app/controllers/statika_vs_instance_controller.rb:19:in `index'
+Started GET "/statika_vs_instance/index" for 127.0.0.1 at 2023-11-16 15:04:07 +0100
+  
+LoadError (cannot load such file -- math):
+  
+app/controllers/statika_vs_instance_controller.rb:2:in `<class:StatikaVsInstanceController>'
+app/controllers/statika_vs_instance_controller.rb:1:in `<main>'
+Started GET "/statika_vs_instance/index" for 127.0.0.1 at 2023-11-16 15:04:48 +0100
+  
+LoadError (cannot load such file -- /math):
+  
+app/controllers/statika_vs_instance_controller.rb:2:in `<class:StatikaVsInstanceController>'
+app/controllers/statika_vs_instance_controller.rb:1:in `<main>'
+Started GET "/statika_vs_instance/index" for 127.0.0.1 at 2023-11-16 15:05:01 +0100
+  
+LoadError (cannot load such file -- C:/Users/lpesek/Documents/Projekty/tutorial/Ruby/rubydev/controllers/math):
+  
+app/controllers/statika_vs_instance_controller.rb:2:in `<class:StatikaVsInstanceController>'
+app/controllers/statika_vs_instance_controller.rb:1:in `<main>'
+Started GET "/statika_vs_instance/index" for 127.0.0.1 at 2023-11-16 15:05:15 +0100
+Processing by StatikaVsInstanceController#index as HTML
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms | Allocations: 603)
+
+
+  
+NoMethodError (undefined method `sum' for Math:Module):
+  
+app/controllers/statika_vs_instance_controller.rb:18:in `index'
+Started GET "/statika_vs_instance/index" for 127.0.0.1 at 2023-11-16 15:05:34 +0100
+  
+SyntaxError (C:/Users/lpesek/Documents/Projekty/tutorial/Ruby/rubydev/oop/app/controllers/statika_vs_instance_controller.rb:22: syntax error, unexpected end-of-input):
+  
+app/controllers/statika_vs_instance_controller.rb:22: syntax error, unexpected end-of-input
+Started GET "/statika_vs_instance/index" for 127.0.0.1 at 2023-11-16 15:05:43 +0100
+Processing by StatikaVsInstanceController#index as HTML
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms | Allocations: 603)
+
+
+  
+NoMethodError (undefined method `sum' for Math:Module):
+  
+app/controllers/statika_vs_instance_controller.rb:18:in `index'
+Started GET "/statika_vs_instance/index" for 127.0.0.1 at 2023-11-16 15:06:38 +0100
+Processing by StatikaVsInstanceController#index as HTML
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms | Allocations: 545)
+
+
+  
+NoMethodError (undefined method `sum' for Math:Module):
+  
+app/controllers/statika_vs_instance_controller.rb:18:in `index'
+Started GET "/statika_vs_instance/index" for 127.0.0.1 at 2023-11-16 15:06:54 +0100
+Processing by StatikaVsInstanceController#index as HTML
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms | Allocations: 603)
+
+
+  
+NoMethodError (undefined method `sum' for Math:Module):
+  
+app/controllers/statika_vs_instance_controller.rb:18:in `index'
+Started GET "/statika_vs_instance/index" for 127.0.0.1 at 2023-11-16 15:07:27 +0100
+  
+NoMethodError (undefined method `sum' for Math:Module):
+  
+app/controllers/statika_vs_instance_controller.rb:20:in `<class:StatikaVsInstanceController>'
+app/controllers/statika_vs_instance_controller.rb:1:in `<main>'
+Started GET "/statika_vs_instance/index" for 127.0.0.1 at 2023-11-16 15:09:27 +0100
+Processing by StatikaVsInstanceController#index as HTML
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms | Allocations: 545)
+
+
+  
+NoMethodError (undefined method `sum' for Math:Module):
+  
+app/controllers/statika_vs_instance_controller.rb:18:in `index'
+Started GET "/statika_vs_instance/index" for 127.0.0.1 at 2023-11-16 15:14:43 +0100
+Processing by StatikaVsInstanceController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering statika_vs_instance/index.html.erb within layouts/application
+  Rendered statika_vs_instance/index.html.erb within layouts/application (Duration: 0.4ms | Allocations: 83)
+  Rendered layout layouts/application.html.erb (Duration: 27.6ms | Allocations: 14397)
+Completed 200 OK in 50ms (Views: 34.5ms | ActiveRecord: 0.0ms | Allocations: 15552)
+
+
+Started GET "/statika_vs_instance/index" for 127.0.0.1 at 2023-11-16 15:16:19 +0100
+Processing by StatikaVsInstanceController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering statika_vs_instance/index.html.erb within layouts/application
+  Rendered statika_vs_instance/index.html.erb within layouts/application (Duration: 0.5ms | Allocations: 83)
+  Rendered layout layouts/application.html.erb (Duration: 31.5ms | Allocations: 14407)
+Completed 200 OK in 50ms (Views: 39.3ms | ActiveRecord: 0.0ms | Allocations: 15496)
+
+
+Started GET "/statika_vs_instance/index" for 127.0.0.1 at 2023-11-16 15:20:40 +0100
+Processing by StatikaVsInstanceController#index as HTML
+Completed 500 Internal Server Error in 28ms (ActiveRecord: 0.0ms | Allocations: 620)
+
+
+  
+NoMethodError (undefined method `get_count' for #<Car:0x000002a76b24cc18 @number=1>):
+  
+app/controllers/statika_vs_instance_controller.rb:8:in `index'
+Started GET "/statika_vs_instance/index" for 127.0.0.1 at 2023-11-16 15:21:01 +0100
+Processing by StatikaVsInstanceController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering statika_vs_instance/index.html.erb within layouts/application
+  Rendered statika_vs_instance/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 83)
+  Rendered layout layouts/application.html.erb (Duration: 27.4ms | Allocations: 14409)
+Completed 200 OK in 43ms (Views: 33.5ms | ActiveRecord: 0.0ms | Allocations: 15501)
+
+
