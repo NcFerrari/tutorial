@@ -1398,3 +1398,779 @@ Processing by SingletonController#index as HTML
 Completed 200 OK in 40ms (Views: 34.2ms | ActiveRecord: 0.0ms | Allocations: 15378)
 
 
+Started GET "/modules/index" for 127.0.0.1 at 2023-11-16 15:42:44 +0100
+Processing by ModulesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering modules/index.html.erb within layouts/application
+  Rendered modules/index.html.erb within layouts/application (Duration: 0.4ms | Allocations: 89)
+  Rendered layout layouts/application.html.erb (Duration: 79.1ms | Allocations: 14387)
+Completed 200 OK in 91ms (Views: 86.8ms | ActiveRecord: 0.0ms | Allocations: 15301)
+
+
+Started GET "/modules/index" for 127.0.0.1 at 2023-11-16 15:43:29 +0100
+  
+LoadError (cannot load such file -- my_module):
+  
+app/controllers/modules_controller.rb:3:in `<class:ModulesController>'
+app/controllers/modules_controller.rb:1:in `<main>'
+Started GET "/modules/index" for 127.0.0.1 at 2023-11-16 15:43:46 +0100
+  
+LoadError (cannot load such file -- my_module):
+  
+app/controllers/modules_controller.rb:2:in `<main>'
+Started GET "/modules/index" for 127.0.0.1 at 2023-11-16 15:44:09 +0100
+  
+LoadError (cannot load such file -- my_module):
+  
+app/controllers/modules_controller.rb:1:in `<main>'
+Started GET "/modules/index" for 127.0.0.1 at 2023-11-16 15:44:19 +0100
+  
+LoadError (cannot load such file -- /my_module):
+  
+app/controllers/modules_controller.rb:1:in `<main>'
+Started GET "/modules/index" for 127.0.0.1 at 2023-11-16 15:44:29 +0100
+  
+LoadError (cannot load such file -- .my_module):
+  
+app/controllers/modules_controller.rb:1:in `<main>'
+Started GET "/modules/index" for 127.0.0.1 at 2023-11-16 15:44:35 +0100
+  
+LoadError (cannot load such file -- my_module):
+  
+app/controllers/modules_controller.rb:1:in `<main>'
+Started GET "/modules/index" for 127.0.0.1 at 2023-11-16 15:45:05 +0100
+  
+LoadError (cannot load such file -- controllers/my_module):
+  
+app/controllers/modules_controller.rb:1:in `<main>'
+Started GET "/modules/index" for 127.0.0.1 at 2023-11-16 15:45:34 +0100
+  
+LoadError (cannot load such file -- my_module):
+  
+app/controllers/modules_controller.rb:1:in `<main>'
+Started GET "/modules/index" for 127.0.0.1 at 2023-11-16 15:46:14 +0100
+  
+LoadError (cannot load such file -- My_module):
+  
+app/controllers/modules_controller.rb:1:in `<main>'
+Started GET "/modules/index" for 127.0.0.1 at 2023-11-16 15:46:27 +0100
+  
+LoadError (cannot load such file -- my_module):
+  
+app/controllers/modules_controller.rb:1:in `<main>'
+Started GET "/modules/index" for 127.0.0.1 at 2023-11-16 15:46:49 +0100
+  
+LoadError (cannot load such file -- C:/Users/lpesek/Documents/Projekty/tutorial/Ruby/app/controllers/my_module):
+  
+app/controllers/modules_controller.rb:1:in `<main>'
+Started GET "/modules/index" for 127.0.0.1 at 2023-11-16 15:49:13 +0100
+  
+LoadError (cannot load such file -- gogo):
+  
+app/controllers/modules_controller.rb:1:in `<main>'
+Started GET "/modules/index" for 127.0.0.1 at 2023-11-16 15:50:21 +0100
+  
+LoadError (cannot load such file -- gogo):
+  
+app/controllers/modules_controller.rb:1:in `<main>'
+Started GET "/modules/index" for 127.0.0.1 at 2023-11-16 15:50:45 +0100
+  
+LoadError (cannot load such file -- gogo):
+  
+app/controllers/modules_controller.rb:1:in `<main>'
+Started GET "/modules/index" for 127.0.0.1 at 2023-11-16 15:51:00 +0100
+  
+LoadError (cannot load such file -- gogo):
+  
+app/controllers/modules_controller.rb:1:in `<main>'
+Started GET "/modules/index" for 127.0.0.1 at 2023-11-16 15:54:49 +0100
+Processing by ModulesController#index as HTML
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms | Allocations: 455)
+
+
+  
+NameError (undefined local variable or method `nejaka_metoda' for #<ModulesController:0x00000000064000>):
+  
+app/controllers/modules_controller.rb:6:in `index'
+Started GET "/modules/index" for 127.0.0.1 at 2023-11-16 15:55:01 +0100
+Processing by ModulesController#index as HTML
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 505)
+
+
+  
+NameError (undefined local variable or method `nejaka_metoda' for #<ModulesController:0x00000000067a20>):
+  
+app/controllers/modules_controller.rb:6:in `index'
+Started GET "/modules/index" for 127.0.0.1 at 2023-11-16 15:55:13 +0100
+Processing by ModulesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering modules/index.html.erb within layouts/application
+  Rendered modules/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 87)
+  Rendered layout layouts/application.html.erb (Duration: 28.2ms | Allocations: 14424)
+Completed 200 OK in 39ms (Views: 34.4ms | ActiveRecord: 0.0ms | Allocations: 15342)
+
+
+Started GET "/modules/index" for 127.0.0.1 at 2023-11-20 09:56:21 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (uninitialized constant ModulesController):
+  
+Started GET "/" for 127.0.0.1 at 2023-11-20 09:56:23 +0100
+  
+ActionController::RoutingError (uninitialized constant HomeController):
+  
+Started GET "/" for 127.0.0.1 at 2023-11-20 09:56:27 +0100
+  
+ActionController::RoutingError (uninitialized constant HomeController):
+  
+Started GET "/index" for 127.0.0.1 at 2023-11-20 09:56:30 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/index"):
+  
+Started GET "/index" for 127.0.0.1 at 2023-11-20 09:56:49 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/index"):
+  
+Started GET "/index" for 127.0.0.1 at 2023-11-20 09:58:11 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/index"):
+  
+Started GET "/index" for 127.0.0.1 at 2023-11-20 09:58:54 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/index"):
+  
+Started GET "/" for 127.0.0.1 at 2023-11-20 09:59:05 +0100
+  
+ActionController::RoutingError (uninitialized constant HomeController):
+  
+Started GET "/index" for 127.0.0.1 at 2023-11-20 09:59:10 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/index"):
+  
+Started GET "/" for 127.0.0.1 at 2023-11-20 10:00:21 +0100
+  
+ActionController::RoutingError (uninitialized constant HomeController):
+  
+Started GET "/" for 127.0.0.1 at 2023-11-20 10:00:24 +0100
+  
+ActionController::RoutingError (uninitialized constant HomeController):
+  
+Started GET "/car" for 127.0.0.1 at 2023-11-20 10:00:58 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/car"):
+  
+Started GET "/" for 127.0.0.1 at 2023-11-20 10:01:01 +0100
+  
+ActionController::RoutingError (uninitialized constant HomeController):
+  
+Started GET "/singleton/index" for 127.0.0.1 at 2023-11-20 10:12:53 +0100
+Processing by SingletonController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering singleton/index.html.erb within layouts/application
+  Rendered singleton/index.html.erb within layouts/application (Duration: 0.4ms | Allocations: 85)
+  Rendered layout layouts/application.html.erb (Duration: 517.1ms | Allocations: 36641)
+Completed 200 OK in 607ms (Views: 535.0ms | ActiveRecord: 0.0ms | Allocations: 38673)
+
+
+Started GET "/modules/index" for 127.0.0.1 at 2023-11-20 10:16:29 +0100
+Processing by ModulesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering modules/index.html.erb within layouts/application
+  Rendered modules/index.html.erb within layouts/application (Duration: 0.4ms | Allocations: 89)
+  Rendered layout layouts/application.html.erb (Duration: 33.8ms | Allocations: 14414)
+Completed 200 OK in 44ms (Views: 39.6ms | ActiveRecord: 0.0ms | Allocations: 15329)
+
+
+Started GET "/modules/index" for 127.0.0.1 at 2023-11-20 10:31:06 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+LoadError (cannot load such file -- matika):
+  
+app/controllers/modules_controller.rb:3:in `<class:ModulesController>'
+app/controllers/modules_controller.rb:1:in `<main>'
+Started GET "/modules/index" for 127.0.0.1 at 2023-11-20 10:31:20 +0100
+  
+LoadError (cannot load such file -- matika):
+  
+app/controllers/modules_controller.rb:1:in `<main>'
+Started GET "/modules/index" for 127.0.0.1 at 2023-11-20 10:32:13 +0100
+  
+LoadError (cannot load such file -- matika):
+  
+app/controllers/modules_controller.rb:1:in `<main>'
+Started GET "/modules/index" for 127.0.0.1 at 2023-11-20 10:32:30 +0100
+  
+LoadError (cannot load such file -- C:/Users/lpesek/Documents/Projekty/tutorial/Ruby/rubydev/controllers/matika):
+  
+app/controllers/modules_controller.rb:1:in `<main>'
+Started GET "/modules/index" for 127.0.0.1 at 2023-11-20 10:32:35 +0100
+  
+LoadError (cannot load such file -- C:/Users/lpesek/Documents/Projekty/tutorial/Ruby/rubydev/controllers/matika):
+  
+app/controllers/modules_controller.rb:1:in `<main>'
+Started GET "/modules/index" for 127.0.0.1 at 2023-11-20 10:33:22 +0100
+  
+LoadError (cannot load such file -- C:/Users/lpesek/Documents/Projekty/tutorial/Ruby/rubydev/modules/matika):
+  
+app/controllers/modules_controller.rb:1:in `<main>'
+Started GET "/modules/index" for 127.0.0.1 at 2023-11-20 10:34:02 +0100
+  
+LoadError (cannot load such file -- C:/Users/lpesek/Documents/Projekty/tutorial/Ruby/rubydev/modules/matika):
+  
+app/controllers/modules_controller.rb:1:in `<main>'
+Started GET "/modules/index" for 127.0.0.1 at 2023-11-20 10:35:26 +0100
+Processing by ModulesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering modules/index.html.erb within layouts/application
+  Rendered modules/index.html.erb within layouts/application (Duration: 0.4ms | Allocations: 87)
+  Rendered layout layouts/application.html.erb (Duration: 112.7ms | Allocations: 36743)
+Completed 200 OK in 132ms (Views: 120.2ms | ActiveRecord: 0.0ms | Allocations: 38727)
+
+
+Started GET "/modules/index" for 127.0.0.1 at 2023-11-20 10:37:13 +0100
+  
+LoadError (cannot load such file -- app/modules/matika):
+  
+app/controllers/modules_controller.rb:2:in `<main>'
+Started GET "/modules/index" for 127.0.0.1 at 2023-11-20 10:37:26 +0100
+Processing by ModulesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering modules/index.html.erb within layouts/application
+  Rendered modules/index.html.erb within layouts/application (Duration: 0.5ms | Allocations: 83)
+  Rendered layout layouts/application.html.erb (Duration: 43.1ms | Allocations: 14425)
+Completed 200 OK in 55ms (Views: 49.6ms | ActiveRecord: 0.0ms | Allocations: 15341)
+
+
+Started GET "/modules/index" for 127.0.0.1 at 2023-11-20 10:41:43 +0100
+  
+TypeError (wrong argument type String (expected Module)):
+  
+app/controllers/modules_controller.rb:3:in `include'
+app/controllers/modules_controller.rb:3:in `<main>'
+Started GET "/modules/index" for 127.0.0.1 at 2023-11-20 10:41:56 +0100
+  
+TypeError (wrong argument type String (expected Module)):
+  
+app/controllers/modules_controller.rb:3:in `include'
+app/controllers/modules_controller.rb:3:in `<main>'
+Started GET "/modules/index" for 127.0.0.1 at 2023-11-20 10:42:25 +0100
+  
+TypeError (wrong argument type String (expected Module)):
+  
+app/controllers/modules_controller.rb:3:in `include'
+app/controllers/modules_controller.rb:3:in `<main>'
+Started GET "/modules/index" for 127.0.0.1 at 2023-11-20 10:43:32 +0100
+  
+TypeError (wrong argument type String (expected Module)):
+  
+app/controllers/modules_controller.rb:3:in `include'
+app/controllers/modules_controller.rb:3:in `<main>'
+Started GET "/modules/index" for 127.0.0.1 at 2023-11-20 10:57:39 +0100
+  
+TypeError (wrong argument type String (expected Module)):
+  
+app/controllers/modules_controller.rb:6:in `include'
+app/controllers/modules_controller.rb:6:in `<class:ModulesController>'
+app/controllers/modules_controller.rb:4:in `<main>'
+Started GET "/modules/index" for 127.0.0.1 at 2023-11-20 11:02:46 +0100
+  
+TypeError (wrong argument type String (expected Module)):
+  
+app/controllers/modules_controller.rb:6:in `include'
+app/controllers/modules_controller.rb:6:in `<class:ModulesController>'
+app/controllers/modules_controller.rb:4:in `<main>'
+Started GET "/modules/index" for 127.0.0.1 at 2023-11-20 11:03:15 +0100
+  
+TypeError (wrong argument type String (expected Module)):
+  
+app/controllers/modules_controller.rb:6:in `include'
+app/controllers/modules_controller.rb:6:in `<class:ModulesController>'
+app/controllers/modules_controller.rb:4:in `<main>'
+Started GET "/modules/index" for 127.0.0.1 at 2023-11-20 11:03:28 +0100
+  
+TypeError (wrong argument type String (expected Module)):
+  
+app/controllers/modules_controller.rb:6:in `include'
+app/controllers/modules_controller.rb:6:in `<class:ModulesController>'
+app/controllers/modules_controller.rb:4:in `<main>'
+Started GET "/modules/index" for 127.0.0.1 at 2023-11-20 11:04:36 +0100
+  
+TypeError (wrong argument type String (expected Module)):
+  
+app/controllers/modules_controller.rb:6:in `include'
+app/controllers/modules_controller.rb:6:in `<class:ModulesController>'
+app/controllers/modules_controller.rb:4:in `<main>'
+Started GET "/modules/index" for 127.0.0.1 at 2023-11-20 11:07:28 +0100
+  
+TypeError (wrong argument type String (expected Module)):
+  
+app/controllers/modules_controller.rb:6:in `include'
+app/controllers/modules_controller.rb:6:in `<class:ModulesController>'
+app/controllers/modules_controller.rb:4:in `<main>'
+Started GET "/modules/index" for 127.0.0.1 at 2023-11-20 11:07:34 +0100
+  
+TypeError (wrong argument type String (expected Module)):
+  
+app/controllers/modules_controller.rb:6:in `include'
+app/controllers/modules_controller.rb:6:in `<class:ModulesController>'
+app/controllers/modules_controller.rb:4:in `<main>'
+Started GET "/modules/index" for 127.0.0.1 at 2023-11-20 11:07:41 +0100
+  
+TypeError (wrong argument type String (expected Module)):
+  
+app/controllers/modules_controller.rb:6:in `include'
+app/controllers/modules_controller.rb:6:in `<class:ModulesController>'
+app/controllers/modules_controller.rb:4:in `<main>'
+Started GET "/modules/index" for 127.0.0.1 at 2023-11-20 11:07:48 +0100
+  
+TypeError (wrong argument type String (expected Module)):
+  
+app/controllers/modules_controller.rb:6:in `include'
+app/controllers/modules_controller.rb:6:in `<class:ModulesController>'
+app/controllers/modules_controller.rb:4:in `<main>'
+Started GET "/modules/index" for 127.0.0.1 at 2023-11-20 11:07:56 +0100
+  
+TypeError (wrong argument type String (expected Module)):
+  
+app/controllers/modules_controller.rb:6:in `include'
+app/controllers/modules_controller.rb:6:in `<class:ModulesController>'
+app/controllers/modules_controller.rb:4:in `<main>'
+Started GET "/modules/index" for 127.0.0.1 at 2023-11-20 11:08:04 +0100
+Processing by ModulesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering modules/index.html.erb within layouts/application
+  Rendered modules/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 87)
+  Rendered layout layouts/application.html.erb (Duration: 31.0ms | Allocations: 14434)
+Completed 200 OK in 44ms (Views: 37.3ms | ActiveRecord: 0.0ms | Allocations: 15352)
+
+
+Started GET "/modules/index" for 127.0.0.1 at 2023-11-20 11:08:13 +0100
+Processing by ModulesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering modules/index.html.erb within layouts/application
+  Rendered modules/index.html.erb within layouts/application (Duration: 0.4ms | Allocations: 87)
+  Rendered layout layouts/application.html.erb (Duration: 30.6ms | Allocations: 14423)
+Completed 200 OK in 43ms (Views: 37.4ms | ActiveRecord: 0.0ms | Allocations: 15339)
+
+
+Started GET "/modules/index" for 127.0.0.1 at 2023-11-20 11:09:32 +0100
+Processing by ModulesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering modules/index.html.erb within layouts/application
+  Rendered modules/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 87)
+  Rendered layout layouts/application.html.erb (Duration: 29.5ms | Allocations: 14415)
+Completed 200 OK in 52ms (Views: 36.3ms | ActiveRecord: 0.0ms | Allocations: 15331)
+
+
+Started GET "/modules/index" for 127.0.0.1 at 2023-11-20 11:09:47 +0100
+  
+TypeError (wrong argument type String (expected Module)):
+  
+app/controllers/modules_controller.rb:7:in `include'
+app/controllers/modules_controller.rb:7:in `<class:ModulesController>'
+app/controllers/modules_controller.rb:5:in `<main>'
+Started GET "/modules/index" for 127.0.0.1 at 2023-11-20 11:10:16 +0100
+  
+TypeError (wrong argument type String (expected Module)):
+  
+app/controllers/modules_controller.rb:7:in `include'
+app/controllers/modules_controller.rb:7:in `<class:ModulesController>'
+app/controllers/modules_controller.rb:5:in `<main>'
+Started GET "/modules/index" for 127.0.0.1 at 2023-11-20 11:10:29 +0100
+  
+TypeError (wrong argument type String (expected Module)):
+  
+app/controllers/modules_controller.rb:7:in `include'
+app/controllers/modules_controller.rb:7:in `<class:ModulesController>'
+app/controllers/modules_controller.rb:5:in `<main>'
+Started GET "/modules/index" for 127.0.0.1 at 2023-11-20 11:10:48 +0100
+  
+TypeError (wrong argument type String (expected Module)):
+  
+app/controllers/modules_controller.rb:6:in `include'
+app/controllers/modules_controller.rb:6:in `<class:ModulesController>'
+app/controllers/modules_controller.rb:4:in `<main>'
+Started GET "/modules/index" for 127.0.0.1 at 2023-11-20 11:11:43 +0100
+  
+TypeError (wrong argument type String (expected Module)):
+  
+app/controllers/modules_controller.rb:6:in `include'
+app/controllers/modules_controller.rb:6:in `<class:ModulesController>'
+app/controllers/modules_controller.rb:4:in `<main>'
+Started GET "/modules/index" for 127.0.0.1 at 2023-11-20 11:11:48 +0100
+  
+TypeError (wrong argument type String (expected Module)):
+  
+app/controllers/modules_controller.rb:6:in `include'
+app/controllers/modules_controller.rb:6:in `<class:ModulesController>'
+app/controllers/modules_controller.rb:4:in `<main>'
+Started GET "/modules/index" for 127.0.0.1 at 2023-11-20 11:14:33 +0100
+  
+TypeError (wrong argument type String (expected Module)):
+  
+app/controllers/modules_controller.rb:9:in `include'
+app/controllers/modules_controller.rb:9:in `<class:ModulesController>'
+app/controllers/modules_controller.rb:7:in `<main>'
+Started GET "/modules/index" for 127.0.0.1 at 2023-11-20 11:16:05 +0100
+Processing by ModulesController#index as HTML
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms | Allocations: 464)
+
+
+  
+NoMethodError (undefined method `new' for Matika:Module):
+  
+app/controllers/modules_controller.rb:11:in `index'
+Started GET "/modules/index" for 127.0.0.1 at 2023-11-20 11:16:43 +0100
+Processing by ModulesController#index as HTML
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 445)
+
+
+  
+NoMethodError (undefined method `new' for Matika:Module):
+  
+app/controllers/modules_controller.rb:8:in `index'
+Started GET "/modules/index" for 127.0.0.1 at 2023-11-20 11:17:08 +0100
+Processing by ModulesController#index as HTML
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 513)
+
+
+  
+NameError (undefined local variable or method `shared_method' for #<ModulesController:0x0000000007f6c0>):
+  
+app/controllers/modules_controller.rb:8:in `index'
+Started GET "/modules/index" for 127.0.0.1 at 2023-11-20 11:17:17 +0100
+Processing by ModulesController#index as HTML
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 445)
+
+
+  
+NoMethodError (undefined method `shared_method' for Matika:Module):
+  
+app/controllers/modules_controller.rb:8:in `index'
+Started GET "/modules/index" for 127.0.0.1 at 2023-11-20 11:17:30 +0100
+Processing by ModulesController#index as HTML
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 464)
+
+
+  
+NoMethodError (undefined method `shared_method' for Matika:Module):
+  
+app/controllers/modules_controller.rb:8:in `index'
+Started GET "/modules/index" for 127.0.0.1 at 2023-11-20 11:17:44 +0100
+Processing by ModulesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering modules/index.html.erb within layouts/application
+  Rendered modules/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 87)
+  Rendered layout layouts/application.html.erb (Duration: 29.0ms | Allocations: 14416)
+Completed 200 OK in 40ms (Views: 35.0ms | ActiveRecord: 0.0ms | Allocations: 15334)
+
+
+Started GET "/modules/index" for 127.0.0.1 at 2023-11-20 11:23:56 +0100
+Processing by ModulesController#index as HTML
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms | Allocations: 447)
+
+
+  
+NoMethodError (undefined method `new' for Matika:Module):
+  
+app/controllers/modules_controller.rb:10:in `index'
+Started GET "/modules/index" for 127.0.0.1 at 2023-11-20 11:24:40 +0100
+Processing by ModulesController#index as HTML
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms | Allocations: 450)
+
+
+  
+NameError (undefined local variable or method `metoda_modulu' for #<ModulesController:0x0000000008e530>):
+  
+app/controllers/modules_controller.rb:10:in `index'
+Started GET "/modules/index" for 127.0.0.1 at 2023-11-20 11:24:58 +0100
+Processing by ModulesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering modules/index.html.erb within layouts/application
+  Rendered modules/index.html.erb within layouts/application (Duration: 0.4ms | Allocations: 87)
+  Rendered layout layouts/application.html.erb (Duration: 29.2ms | Allocations: 14407)
+Completed 200 OK in 39ms (Views: 35.0ms | ActiveRecord: 0.0ms | Allocations: 15323)
+
+
+Started GET "/modules/index" for 127.0.0.1 at 2023-11-20 11:25:14 +0100
+Processing by ModulesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering modules/index.html.erb within layouts/application
+  Rendered modules/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 87)
+  Rendered layout layouts/application.html.erb (Duration: 28.5ms | Allocations: 14425)
+Completed 200 OK in 39ms (Views: 34.1ms | ActiveRecord: 0.0ms | Allocations: 15340)
+
+
+Started GET "/modules/index" for 127.0.0.1 at 2023-11-20 11:25:20 +0100
+Processing by ModulesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering modules/index.html.erb within layouts/application
+  Rendered modules/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 7.0ms | Allocations: 2177)
+Completed 200 OK in 11ms (Views: 8.1ms | ActiveRecord: 0.0ms | Allocations: 2439)
+
+
+Started GET "/modules/index" for 127.0.0.1 at 2023-11-20 11:25:31 +0100
+Processing by ModulesController#index as HTML
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 505)
+
+
+  
+NoMethodError (undefined method `new' for Matika:Module):
+  
+app/controllers/modules_controller.rb:11:in `index'
+Started GET "/modules/index" for 127.0.0.1 at 2023-11-20 11:26:19 +0100
+  
+NameError (uninitialized constant ModulesController::ModulProInclude):
+  
+app/controllers/modules_controller.rb:6:in `<class:ModulesController>'
+app/controllers/modules_controller.rb:4:in `<main>'
+Started GET "/modules/index" for 127.0.0.1 at 2023-11-20 11:27:25 +0100
+  
+LoadError (cannot load such file -- C:/Users/lpesek/Documents/Projekty/tutorial/Ruby/rubydev/oop/app/controllers/..modules/modul_pro_include):
+  
+app/controllers/modules_controller.rb:3:in `require_relative'
+app/controllers/modules_controller.rb:3:in `<main>'
+Started GET "/modules/index" for 127.0.0.1 at 2023-11-20 11:27:34 +0100
+Processing by ModulesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering modules/index.html.erb within layouts/application
+  Rendered modules/index.html.erb within layouts/application (Duration: 0.4ms | Allocations: 83)
+  Rendered layout layouts/application.html.erb (Duration: 94.2ms | Allocations: 14446)
+Completed 200 OK in 109ms (Views: 103.5ms | ActiveRecord: 0.0ms | Allocations: 15359)
+
+
+Started GET "/modules/index" for 127.0.0.1 at 2023-11-20 11:27:53 +0100
+Processing by ModulesController#index as HTML
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms | Allocations: 505)
+
+
+  
+NoMethodError (undefined method `new' for ModulProInclude:Module):
+  
+app/controllers/modules_controller.rb:12:in `index'
+Started GET "/modules/index" for 127.0.0.1 at 2023-11-20 11:28:10 +0100
+  
+NoMethodError (undefined method `new' for ModulProInclude:Module):
+  
+app/controllers/modules_controller.rb:13:in `<class:ModulesController>'
+app/controllers/modules_controller.rb:5:in `<main>'
+Started GET "/modules/index" for 127.0.0.1 at 2023-11-20 11:28:35 +0100
+Processing by ModulesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering modules/index.html.erb within layouts/application
+  Rendered modules/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 87)
+  Rendered layout layouts/application.html.erb (Duration: 28.9ms | Allocations: 14409)
+Completed 200 OK in 42ms (Views: 35.1ms | ActiveRecord: 0.0ms | Allocations: 15329)
+
+
+Started GET "/modules/index" for 127.0.0.1 at 2023-11-20 11:29:22 +0100
+Processing by ModulesController#index as HTML
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms | Allocations: 451)
+
+
+  
+NoMethodError (undefined method `count_z_includu' for #<ModulesController:0x000000000b3790>):
+  
+app/controllers/modules_controller.rb:12:in `index'
+Started GET "/modules/index" for 127.0.0.1 at 2023-11-20 11:30:15 +0100
+Processing by ModulesController#index as HTML
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 448)
+
+
+  
+NoMethodError (undefined method `count_z_includu' for #<ModulesController:0x000000000b7570>):
+  
+app/controllers/modules_controller.rb:12:in `index'
+Started GET "/modules/index" for 127.0.0.1 at 2023-11-20 11:30:36 +0100
+Processing by ModulesController#index as HTML
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 505)
+
+
+  
+NameError (undefined local variable or method `count_z_includu' for #<ModulesController:0x000000000bb300>):
+  
+app/controllers/modules_controller.rb:12:in `index'
+Started GET "/modules/index" for 127.0.0.1 at 2023-11-20 11:30:46 +0100
+Processing by ModulesController#index as HTML
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 449)
+
+
+  
+NameError (undefined local variable or method `count_z_includu' for #<ModulesController:0x000000000bf0e0>):
+  
+app/controllers/modules_controller.rb:12:in `index'
+Started GET "/modules/index" for 127.0.0.1 at 2023-11-20 11:30:54 +0100
+Processing by ModulesController#index as HTML
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms | Allocations: 466)
+
+
+  
+NameError (undefined local variable or method `count_z_includu' for #<ModulesController:0x000000000bf428>):
+  
+app/controllers/modules_controller.rb:12:in `index'
+Started GET "/modules/index" for 127.0.0.1 at 2023-11-20 11:31:46 +0100
+Processing by ModulesController#index as HTML
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms | Allocations: 447)
+
+
+  
+NameError (undefined local variable or method `count_z_includu' for #<ModulesController:0x000000000c3258>):
+  
+app/controllers/modules_controller.rb:12:in `index'
+Started GET "/modules/index" for 127.0.0.1 at 2023-11-20 11:32:12 +0100
+Processing by ModulesController#index as HTML
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 505)
+
+
+  
+NameError (undefined local variable or method `count_z_includu' for #<ModulesController:0x000000000c70b0>):
+  
+app/controllers/modules_controller.rb:12:in `index'
+Started GET "/modules/index" for 127.0.0.1 at 2023-11-20 11:32:55 +0100
+Processing by ModulesController#index as HTML
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 465)
+
+
+  
+NameError (undefined local variable or method `count_z_includu' for #<ModulesController:0x000000000c7420>):
+  
+app/controllers/modules_controller.rb:12:in `index'
+Started GET "/modules/index" for 127.0.0.1 at 2023-11-20 11:33:04 +0100
+Processing by ModulesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering modules/index.html.erb within layouts/application
+  Rendered modules/index.html.erb within layouts/application (Duration: 0.7ms | Allocations: 87)
+  Rendered layout layouts/application.html.erb (Duration: 54.2ms | Allocations: 14413)
+Completed 200 OK in 72ms (Views: 65.0ms | ActiveRecord: 0.0ms | Allocations: 15331)
+
+
+Started GET "/modules/index" for 127.0.0.1 at 2023-11-20 11:33:08 +0100
+Processing by ModulesController#index as HTML
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 505)
+
+
+  
+NameError (undefined local variable or method `count_z_includu' for #<ModulesController:0x000000000cee28>):
+  
+app/controllers/modules_controller.rb:12:in `index'
+Started GET "/modules/index" for 127.0.0.1 at 2023-11-20 11:33:25 +0100
+Processing by ModulesController#index as HTML
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 505)
+
+
+  
+NameError (undefined local variable or method `count_z_includu' for #<ModulesController:0x000000000d2cd0>):
+  
+app/controllers/modules_controller.rb:13:in `index'
+Started GET "/modules/index" for 127.0.0.1 at 2023-11-20 11:33:37 +0100
+Processing by ModulesController#index as HTML
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms | Allocations: 447)
+
+
+  
+NameError (undefined local variable or method `count_z_includu' for #<ModulesController:0x000000000d6b78>):
+  
+app/controllers/modules_controller.rb:11:in `index'
+Started GET "/modules/index" for 127.0.0.1 at 2023-11-20 11:33:45 +0100
+Processing by ModulesController#index as HTML
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 506)
+
+
+  
+NameError (undefined local variable or method `metoda_modulu' for #<ModulesController:0x000000000daa48>):
+  
+app/controllers/modules_controller.rb:13:in `index'
+Started GET "/modules/index" for 127.0.0.1 at 2023-11-20 11:33:50 +0100
+Processing by ModulesController#index as HTML
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 505)
+
+
+  
+NameError (undefined local variable or method `count_z_includu' for #<ModulesController:0x000000000de940>):
+  
+app/controllers/modules_controller.rb:11:in `index'
+Started GET "/modules/index" for 127.0.0.1 at 2023-11-20 11:33:58 +0100
+Started GET "/modules/index" for 127.0.0.1 at 2023-11-20 11:33:58 +0100
+Processing by ModulesController#index as HTML
+Processing by ModulesController#index as HTML
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms | Allocations: 654)
+
+
+  
+NameError (undefined local variable or method `count_z_includu' for #<ModulesController:0x000000000e2928>):
+  
+app/controllers/modules_controller.rb:12:in `index'
+Completed 500 Internal Server Error in 157ms (ActiveRecord: 0.0ms | Allocations: 137675)
+
+
+  
+NameError (undefined local variable or method `count_z_includu' for #<ModulesController:0x000000000e2978>):
+  
+app/controllers/modules_controller.rb:12:in `index'
+Started GET "/modules/index" for 127.0.0.1 at 2023-11-20 11:34:27 +0100
+Processing by ModulesController#index as HTML
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 465)
+
+
+  
+NameError (undefined local variable or method `count_z_includu' for #<ModulesController:0x000000000e2f90>):
+  
+app/controllers/modules_controller.rb:12:in `index'
+Started GET "/modules/index" for 127.0.0.1 at 2023-11-20 11:34:39 +0100
+Processing by ModulesController#index as HTML
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms | Allocations: 465)
+
+
+  
+NameError (undefined local variable or method `count_z_includu' for #<ModulesController:0x000000000e32d8>):
+  
+app/controllers/modules_controller.rb:12:in `index'
+Started GET "/modules/index" for 127.0.0.1 at 2023-11-20 11:34:48 +0100
+Processing by ModulesController#index as HTML
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms | Allocations: 448)
+
+
+  
+NameError (undefined local variable or method `aaa' for #<ModulesController:0x000000000e7248>):
+  
+app/controllers/modules_controller.rb:12:in `index'
+Started GET "/modules/index" for 127.0.0.1 at 2023-11-20 11:35:47 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ModulesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering modules/index.html.erb within layouts/application
+  Rendered modules/index.html.erb within layouts/application (Duration: 4.0ms | Allocations: 176)
+  Rendered layout layouts/application.html.erb (Duration: 202.2ms | Allocations: 38281)
+Completed 200 OK in 271ms (Views: 224.1ms | ActiveRecord: 0.0ms | Allocations: 43137)
+
+
+Started GET "/modules/index" for 127.0.0.1 at 2023-11-20 11:36:10 +0100
+Processing by ModulesController#index as HTML
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms | Allocations: 468)
+
+
+  
+ArgumentError (wrong number of arguments (given 2, expected 0)):
+  
+app/modules/matika.rb:9:in `count_jako_include'
+app/controllers/modules_controller.rb:12:in `index'
+Started GET "/modules/index" for 127.0.0.1 at 2023-11-20 11:36:19 +0100
+Processing by ModulesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering modules/index.html.erb within layouts/application
+  Rendered modules/index.html.erb within layouts/application (Duration: 0.4ms | Allocations: 87)
+  Rendered layout layouts/application.html.erb (Duration: 27.1ms | Allocations: 14365)
+Completed 200 OK in 42ms (Views: 34.6ms | ActiveRecord: 0.0ms | Allocations: 15291)
+
+
+Started GET "/modules/index" for 127.0.0.1 at 2023-11-20 11:36:25 +0100
+Processing by ModulesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering modules/index.html.erb within layouts/application
+  Rendered modules/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 87)
+  Rendered layout layouts/application.html.erb (Duration: 32.4ms | Allocations: 14360)
+Completed 200 OK in 44ms (Views: 38.4ms | ActiveRecord: 0.0ms | Allocations: 15286)
+
+
