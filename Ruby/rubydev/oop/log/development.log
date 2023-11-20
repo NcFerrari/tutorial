@@ -2174,3 +2174,101 @@ Processing by ModulesController#index as HTML
 Completed 200 OK in 44ms (Views: 38.4ms | ActiveRecord: 0.0ms | Allocations: 15286)
 
 
+Started GET "/modules/index" for 127.0.0.1 at 2023-11-20 12:05:55 +0100
+Processing by ModulesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering modules/index.html.erb within layouts/application
+  Rendered modules/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 87)
+  Rendered layout layouts/application.html.erb (Duration: 28.7ms | Allocations: 14367)
+Completed 200 OK in 40ms (Views: 34.3ms | ActiveRecord: 0.0ms | Allocations: 15291)
+
+
+Started GET "/modules/indextrida" for 127.0.0.1 at 2023-11-20 12:05:58 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/modules/indextrida"):
+  
+Started GET "/modules/trida" for 127.0.0.1 at 2023-11-20 12:06:00 +0100
+Processing by ModulesController#trida as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering modules/trida.html.erb within layouts/application
+  Rendered modules/trida.html.erb within layouts/application (Duration: 0.4ms | Allocations: 82)
+  Rendered layout layouts/application.html.erb (Duration: 8.0ms | Allocations: 2291)
+Completed 200 OK in 14ms (Views: 9.1ms | ActiveRecord: 0.0ms | Allocations: 2616)
+
+
+Started GET "/modules/trida" for 127.0.0.1 at 2023-11-20 12:09:37 +0100
+Processing by ModulesController#trida as HTML
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 451)
+
+
+  
+NameError (uninitialized constant ModulesController::Calc):
+  
+app/controllers/modules_controller.rb:19:in `trida'
+Started GET "/modules/trida" for 127.0.0.1 at 2023-11-20 12:10:03 +0100
+  
+NameError (uninitialized constant ModulesController::Calc):
+  
+app/controllers/modules_controller.rb:10:in `<class:ModulesController>'
+app/controllers/modules_controller.rb:6:in `<main>'
+Started GET "/modules/trida" for 127.0.0.1 at 2023-11-20 12:10:18 +0100
+Processing by ModulesController#trida as HTML
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 459)
+
+
+  
+NoMethodError (undefined method `secti' for #<ModulesController:0x000000000228d0>):
+  
+app/controllers/modules_controller.rb:20:in `trida'
+Started GET "/modules/trida" for 127.0.0.1 at 2023-11-20 12:10:25 +0100
+Processing by ModulesController#trida as HTML
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 504)
+
+
+  
+NoMethodError (undefined method `secti' for ModulSeTridou::Calc:Class):
+  
+app/controllers/modules_controller.rb:20:in `trida'
+Started GET "/modules/trida" for 127.0.0.1 at 2023-11-20 12:11:01 +0100
+Processing by ModulesController#trida as HTML
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 445)
+
+
+  
+NoMethodError (undefined method `secti' for ModulSeTridou::Calc:Class):
+  
+app/controllers/modules_controller.rb:19:in `trida'
+Started GET "/modules/trida" for 127.0.0.1 at 2023-11-20 12:11:25 +0100
+  
+TypeError (wrong argument type Class (expected Module)):
+  
+app/controllers/modules_controller.rb:10:in `include'
+app/controllers/modules_controller.rb:10:in `<class:ModulesController>'
+app/controllers/modules_controller.rb:6:in `<main>'
+Started GET "/modules/trida" for 127.0.0.1 at 2023-11-20 12:11:46 +0100
+Processing by ModulesController#trida as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering modules/trida.html.erb within layouts/application
+  Rendered modules/trida.html.erb within layouts/application (Duration: 0.8ms | Allocations: 84)
+  Rendered layout layouts/application.html.erb (Duration: 34.1ms | Allocations: 14430)
+Completed 200 OK in 57ms (Views: 45.6ms | ActiveRecord: 0.0ms | Allocations: 15350)
+
+
+Started GET "/modules/trida" for 127.0.0.1 at 2023-11-20 12:13:33 +0100
+Processing by ModulesController#trida as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering modules/trida.html.erb within layouts/application
+  Rendered modules/trida.html.erb within layouts/application (Duration: 0.3ms | Allocations: 84)
+  Rendered layout layouts/application.html.erb (Duration: 29.7ms | Allocations: 14401)
+Completed 200 OK in 41ms (Views: 35.7ms | ActiveRecord: 0.0ms | Allocations: 15325)
+
+
+Started GET "/modules/trida" for 127.0.0.1 at 2023-11-20 12:13:56 +0100
+Processing by ModulesController#trida as HTML
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 507)
+
+
+  
+NameError (uninitialized constant ModulesController::Calc):
+  
+app/controllers/modules_controller.rb:22:in `trida'
