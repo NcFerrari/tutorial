@@ -2272,3 +2272,164 @@ Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 5
 NameError (uninitialized constant ModulesController::Calc):
   
 app/controllers/modules_controller.rb:22:in `trida'
+Started GET "/modules/trida" for 127.0.0.1 at 2023-11-20 12:16:43 +0100
+Processing by ModulesController#trida as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering modules/trida.html.erb within layouts/application
+  Rendered modules/trida.html.erb within layouts/application (Duration: 0.4ms | Allocations: 84)
+  Rendered layout layouts/application.html.erb (Duration: 30.2ms | Allocations: 14415)
+Completed 200 OK in 42ms (Views: 36.7ms | ActiveRecord: 0.0ms | Allocations: 15339)
+
+
+Started GET "/modules/trida" for 127.0.0.1 at 2023-11-20 12:17:38 +0100
+  
+TypeError (wrong argument type Class (expected Module)):
+  
+app/controllers/modules_controller.rb:11:in `include'
+app/controllers/modules_controller.rb:11:in `<class:ModulesController>'
+app/controllers/modules_controller.rb:6:in `<main>'
+Started GET "/modules/trida" for 127.0.0.1 at 2023-11-20 12:17:52 +0100
+  
+LoadError (cannot load such file -- C:/pes):
+  
+app/controllers/modules_controller.rb:5:in `require_relative'
+app/controllers/modules_controller.rb:5:in `<main>'
+Started GET "/modules/trida" for 127.0.0.1 at 2023-11-20 12:18:09 +0100
+  
+TypeError (wrong argument type Class (expected Module)):
+  
+app/controllers/modules_controller.rb:12:in `include'
+app/controllers/modules_controller.rb:12:in `<class:ModulesController>'
+app/controllers/modules_controller.rb:7:in `<main>'
+Started GET "/modules/trida" for 127.0.0.1 at 2023-11-20 12:18:28 +0100
+Processing by ModulesController#trida as HTML
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 507)
+
+
+  
+NameError (undefined local variable or method `testing' for #<ModulesController:0x00000000049390>):
+  
+app/controllers/modules_controller.rb:26:in `trida'
+Started GET "/modules/trida" for 127.0.0.1 at 2023-11-20 12:18:36 +0100
+Processing by ModulesController#trida as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering modules/trida.html.erb within layouts/application
+  Rendered modules/trida.html.erb within layouts/application (Duration: 0.3ms | Allocations: 84)
+  Rendered layout layouts/application.html.erb (Duration: 42.7ms | Allocations: 14403)
+Completed 200 OK in 54ms (Views: 48.4ms | ActiveRecord: 0.0ms | Allocations: 15320)
+
+
+Started GET "/modules/trida" for 127.0.0.1 at 2023-11-20 12:18:43 +0100
+Processing by ModulesController#trida as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering modules/trida.html.erb within layouts/application
+  Rendered modules/trida.html.erb within layouts/application (Duration: 2.4ms | Allocations: 84)
+  Rendered layout layouts/application.html.erb (Duration: 56.4ms | Allocations: 14419)
+Completed 200 OK in 72ms (Views: 64.0ms | ActiveRecord: 0.0ms | Allocations: 15501)
+
+
+Started GET "/excercises/prvni" for 127.0.0.1 at 2023-11-20 12:39:30 +0100
+Processing by ExcercisesController#prvni as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering excercises/prvni.html.erb within layouts/application
+  Rendered excercises/prvni.html.erb within layouts/application (Duration: 0.3ms | Allocations: 89)
+  Rendered layout layouts/application.html.erb (Duration: 30.3ms | Allocations: 14432)
+Completed 200 OK in 41ms (Views: 36.5ms | ActiveRecord: 0.0ms | Allocations: 15350)
+
+
+Started GET "/excercises/prvni" for 127.0.0.1 at 2023-11-20 13:04:11 +0100
+Processing by ExcercisesController#prvni as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering excercises/prvni.html.erb within layouts/application
+  Rendered excercises/prvni.html.erb within layouts/application (Duration: 0.5ms | Allocations: 87)
+  Rendered layout layouts/application.html.erb (Duration: 29.8ms | Allocations: 14403)
+Completed 200 OK in 41ms (Views: 36.3ms | ActiveRecord: 0.0ms | Allocations: 15319)
+
+
+Started GET "/excercises/prvni" for 127.0.0.1 at 2023-11-20 13:06:32 +0100
+Processing by ExcercisesController#prvni as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering excercises/prvni.html.erb within layouts/application
+  Rendered excercises/prvni.html.erb within layouts/application (Duration: 0.5ms | Allocations: 87)
+  Rendered layout layouts/application.html.erb (Duration: 28.4ms | Allocations: 14400)
+Completed 200 OK in 44ms (Views: 35.9ms | ActiveRecord: 0.0ms | Allocations: 15471)
+
+
+Started GET "/excercises/prvni" for 127.0.0.1 at 2023-11-20 13:07:52 +0100
+Processing by ExcercisesController#prvni as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering excercises/prvni.html.erb within layouts/application
+  Rendered excercises/prvni.html.erb within layouts/application (Duration: 0.4ms | Allocations: 87)
+  Rendered layout layouts/application.html.erb (Duration: 30.7ms | Allocations: 14416)
+Completed 200 OK in 49ms (Views: 37.6ms | ActiveRecord: 0.0ms | Allocations: 15560)
+
+
+Started GET "/excercises/prvni" for 127.0.0.1 at 2023-11-20 13:11:48 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/excercises/prvni"):
+  
+Started GET "/excercises/index" for 127.0.0.1 at 2023-11-20 13:11:54 +0100
+Processing by ExcercisesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering excercises/index.html.erb within layouts/application
+  Rendered excercises/index.html.erb within layouts/application (Duration: 0.4ms | Allocations: 79)
+  Rendered layout layouts/application.html.erb (Duration: 28.1ms | Allocations: 14402)
+Completed 200 OK in 41ms (Views: 34.1ms | ActiveRecord: 0.0ms | Allocations: 15444)
+
+
+Started GET "/excercises/index" for 127.0.0.1 at 2023-11-20 13:15:02 +0100
+Processing by ExcercisesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering excercises/index.html.erb within layouts/application
+  Rendered excercises/index.html.erb within layouts/application (Duration: 0.4ms | Allocations: 81)
+  Rendered layout layouts/application.html.erb (Duration: 31.0ms | Allocations: 14413)
+Completed 200 OK in 63ms (Views: 38.0ms | ActiveRecord: 0.0ms | Allocations: 15994)
+
+
+Started GET "/excercises/index" for 127.0.0.1 at 2023-11-20 13:17:09 +0100
+Processing by ExcercisesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering excercises/index.html.erb within layouts/application
+  Rendered excercises/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 81)
+  Rendered layout layouts/application.html.erb (Duration: 33.6ms | Allocations: 14431)
+Completed 200 OK in 59ms (Views: 40.4ms | ActiveRecord: 0.0ms | Allocations: 15867)
+
+
+Started GET "/excercises/index" for 127.0.0.1 at 2023-11-20 13:19:16 +0100
+Processing by ExcercisesController#index as HTML
+Completed 500 Internal Server Error in 61ms (ActiveRecord: 0.0ms | Allocations: 947)
+
+
+  
+NoMethodError (undefined method `vezmi_barva' for #<Auto2:0x000001defb656068>):
+  
+app/controllers/excercises_controller.rb:21:in `treti'
+app/controllers/excercises_controller.rb:6:in `index'
+Started GET "/excercises/index" for 127.0.0.1 at 2023-11-20 13:19:41 +0100
+Processing by ExcercisesController#index as HTML
+Completed 500 Internal Server Error in 55ms (ActiveRecord: 0.0ms | Allocations: 889)
+
+
+  
+NoMethodError (undefined method `vezmi_barva' for #<Auto2:0x000001defea84538>):
+  
+app/controllers/excercises_controller.rb:21:in `treti'
+app/controllers/excercises_controller.rb:6:in `index'
+Started GET "/excercises/index" for 127.0.0.1 at 2023-11-20 13:19:54 +0100
+Processing by ExcercisesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering excercises/index.html.erb within layouts/application
+  Rendered excercises/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 81)
+  Rendered layout layouts/application.html.erb (Duration: 32.2ms | Allocations: 14421)
+Completed 200 OK in 77ms (Views: 38.1ms | ActiveRecord: 0.0ms | Allocations: 15766)
+
+
+Started GET "/excercises/index" for 127.0.0.1 at 2023-11-20 13:20:22 +0100
+Processing by ExcercisesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering excercises/index.html.erb within layouts/application
+  Rendered excercises/index.html.erb within layouts/application (Duration: 0.4ms | Allocations: 81)
+  Rendered layout layouts/application.html.erb (Duration: 29.7ms | Allocations: 14415)
+Completed 200 OK in 53ms (Views: 36.7ms | ActiveRecord: 0.0ms | Allocations: 15784)
+
+
