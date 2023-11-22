@@ -1,2 +1,24 @@
-<h1>Hele#tady</h1>
-<p>Find me in app/views/hele/tady.html.erb</p>
+<h1>Práce s pohledy</h1>
+Toto je aktivní pohled v aplikaci Ruby on Rails
+<br>
+<br>
+2 + 3 = <%= 2 + 3 %>
+<br>
+<br>
+Fungují cykly?
+<br>
+<% 3.times do %>
+  ANO!<br>
+  <% puts "Ahoj" %>
+<% end %>
+<br>
+Aktuální čas: <%= Time.now %>
+<br>
+<br>
+Aktuální čas z controlleru: <%= @aktualni_cas %>
+<br>
+<br>
+<%= h "Říkám tady<tam abecedně" %>
+<br>
+<br>
+Tato stránka vykonává za běhu kód jazyka Ruby.

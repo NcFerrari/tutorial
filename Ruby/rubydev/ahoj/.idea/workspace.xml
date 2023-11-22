@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3f6c8ba4-78b6-4744-bd60-af6dac0893d5" name="Changes" comment="" />
+    <list default="true" id="3f6c8ba4-78b6-4744-bd60-af6dac0893d5" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../kap04/zobrazovac/app/views/hele/tady.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/../kap04/zobrazovac/app/views/hele/tady.html.erb" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -117,6 +119,7 @@
       <workItem from="1700131868518" duration="16000" />
       <workItem from="1700131929679" duration="110000" />
       <workItem from="1700484884068" duration="7000" />
+      <workItem from="1700643000039" duration="19000" />
     </task>
     <servers />
   </component>
