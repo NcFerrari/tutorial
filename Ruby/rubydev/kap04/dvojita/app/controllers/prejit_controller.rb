@@ -8,5 +8,6 @@ class PrejitController < ApplicationController
   end
 
   def obed
+    render(:file => 'C:\Users\lpesek\Documents\Projekty\tutorial\Ruby\rubydev\kap04\dvojita\app\views\prejit\obed.html.erb')
   end
 end
