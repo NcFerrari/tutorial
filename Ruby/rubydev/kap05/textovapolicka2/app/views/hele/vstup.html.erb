@@ -1,0 +1,11 @@
+<h1>Práce s textovými políčky</h1>
+Tato aplikace Ruby on Rails vám dovoluje číst data z textových políček.
+<br>
+<%= start_form_tag ({ :action_name => "tady" }, { :method => "post" }) %>
+Zadejte prosím své jméno.
+<br>
+<%= text_field_tag ("text1", "", { "size" => 30 }) %>
+<br>
+<br>
+<input type="submit"/>
+<%= end_form_tag %>
