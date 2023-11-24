@@ -1,2 +1,15 @@
-<h1>Hele#tady</h1>
-<p>Find me in app/views/hele/tady.html.erb</p>
+<h1>Práce s modelem</h1>
+
+Tato aplikace zpracovává data z FE do modelu (v ruby je modelem DTOčko).
+
+<!--pozor na rozdíl mezi uvozovky a apostrofy!! Uvozovky v cestě se zpětným lomítkem převedou \t na tabulátor!!-->
+<!--Špatný příklad: <%#= form_tag("\hele\tady", :method => "get") do %>-->
+<!--první správná varianta: <%#= form_tag("/hele/tady", :method => "get") do %>-->
+<!--druhá správná varianta: <%#= form_tag('\hele\tady', :method => "get") do %>-->
+<%= form_tag('\hele\tady', :method => "get") do %>
+  Zadejte prosím své jméno:
+  <%#= text_field_tag("textField", "") %>
+  <%= text_field("zpracovatel", "data") %>
+  <br>
+  <%= submit_tag %>
+<% end %>
