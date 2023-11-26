@@ -1,0 +1,12 @@
+<h1>Práce s relacemi</h1>
+Tato aplikace Ruby on Rails vám dovoluje ukládat data do relací.
+
+<%= form_tag("/hele/vstup", :method => "get") do %>
+  <br>
+  Čítač 1: <%= @citac1 %>.
+  <br>
+  Čítač 2: <%= @citac2 %>.
+  <br>
+  <br>
+  <%= submit_tag("odeslat") %>
+<% end %>
