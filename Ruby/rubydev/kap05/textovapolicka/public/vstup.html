@@ -3,6 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <title>Použití textových políček</title>
+    <style>
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+    </style>
 </head>
 <body>
 <h1>Práce s textovými políčky</h1>
@@ -12,6 +19,9 @@
     Zadejte své jméno.
     <input type="text" name="textField"/>
     <br>
+    Zadejte svůj věk.
+    <!--    pro odstranění šipek z number se používá css.-->
+    <input type="number" name="age" style="width: 30px"/>
     <br>
     <input type="submit"/>
 </form>
