@@ -1,0 +1,6 @@
+driver: jdbc:mysql://
+host: ${HOST:localhost}
+port: 3306
+db: demo
+user: ${USER}
+password: ${PASS}
