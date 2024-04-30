@@ -29,8 +29,10 @@ public class DBConnection {
     }
 
     private void runMethods() throws SQLException {
-        read();
-        create();
+//        create();
+//        read();
+//        update();
+        delete();
     }
 
     private void executeStatement() {
@@ -64,23 +66,34 @@ public class DBConnection {
         }
     }
 
+    private void create() throws SQLException {
+        log.info("CREATE INTO DATABASE");
+        for (int i = 0; i < 10; i++) {
+            Object[] human = Human.generate(HumanAtr.SURNAME, HumanAtr.NAME, HumanAtr.EMAIL);
+            statement.execute("INSERT INTO employees (last_name, first_name, email) VALUES " +
+                    "(" + String.format("'%s', '%s', '%s')", human[0], human[1], human[2]));
+        }
+        log.info("Insert complete.");
+    }
+
     private void read() throws SQLException {
         log.info("READ FROM DATABASE");
-        ResultSet myRs = statement.executeQuery("select * from employees");
+        ResultSet myRs = statement.executeQuery("SELECT * FROM employees");
         while (myRs.next()) {
             String stringBuilder = myRs.getString("last_name") + "," + myRs.getString("first_name");
             log.info(stringBuilder);
         }
     }
 
-    private void create() throws SQLException {
-        log.info("CREATE INTO DATABASE");
-        for (int i = 0; i < 10; i++) {
-            Object[] human = Human.generate(HumanAtr.SURNAME, HumanAtr.NAME, HumanAtr.EMAIL);
-            StringBuilder sql = new StringBuilder("INSERT INTO employees (last_name, first_name, email) values (");
-            sql.append(String.format("'%s', '%s', '%s')", human[0], human[1], human[2]));
-            statement.execute(sql.toString());
-        }
-        log.info("Insert complete.");
+    private void update() throws SQLException {
+        log.info("UPDATE DATA");
+        statement.execute("UPDATE employees SET email='demo@luv2code.com' WHERE id=9");
+        log.info("Update complete.");
+    }
+
+    private void delete() throws SQLException {
+        log.info("DELETE DATA");
+        int deletedCount = statement.executeUpdate("DELETE FROM employees WHERE last_name LIKE '%l%'");
+        log.info("Delete complete. Removed " + deletedCount + " records.");
     }
 }
