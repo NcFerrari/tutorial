@@ -12,7 +12,7 @@ public class Manager {
 
     public Manager() {
         log.info("project started");
-        new DBConnection().execute();
+        new DBConnection().runDB();
     }
 
     public static void main(String[] args) {

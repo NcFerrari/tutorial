@@ -3,16 +3,10 @@
 pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
 M
 src/main/java/lp/Manager.java,3\9\39315997c19bf78f312829fc7762910ecb70e9f1
-P
- src/main/java/lp/DataSource.java,8\4\843c49b747df01732ed7fa4aef04fdab202d5886
-Y
-)src/main/java/lp/jpa/db/DBConnection.java,d\e\de7ef291c64dad875620aec54aa6c644e07dc7a5
 ^
 .src/main/java/lp/be/service/LoggerService.java,8\6\86185e5f4dc0890e7610c014d7fae2e2f12c5314
 \
 ,src/main/java/lp/be/jpa/db/DBConnection.java,8\2\82ac0024b97137d21e2664f56d0c0aeabfaa34e0
-j
-:src/main/java/lp/be/serviceimpl/ConfigFileServiceImpl.java,f\d\fd3951b2baab046d9d71f0670619e27ef54e2d4c
 f
 6src/main/java/lp/be/serviceimpl/LoggerServiceImpl.java,6\3\63b7d1304c5a961d6d8d0cf9576825aa63aaf001
 Z

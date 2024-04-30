@@ -11,16 +11,46 @@ import java.io.InputStream;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 
 public class DBConnection {
 
     private final LoggerService loggerService = LoggerServiceImpl.getInstance(DBConnection.class);
     private final Logger log = loggerService.getLog();
+    private DataSource dataSource;
+    private Statement statement;
 
-    public void execute() {
+    public void runDB() {
+        loadDataSource();
+        executeStatement();
+    }
+
+    private void runMethods() throws SQLException {
+        read();
+        create();
+    }
+
+    private void executeStatement() {
+        try (Connection connection = DriverManager.getConnection(
+                dataSource.getUrl(),
+                dataSource.getUser(),
+                dataSource.getPassword())) {
+            statement = connection.createStatement();
+            runMethods();
+        } catch (Exception exp) {
+            log.error(exp.getMessage());
+        } finally {
+            try {
+                statement.close();
+            } catch (SQLException e) {
+                log.error(e.getMessage());
+            }
+        }
+    }
+
+    private void loadDataSource() {
         ObjectMapper mapper = new ObjectMapper(new YAMLFactory());
-        DataSource dataSource;
         try {
             InputStream inputStream = getClass().getClassLoader().getResourceAsStream("conf.yaml");
             if (inputStream == null) {
@@ -29,18 +59,17 @@ public class DBConnection {
             dataSource = mapper.readValue(inputStream, DataSource.class).loadSystemEnvironments();
         } catch (IOException e) {
             log.error(e.getMessage());
-            return;
         }
+    }
 
-        try (Connection connection = DriverManager.getConnection(dataSource.getUrl(), dataSource.getUser(),
-                dataSource.getPassword()); Statement myStmt = connection.createStatement()) {
-            ResultSet myRs = myStmt.executeQuery("select * from employees");
-            while (myRs.next()) {
-                String stringBuilder = myRs.getString("last_name") + "," + myRs.getString("first_name");
-                log.info(stringBuilder);
-            }
-        } catch (Exception exp) {
-            log.error(exp.getMessage());
+    private void read() throws SQLException {
+        ResultSet myRs = statement.executeQuery("select * from employees");
+        while (myRs.next()) {
+            String stringBuilder = myRs.getString("last_name") + "," + myRs.getString("first_name");
+            log.info(stringBuilder);
         }
+    }
+
+    private void create() {
     }
 }

@@ -54,6 +54,12 @@
             <groupId>org.example</groupId>
             <artifactId>Generators</artifactId>
             <version>1.4</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>mysql</groupId>
+                    <artifactId>mysql-connector-java</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
 
     </dependencies>
