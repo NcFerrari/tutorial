@@ -12,6 +12,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -22,6 +23,8 @@ public class DBConnection {
     private final Logger log = loggerService.getLog();
     private DataSource dataSource;
     private Statement statement;
+    private Connection connection;
+    private int newPeopleCount;
 
     public void runDB() {
         loadDataSource();
@@ -29,17 +32,20 @@ public class DBConnection {
     }
 
     private void runMethods() throws SQLException {
-//        create();
-//        read();
-//        update();
+        newPeopleCount = 0;
+        create();
+        read();
+        update();
         delete();
+        preparedStatementExample();
     }
 
     private void executeStatement() {
-        try (Connection connection = DriverManager.getConnection(
-                dataSource.getUrl(),
-                dataSource.getUser(),
-                dataSource.getPassword())) {
+        try {
+            connection = DriverManager.getConnection(
+                    dataSource.getUrl(),
+                    dataSource.getUser(),
+                    dataSource.getPassword());
             statement = connection.createStatement();
             runMethods();
         } catch (Exception exp) {
@@ -47,6 +53,7 @@ public class DBConnection {
         } finally {
             try {
                 statement.close();
+                connection.close();
             } catch (SQLException e) {
                 log.error(e.getMessage());
             }
@@ -68,7 +75,7 @@ public class DBConnection {
 
     private void create() throws SQLException {
         log.info("CREATE INTO DATABASE");
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < newPeopleCount; i++) {
             Object[] human = Human.generate(HumanAtr.SURNAME, HumanAtr.NAME, HumanAtr.EMAIL);
             statement.execute("INSERT INTO employees (last_name, first_name, email) VALUES " +
                     "(" + String.format("'%s', '%s', '%s')", human[0], human[1], human[2]));
@@ -95,5 +102,18 @@ public class DBConnection {
         log.info("DELETE DATA");
         int deletedCount = statement.executeUpdate("DELETE FROM employees WHERE last_name LIKE '%l%'");
         log.info("Delete complete. Removed {} records.", deletedCount);
+    }
+
+    private void preparedStatementExample() {
+        try (PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM employees WHERE first_name LIKE ?")) {
+            preparedStatement.setString(1, "%a%");
+            ResultSet rs = preparedStatement.executeQuery();
+            while (rs.next()) {
+                String stringBuilder = rs.getString("last_name") + "," + rs.getString("first_name");
+                log.info(stringBuilder);
+            }
+        } catch (SQLException e) {
+            log.error(e.getMessage());
+        }
     }
 }
