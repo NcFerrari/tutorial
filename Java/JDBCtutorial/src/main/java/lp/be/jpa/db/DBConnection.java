@@ -2,6 +2,8 @@ package lp.be.jpa.db;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
+import generator.Human;
+import generator.utils.HumanAtr;
 import lp.be.service.LoggerService;
 import lp.be.serviceimpl.LoggerServiceImpl;
 import org.apache.logging.log4j.Logger;
@@ -63,6 +65,7 @@ public class DBConnection {
     }
 
     private void read() throws SQLException {
+        log.info("READ FROM DATABASE");
         ResultSet myRs = statement.executeQuery("select * from employees");
         while (myRs.next()) {
             String stringBuilder = myRs.getString("last_name") + "," + myRs.getString("first_name");
@@ -70,6 +73,14 @@ public class DBConnection {
         }
     }
 
-    private void create() {
+    private void create() throws SQLException {
+        log.info("CREATE INTO DATABASE");
+        for (int i = 0; i < 10; i++) {
+            Object[] human = Human.generate(HumanAtr.SURNAME, HumanAtr.NAME, HumanAtr.EMAIL);
+            StringBuilder sql = new StringBuilder("INSERT INTO employees (last_name, first_name, email) values (");
+            sql.append(String.format("'%s', '%s', '%s')", human[0], human[1], human[2]));
+            statement.execute(sql.toString());
+        }
+        log.info("Insert complete.");
     }
 }
