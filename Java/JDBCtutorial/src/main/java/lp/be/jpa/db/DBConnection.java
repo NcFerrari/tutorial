@@ -87,13 +87,13 @@ public class DBConnection {
 
     private void update() throws SQLException {
         log.info("UPDATE DATA");
-        statement.execute("UPDATE employees SET email='demo@luv2code.com' WHERE id=9");
-        log.info("Update complete.");
+        int updateCount = statement.executeUpdate("UPDATE employees SET email='demo@luv2code.com' WHERE id=9");
+        log.info("Update complete. Updated {} records.", updateCount);
     }
 
     private void delete() throws SQLException {
         log.info("DELETE DATA");
         int deletedCount = statement.executeUpdate("DELETE FROM employees WHERE last_name LIKE '%l%'");
-        log.info("Delete complete. Removed " + deletedCount + " records.");
+        log.info("Delete complete. Removed {} records.", deletedCount);
     }
 }
