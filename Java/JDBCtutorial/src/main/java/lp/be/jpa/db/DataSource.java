@@ -1,4 +1,4 @@
-package lp;
+package lp.be.jpa.db;
 
 import lombok.Getter;
 import lombok.Setter;
