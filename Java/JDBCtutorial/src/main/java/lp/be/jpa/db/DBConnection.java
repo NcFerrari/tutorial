@@ -2,6 +2,7 @@ package lp.be.jpa.db;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
+import com.mysql.cj.util.StringUtils;
 import generator.Human;
 import generator.utils.HumanAtr;
 import lp.be.service.LoggerService;
@@ -10,17 +11,23 @@ import org.apache.logging.log4j.Logger;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.sql.Types;
+import java.util.Random;
 
 public class DBConnection {
 
+    private static final String HR = "HR";
+    private static final String ENGINEERING = "Engineering";
     private final LoggerService loggerService = LoggerServiceImpl.getInstance(DBConnection.class);
     private final Logger log = loggerService.getLog();
+    private final Random rnd = new Random();
     private DataSource dataSource;
     private Statement statement;
     private Connection connection;
@@ -38,6 +45,8 @@ public class DBConnection {
         update();
         delete();
         preparedStatementExample();
+        callableStatementExample();
+        greet();
     }
 
     private void executeStatement() {
@@ -75,20 +84,23 @@ public class DBConnection {
 
     private void create() throws SQLException {
         log.info("CREATE INTO DATABASE");
+        String[] departments = {HR, ENGINEERING, "Legal"};
         for (int i = 0; i < newPeopleCount; i++) {
             Object[] human = Human.generate(HumanAtr.SURNAME, HumanAtr.NAME, HumanAtr.EMAIL);
-            statement.execute("INSERT INTO employees (last_name, first_name, email) VALUES " +
-                    "(" + String.format("'%s', '%s', '%s')", human[0], human[1], human[2]));
+            String sql = "INSERT INTO employees (last_name, first_name, email, department, salary) VALUES " +
+                    "(" + String.format("'%s', '%s', '%s', '%s', '%d')", human[1], human[0], human[2],
+                    departments[rnd.nextInt(departments.length)], 20_000 + rnd.nextInt(100_000));
+            statement.execute(sql);
         }
         log.info("Insert complete.");
     }
 
     private void read() throws SQLException {
         log.info("READ FROM DATABASE");
-        ResultSet myRs = statement.executeQuery("SELECT * FROM employees");
-        while (myRs.next()) {
-            String stringBuilder = myRs.getString("last_name") + "," + myRs.getString("first_name");
-            log.info(stringBuilder);
+        ResultSet rs = statement.executeQuery("SELECT * FROM employees");
+        while (rs.next()) {
+            String result = getBasicData(rs);
+            log.info(result);
         }
     }
 
@@ -105,15 +117,63 @@ public class DBConnection {
     }
 
     private void preparedStatementExample() {
-        try (PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM employees WHERE first_name LIKE ?")) {
+        try (PreparedStatement preparedStatement =
+                     connection.prepareStatement("SELECT * FROM employees WHERE first_name LIKE ?")) {
             preparedStatement.setString(1, "%a%");
             ResultSet rs = preparedStatement.executeQuery();
             while (rs.next()) {
-                String stringBuilder = rs.getString("last_name") + "," + rs.getString("first_name");
-                log.info(stringBuilder);
+                String result = getBasicData(rs);
+                log.info(result);
             }
         } catch (SQLException e) {
             log.error(e.getMessage());
         }
+    }
+
+    private void callableStatementExample() throws SQLException {
+        int theIncreaseAmount = 10_000;
+        log.info("Salaries BEFORE");
+        log.info("");
+        testingOutput(ENGINEERING);
+        try (CallableStatement cs = connection.prepareCall("{call increase_salaries_for_department(?, ?)}")) {
+            cs.setString(1, ENGINEERING);
+            cs.setDouble(2, theIncreaseAmount);
+
+            log.info("");
+            log.info("");
+            log.info("Calling stored procedure. increase_salaries_for_department('{}', {})",
+                    ENGINEERING, theIncreaseAmount);
+            cs.execute();
+            log.info("Finished calling stored procedure");
+            log.info("");
+            log.info("");
+            log.info("Salaries AFTER");
+            log.info("");
+        }
+        testingOutput(ENGINEERING);
+    }
+
+    private void greet() throws SQLException {
+        log.info("GREETINGS");
+        try (CallableStatement callableStatement = connection.prepareCall("{call greet_the_department(?)}")) {
+            callableStatement.registerOutParameter(1, Types.VARCHAR);
+            callableStatement.setString(1, HR);
+            callableStatement.execute();
+            String theResult = callableStatement.getString(1);
+            log.info("The result = {}", theResult);
+        }
+    }
+
+    private void testingOutput(String theDepartment) throws SQLException {
+        ResultSet rs = statement.executeQuery("SELECT * FROM employees WHERE department='" + theDepartment + "'");
+        while (rs.next()) {
+            String stringBuilder = getBasicData(rs) + ", " + rs.getString("department") + ", " + rs.getString("salary");
+            log.info(stringBuilder);
+        }
+    }
+
+    private String getBasicData(ResultSet rs) throws SQLException {
+        String result = rs.getString("last_name") + "," + rs.getString("first_name");
+        return StringUtils.isNullOrEmpty(result) ? "Nothing to display" : result;
     }
 }

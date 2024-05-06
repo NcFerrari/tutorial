@@ -2,5 +2,6 @@ driver: jdbc:mysql://
 host: ${HOST:localhost}
 port: 3306
 db: demo
+encoding: ?characterEncoding=utf8
 user: ${USER}
 password: ${PASS}
