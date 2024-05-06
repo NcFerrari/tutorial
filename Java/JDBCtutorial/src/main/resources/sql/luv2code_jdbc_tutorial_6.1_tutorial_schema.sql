@@ -16,7 +16,7 @@ CREATE TABLE `employees`
 	PRIMARY KEY (`id`)
 ) ENGINE = InnoDB
   AUTO_INCREMENT = 1
-  DEFAULT CHARSET = latin1;
+  DEFAULT CHARSET = utf8mb4;
 
 INSERT INTO `employees` (`id`, `last_name`, `first_name`, `email`, `department`, `salary`)
 VALUES (1, 'Doe', 'John', 'john.doe@foo.com', 'HR', 55000.00);

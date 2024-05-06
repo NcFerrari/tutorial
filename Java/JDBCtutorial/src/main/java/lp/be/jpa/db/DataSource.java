@@ -14,12 +14,12 @@ public class DataSource {
     private String host;
     private int port;
     private String db;
-    private String url;
+    private String encoding;
     private String user;
     private String password;
 
     public String getUrl() {
-        return String.format("%s%s:%d/%s", getDriver(), getHost(), getPort(), getDb());
+        return String.format("%s%s:%d/%s%s", getDriver(), getHost(), getPort(), getDb(), getEncoding());
     }
 
     public DataSource loadSystemEnvironments() {
