@@ -1,7 +1,8 @@
-package lp.be.jpa.db;
+package lp.be.jpa.db.tutorial;
 
 import generator.Human;
 import generator.utils.HumanAtr;
+import lp.be.jpa.db.DBConnection;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;

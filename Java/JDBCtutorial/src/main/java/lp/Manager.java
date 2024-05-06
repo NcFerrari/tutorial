@@ -1,8 +1,8 @@
 package lp;
 
-import lp.be.jpa.db.CRUD;
-import lp.be.jpa.db.Procedures;
-import lp.be.jpa.db.MigrationExamples;
+import lp.be.jpa.db.tutorial.CRUD;
+import lp.be.jpa.db.tutorial.Procedures;
+import lp.be.jpa.db.tutorial.MigrationExamples;
 import lp.be.service.LoggerService;
 import lp.be.serviceimpl.LoggerServiceImpl;
 import org.apache.logging.log4j.Logger;

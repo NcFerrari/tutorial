@@ -1,4 +1,6 @@
-package lp.be.jpa.db;
+package lp.be.jpa.db.tutorial;
+
+import lp.be.jpa.db.DBConnection;
 
 import java.sql.CallableStatement;
 import java.sql.PreparedStatement;
