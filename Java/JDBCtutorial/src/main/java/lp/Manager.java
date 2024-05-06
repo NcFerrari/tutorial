@@ -2,7 +2,7 @@ package lp;
 
 import lp.be.jpa.db.CRUD;
 import lp.be.jpa.db.Procedures;
-import lp.be.jpa.db.TransactionTutorial;
+import lp.be.jpa.db.MigrationExamples;
 import lp.be.service.LoggerService;
 import lp.be.serviceimpl.LoggerServiceImpl;
 import org.apache.logging.log4j.Logger;
@@ -14,12 +14,12 @@ public class Manager {
 
     public Manager() {
         log.info("project started");
-        switch (2) {
+        switch (3) {
             case 2:
                 new Procedures();
                 break;
             case 3:
-                new TransactionTutorial();
+                new MigrationExamples();
                 break;
             default:
                 new CRUD();

@@ -24,3 +24,15 @@ Z
 pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
 f
 6src/main/java/lp/be/serviceimpl/LoggerServiceImpl.java,6\3\63b7d1304c5a961d6d8d0cf9576825aa63aaf001
+Z
+*src/main/java/lp/be/jpa/db/Procedures.java,4\e\4e0a561bbcfc68f9be7522d09848444720b4fa09
+T
+$src/main/java/lp/be/jpa/db/CRUD.java,b\9\b9446cd066663de1af7a45e338c0cdddba3db407
+c
+3src/main/java/lp/be/jpa/db/TransactionTutorial.java,5\f\5f50ff78a53caab6025efc72dc48e06d9affa314
+a
+1src/main/java/lp/be/jpa/db/MigrationExamples.java,2\e\2ed5ed620600dfede9a0542e4cf1bb45b66fc22c
+W
+'src/main/java/lp/be/jpa/db/Logging.java,1\3\130b9b15d65120bc53f8598ca4c32c854dbed8aa
+a
+1src/main/java/lp/be/jpa/db/LoggingAnnotation.java,1\0\10c79d024fba72fc33d59886cccf310083162ce5

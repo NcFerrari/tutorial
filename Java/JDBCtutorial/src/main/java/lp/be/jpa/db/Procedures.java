@@ -8,9 +8,6 @@ import java.sql.Types;
 
 public class Procedures extends DBConnection {
 
-    private static final String HR = "HR";
-    private static final String ENGINEERING = "Engineering";
-
     @Override
     protected void runMethods() throws SQLException {
         preparedStatementExample();

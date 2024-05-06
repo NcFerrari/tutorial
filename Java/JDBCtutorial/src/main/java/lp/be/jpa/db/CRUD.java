@@ -9,8 +9,6 @@ import java.util.Random;
 
 public class CRUD extends DBConnection {
 
-    private static final String HR = "HR";
-    private static final String ENGINEERING = "Engineering";
     private final Random rnd = new Random();
     private int newPeopleCount;
 

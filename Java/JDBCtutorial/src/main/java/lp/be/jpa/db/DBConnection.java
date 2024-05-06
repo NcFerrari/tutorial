@@ -17,6 +17,8 @@ import java.sql.Statement;
 
 public abstract class DBConnection {
 
+    protected static final String HR = "HR";
+    protected static final String ENGINEERING = "Engineering";
     protected final LoggerService loggerService;
     protected final Logger log;
     protected DataSource dataSource;
