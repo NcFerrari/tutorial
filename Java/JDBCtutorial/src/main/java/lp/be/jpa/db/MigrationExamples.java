@@ -1,15 +1,54 @@
 package lp.be.jpa.db;
 
 import java.nio.charset.StandardCharsets;
+import java.sql.DatabaseMetaData;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Scanner;
 
 public class MigrationExamples extends DBConnection {
 
+    private DatabaseMetaData databaseMetaData;
+
     @Override
     protected void runMethods() throws SQLException {
+        databaseMetaData = connection.getMetaData();
         transactionExample();
+        metaData();
+        schemaScan();
+    }
+
+    private void schemaScan() throws SQLException {
+        log.info("SCHEMA SCAN");
+        log.info("");
+        log.info("List of Tables");
+        log.info("--------------");
+        ResultSet rs = databaseMetaData.getTables(null, null, "employees", null);
+        while (rs.next()) {
+            String tableName = rs.getString("TABLE_NAME");
+            log.info(tableName);
+        }
+        log.info("");
+        log.info("List of Columns");
+        log.info("---------------");
+        rs = databaseMetaData.getColumns(null, null, "employees", null);
+        while (rs.next()) {
+            String columnName = rs.getString("COLUMN_NAME");
+            log.info(columnName);
+        }
+
+        log.info("SCHEMA SCAN finished.\n");
+    }
+
+    private void metaData() throws SQLException {
+        log.info("META DATA");
+        databaseMetaData = connection.getMetaData();
+        log.info("Product name: {}", databaseMetaData.getDatabaseProductName());
+        log.info("Product version: {}", databaseMetaData.getDatabaseProductVersion());
+        log.info("");
+        log.info("JDBC Driver name: {}", databaseMetaData.getDriverName());
+        log.info("JDBC Driver version: {}", databaseMetaData.getDriverVersion());
+        log.info("META DATA finished.\n");
     }
 
     private void transactionExample() throws SQLException {
