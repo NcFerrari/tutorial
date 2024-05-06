@@ -1,0 +1,24 @@
+
+j
+java:S1192‚"GDefine a constant instead of duplicating this literal "salary" 4 times.(òØşÉıÿÿÿÿ8œ‰ùÍó1
+n
+java:S1192‚"KDefine a constant instead of duplicating this literal "department" 4 times.(òØşÉıÿÿÿÿ8‰ùÍó1
+m
+java:S1192]"KDefine a constant instead of duplicating this literal "first_name" 6 times.(«ÜÊãøÿÿÿÿ8óäÁÍó1
+
+java:S1192€"kDefine a constant instead of duplicating this literal "SELECT * FROM employees WHERE department='" 4 times.(Şé¶˜ûÿÿÿÿ8‰ùÍó1
+l
+java:S1192]"JDefine a constant instead of duplicating this literal "last_name" 6 times.(«ÜÊãøÿÿÿÿ8òäÁÍó1
+]	java:S125%"<This block of commented-out lines of code should be removed.(ÃÏ²®şÿÿÿÿ8ŸåÁÍó1
+M
+java:S1144O"+Remove this unused private "create" method.(ˆã˜´úÿÿÿÿ8ËåÁÍó1
+F
+java:S1144Y")Remove this unused private "read" method.(ÂÈôÉ8ËåÁÍó1
+H
+java:S1144b"+Remove this unused private "update" method.(âœš´8ËåÁÍó1
+H
+java:S1144h"+Remove this unused private "delete" method.(ßÜ…8ËåÁÍó1
+_
+java:S1144n"=Remove this unused private "preparedStatementExample" method.(‘Á°üÿÿÿÿ8ËåÁÍó1
+_
+java:S1144{"=Remove this unused private "callableStatementExample" method.(òïê¯ùÿÿÿÿ8€ÄùÍó1

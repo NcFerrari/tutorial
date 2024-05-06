@@ -10,6 +10,7 @@ import org.apache.logging.log4j.Logger;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -33,11 +34,13 @@ public class DBConnection {
 
     private void runMethods() throws SQLException {
         newPeopleCount = 0;
-        create();
-        read();
-        update();
-        delete();
-        preparedStatementExample();
+//        create();
+//        read();
+//        update();
+//        delete();
+//        preparedStatementExample();
+//        callableStatementExample();
+        greet();
     }
 
     private void executeStatement() {
@@ -114,6 +117,55 @@ public class DBConnection {
             }
         } catch (SQLException e) {
             log.error(e.getMessage());
+        }
+    }
+
+    private void callableStatementExample() throws SQLException {
+        String theDepartment = "Engineering";
+        int theIncreaseAmount = 10_000;
+        log.info("Salaries BEFORE");
+        log.info("");
+        ResultSet myRs = statement.executeQuery("SELECT * FROM employees WHERE department='" + theDepartment + "'");
+        while (myRs.next()) {
+            String stringBuilder = myRs.getString("last_name") + "," + myRs.getString("first_name") + ", " + myRs.getString("department") + ", " + myRs.getString("salary");
+            log.info(stringBuilder);
+        }
+        try (CallableStatement callableStatement = connection.prepareCall("{call increase_salaries_for_department(?, ?)}")) {
+            callableStatement.setString(1, theDepartment);
+            callableStatement.setDouble(2, theIncreaseAmount);
+
+            log.info("");
+            log.info("");
+            log.info("Calling stored procedure. increase_salaries_for_department('{}', {})", theDepartment, theIncreaseAmount);
+            callableStatement.execute();
+            log.info("Finished calling stored procedure");
+            log.info("");
+            log.info("");
+            log.info("Salaries AFTER");
+            log.info("");
+        }
+        myRs = statement.executeQuery("SELECT * FROM employees WHERE department='" + theDepartment + "'");
+        while (myRs.next()) {
+            String stringBuilder = myRs.getString("last_name") + "," + myRs.getString("first_name") + ", " + myRs.getString("department") + ", " + myRs.getString("salary");
+            log.info(stringBuilder);
+        }
+    }
+
+    private void greet() throws SQLException {
+        String theDepartment = "Engineering";
+        ResultSet myRs = statement.executeQuery("SELECT * FROM employees WHERE department='" + theDepartment + "'");
+        while (myRs.next()) {
+            String stringBuilder = myRs.getString("last_name") + "," + myRs.getString("first_name") + ", " + myRs.getString("department") + ", " + myRs.getString("salary");
+            log.info(stringBuilder);
+        }
+        try (CallableStatement callableStatement = connection.prepareCall("{call greet_the_department(?)}")) {
+            callableStatement.setString(1, theDepartment);
+            callableStatement.execute();
+        }
+        myRs = statement.executeQuery("SELECT * FROM employees WHERE department='" + theDepartment + "'");
+        while (myRs.next()) {
+            String stringBuilder = myRs.getString("last_name") + "," + myRs.getString("first_name") + ", " + myRs.getString("department") + ", " + myRs.getString("salary");
+            log.info(stringBuilder);
         }
     }
 }
