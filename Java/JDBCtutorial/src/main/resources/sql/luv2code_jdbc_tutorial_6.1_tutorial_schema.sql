@@ -7,13 +7,12 @@ drop table if exists employees;
 CREATE TABLE `employees`
 (
     `id`         int(11) NOT null auto_increment,
-    `last_name`  varchar(64) DEFAULT NULL,
-    `first_name` varchar(64) DEFAULT NULL,
-    `email`      varchar(64) DEFAULT NULL,
-    `department` varchar(64) DEFAULT NULL,
-    `salary`     decimal(10.2
-) DEFAULT NULL,
-	PRIMARY KEY (`id`)
+    `last_name`  varchar(64)    DEFAULT NULL,
+    `first_name` varchar(64)    DEFAULT NULL,
+    `email`      varchar(64)    DEFAULT NULL,
+    `department` varchar(64)    DEFAULT NULL,
+    `salary`     decimal(10, 2) DEFAULT NULL,
+    PRIMARY KEY (`id`)
 ) ENGINE = InnoDB
   AUTO_INCREMENT = 1
   DEFAULT CHARSET = utf8mb4;
@@ -84,10 +83,10 @@ DELIMITER $$
 drop procedure if exists `increase_salaries_for_department`$$
 
 create
-    definer = `student`@`localhost` procedure `increase_salaries_for_department`(in the_department varchar(64), in increase_amount decimal(10.2) )
+    definer = `student`@`localhost` procedure `increase_salaries_for_department`(in the_department varchar(64), in increase_amount decimal(10, 2))
 begin
-update employees
-set salary= salary + increase_amount
-where department = the_department;
+    update employees
+    set salary= salary + increase_amount
+    where department = the_department;
 end$$
 DELIMITER :

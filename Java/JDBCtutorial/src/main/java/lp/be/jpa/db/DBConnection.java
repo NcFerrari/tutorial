@@ -18,6 +18,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.sql.Types;
 import java.util.Random;
 
 public class DBConnection {
@@ -39,12 +40,12 @@ public class DBConnection {
 
     private void runMethods() throws SQLException {
         newPeopleCount = 0;
-        create();
-        read();
-        update();
-        delete();
-        preparedStatementExample();
-        callableStatementExample();
+//        create();
+//        read();
+//        update();
+//        delete();
+//        preparedStatementExample();
+//        callableStatementExample();
         greet();
     }
 
@@ -130,7 +131,6 @@ public class DBConnection {
     }
 
     private void callableStatementExample() throws SQLException {
-
         int theIncreaseAmount = 10_000;
         log.info("Salaries BEFORE");
         log.info("");
@@ -154,12 +154,14 @@ public class DBConnection {
     }
 
     private void greet() throws SQLException {
-        testingOutput(HR);
+        log.info("GREETINGS");
         try (CallableStatement callableStatement = connection.prepareCall("{call greet_the_department(?)}")) {
+            callableStatement.registerOutParameter(1, Types.VARCHAR);
             callableStatement.setString(1, HR);
             callableStatement.execute();
+            String theResult = callableStatement.getString(1);
+            log.info("The result = {}", theResult);
         }
-        testingOutput(HR);
     }
 
     private void testingOutput(String theDepartment) throws SQLException {
