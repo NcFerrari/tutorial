@@ -3,6 +3,7 @@ package lp.be.jpa.db;
 import java.nio.charset.StandardCharsets;
 import java.sql.DatabaseMetaData;
 import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.util.Scanner;
 
@@ -16,6 +17,29 @@ public class MigrationExamples extends DBConnection {
         transactionExample();
         metaData();
         schemaScan();
+        metaData2();
+    }
+
+    private void metaData2() throws SQLException {
+        log.info("META DATA2");
+        String sql = "SELECT id, last_name, first_name, salary FROM employees";
+        ResultSet rs = statement.executeQuery(sql);
+        ResultSetMetaData resultSetMetaData = rs.getMetaData();
+        int columnCount = resultSetMetaData.getColumnCount();
+        log.info("Column count: {}", columnCount);
+        log.info("");
+        for (int column = 1; column <= columnCount; column++) {
+            String name = resultSetMetaData.getColumnName(column);
+            String type = resultSetMetaData.getColumnTypeName(column);
+            int nullable = resultSetMetaData.isNullable(column);
+            boolean ai = resultSetMetaData.isAutoIncrement(column);
+            log.info("ColumnName: {}", name);
+            log.info("Column type name: {}", type);
+            log.info("Is Nullable: {}", nullable);
+            log.info("Is Auto Increment: {}", ai);
+            log.info("");
+        }
+        log.info("META DATA2 finished");
     }
 
     private void schemaScan() throws SQLException {
