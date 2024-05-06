@@ -22,8 +22,11 @@ import java.util.Random;
 
 public class DBConnection {
 
+    private static final String HR = "HR";
+    private static final String ENGINEERING = "Engineering";
     private final LoggerService loggerService = LoggerServiceImpl.getInstance(DBConnection.class);
     private final Logger log = loggerService.getLog();
+    private final Random rnd = new Random();
     private DataSource dataSource;
     private Statement statement;
     private Connection connection;
@@ -80,8 +83,7 @@ public class DBConnection {
 
     private void create() throws SQLException {
         log.info("CREATE INTO DATABASE");
-        String[] departments = {"HR", "Engineering", "Legal"};
-        Random rnd = new Random();
+        String[] departments = {HR, ENGINEERING, "Legal"};
         for (int i = 0; i < newPeopleCount; i++) {
             Object[] human = Human.generate(HumanAtr.SURNAME, HumanAtr.NAME, HumanAtr.EMAIL);
             String sql = "INSERT INTO employees (last_name, first_name, email, department, salary) VALUES " +
@@ -129,19 +131,19 @@ public class DBConnection {
     }
 
     private void callableStatementExample() throws SQLException {
-        String theDepartment = "Engineering";
+
         int theIncreaseAmount = 10_000;
         log.info("Salaries BEFORE");
         log.info("");
-        testingOutput(theDepartment);
+        testingOutput(ENGINEERING);
         try (CallableStatement cs = connection.prepareCall("{call increase_salaries_for_department(?, ?)}")) {
-            cs.setString(1, theDepartment);
+            cs.setString(1, ENGINEERING);
             cs.setDouble(2, theIncreaseAmount);
 
             log.info("");
             log.info("");
             log.info("Calling stored procedure. increase_salaries_for_department('{}', {})",
-                    theDepartment, theIncreaseAmount);
+                    ENGINEERING, theIncreaseAmount);
             cs.execute();
             log.info("Finished calling stored procedure");
             log.info("");
@@ -149,17 +151,16 @@ public class DBConnection {
             log.info("Salaries AFTER");
             log.info("");
         }
-        testingOutput(theDepartment);
+        testingOutput(ENGINEERING);
     }
 
     private void greet() throws SQLException {
-        String theDepartment = "Engineering";
-        testingOutput(theDepartment);
+        testingOutput(HR);
         try (CallableStatement callableStatement = connection.prepareCall("{call greet_the_department(?)}")) {
-            callableStatement.setString(1, theDepartment);
+            callableStatement.setString(1, HR);
             callableStatement.execute();
         }
-        testingOutput(theDepartment);
+        testingOutput(HR);
     }
 
     private void testingOutput(String theDepartment) throws SQLException {
