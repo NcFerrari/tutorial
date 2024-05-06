@@ -18,6 +18,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.Random;
 
 public class DBConnection {
 
@@ -79,10 +80,15 @@ public class DBConnection {
 
     private void create() throws SQLException {
         log.info("CREATE INTO DATABASE");
+        String[] departments = {"HR", "Engineering", "Legal"};
+        Random rnd = new Random();
         for (int i = 0; i < newPeopleCount; i++) {
             Object[] human = Human.generate(HumanAtr.SURNAME, HumanAtr.NAME, HumanAtr.EMAIL);
-            statement.execute("INSERT INTO employees (last_name, first_name, email) VALUES " +
-                    "(" + String.format("'%s', '%s', '%s')", human[0], human[1], human[2]));
+            String sql = "INSERT INTO employees (last_name, first_name, email, department, salary) VALUES " +
+                    "(" + String.format("'%s', '%s', '%s', '%s', '%d')", human[1], human[0], human[2],
+                    departments[rnd.nextInt(departments.length)], 20_000 + rnd.nextInt(100_000));
+            log.info(sql);
+            statement.execute(sql);
         }
         log.info("Insert complete.");
     }
