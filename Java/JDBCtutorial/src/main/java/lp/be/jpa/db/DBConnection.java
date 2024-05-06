@@ -40,12 +40,12 @@ public class DBConnection {
 
     private void runMethods() throws SQLException {
         newPeopleCount = 0;
-//        create();
-//        read();
-//        update();
-//        delete();
-//        preparedStatementExample();
-//        callableStatementExample();
+        create();
+        read();
+        update();
+        delete();
+        preparedStatementExample();
+        callableStatementExample();
         greet();
     }
 
