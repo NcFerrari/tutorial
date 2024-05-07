@@ -14,8 +14,8 @@ public class SaveBLOB extends DBConnection {
 
     @Override
     protected void runMethods() throws SQLException {
-//        saveIntoDB();
-//        loadFromDB();
+        saveIntoDB();
+        loadFromDB();
     }
 
     private void loadFromDB() throws SQLException {
@@ -37,15 +37,18 @@ public class SaveBLOB extends DBConnection {
         log.info("LOADED FROM DB");
     }
 
-    private void saveIntoDB() throws SQLException {
+    private void saveIntoDB() {
         log.info("SAVE INTO DB");
         String sql = "UPDATE employees SET resume=? WHERE email='john.doe@foo.com'";
-        PreparedStatement preparedStatement = connection.prepareStatement(sql);
+        try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
 
-        InputStream inputStream = getClass().getClassLoader().getResourceAsStream("sample.pdf");
-        preparedStatement.setBinaryStream(1, inputStream);
+            InputStream inputStream = getClass().getClassLoader().getResourceAsStream("sample.pdf");
+            preparedStatement.setBinaryStream(1, inputStream);
 
-        preparedStatement.executeUpdate();
+            preparedStatement.executeUpdate();
+        } catch (Exception exp) {
+            log.error(exp.getMessage());
+        }
         log.info("SAVED INTO DB");
     }
 }
