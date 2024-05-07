@@ -13,6 +13,7 @@ CREATE TABLE `employees`
     `department` varchar(64)    DEFAULT NULL,
     `salary`     decimal(10, 2) DEFAULT NULL,
     `resume`     blob,
+    `big_text`   longtext,
     PRIMARY KEY (`id`)
 ) ENGINE = InnoDB
   AUTO_INCREMENT = 1
