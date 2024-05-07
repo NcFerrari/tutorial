@@ -1,6 +1,9 @@
 package lp;
 
-import lp.be.jpa.db.DBConnection;
+import lp.be.jpa.db.tutorial.CRUD;
+import lp.be.jpa.db.tutorial.Procedures;
+import lp.be.jpa.db.tutorial.MigrationExamples;
+import lp.be.jpa.db.tutorial.FilesInDB;
 import lp.be.service.LoggerService;
 import lp.be.serviceimpl.LoggerServiceImpl;
 import org.apache.logging.log4j.Logger;
@@ -12,7 +15,19 @@ public class Manager {
 
     public Manager() {
         log.info("project started");
-        new DBConnection().runDB();
+        switch (4) {
+            case 2:
+                new Procedures();
+                break;
+            case 3:
+                new MigrationExamples();
+                break;
+            case 4:
+                new FilesInDB();
+                break;
+            default:
+                new CRUD();
+        }
     }
 
     public static void main(String[] args) {
