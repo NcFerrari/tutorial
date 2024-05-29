@@ -10,8 +10,6 @@ def file_chooser(case):
             return "$4_output"
         case 5:
             return "$5_global_variables"
-        case 6:
-            return "$6_"
 
 fileName = "variables/" + file_chooser(5) + ".py"
 
