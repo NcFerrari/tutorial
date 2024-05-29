@@ -16,5 +16,5 @@ def fileChooser(case):
 
 fileName = "variables/" + fileChooser(2) + ".py"
 
-with open(fileName) as file:
+with open(fileName, encoding="utf-8") as file:
     exec(file.read())
