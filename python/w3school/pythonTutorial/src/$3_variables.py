@@ -9,12 +9,11 @@ def file_chooser(case):
         case 4:
             return "$4_output"
         case 5:
-            return "$5_"
+            return "$5_global_variables"
         case 6:
             return "$6_"
 
-
-fileName = "variables/" + file_chooser(4) + ".py"
+fileName = "variables/" + file_chooser(5) + ".py"
 
 with open(fileName, encoding="utf-8") as file:
     exec(file.read())
