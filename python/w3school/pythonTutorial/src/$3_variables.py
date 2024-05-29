@@ -5,7 +5,7 @@ def fileChooser(case):
         case 2:
             return "$2_names"
         case 3:
-            return "$3_"
+            return "$3_multiple_values"
         case 4:
             return "$4_"
         case 5:
@@ -14,7 +14,7 @@ def fileChooser(case):
             return "$6_"
 
 
-fileName = "variables/" + fileChooser(2) + ".py"
+fileName = "variables/" + fileChooser(3) + ".py"
 
 with open(fileName, encoding="utf-8") as file:
     exec(file.read())
