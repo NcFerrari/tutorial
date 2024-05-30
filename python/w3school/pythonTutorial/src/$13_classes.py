@@ -23,3 +23,16 @@ except NameError:
     pass
 
 
+class User:
+    def login(self, username):
+        print(f"{username} logged")
+
+
+class Admin(User):
+    pass
+
+
+user = User()
+admin = Admin()
+user.login("Lubor")
+admin.login("Magda")
