@@ -39,3 +39,18 @@ match (a):
         print("a is one")
     case 2:
         print("a is two")
+
+# & = and
+# | = or
+# ! = not
+a = True
+b = True
+print(a or b)
+print(not (a and b))
+
+# equals = is
+# !equals = is not
+
+# pokud chceme zjistit, jestli nějaké pole obsahuje položku, tak je na to příkaz in
+array = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+print(3 in array)
