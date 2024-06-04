@@ -102,4 +102,7 @@ najitVse(r"great[a-z]?", "Python is greater then Java")
 najitVse(r"[a-zA-Z]{3}", "Python is greater then Java")
 najitVse(r"C++|C#|Java", "Python is greater then Java")
 
-
+text = "Python is greater then Java"
+text = re.sub("Java", "Python", text)
+text = re.sub("Python", "Java", text, 1)
+print(text)
