@@ -80,11 +80,11 @@ def folders():
     single_directory.mkdir()
     single_directory.rename("test22")
 
-    # create_if_not_exists("testFile.txt")
-    # write_into_file("testFile.txt", "ěščřžýáíéůú")
-    # append_to_file("testFile.txt", "\npřidaný text")
-    # read_file("testFile.txt")
-    # delete_file_or_dir("testFile.txt")
+    create_if_not_exists("testFile.txt")
+    write_into_file("testFile.txt", "ěščřžýáíéůú")
+    append_to_file("testFile.txt", "\npřidaný text")
+    read_file("testFile.txt")
+    delete_file_or_dir("testFile.txt")
 
 
 folders()
@@ -97,4 +97,5 @@ def recursion(dir_name: Path, tabulator: str):
         for file in directory.iterdir():
             recursion(file, tabulator + "\t")
 
-# recursion(Path("D:/Dokumenty/Projekty"), "")
+
+recursion(Path("D:/Dokumenty/Projekty"), "")
