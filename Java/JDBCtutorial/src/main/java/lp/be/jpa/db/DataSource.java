@@ -22,6 +22,11 @@ public class DataSource {
         return String.format("%s%s:%d/%s%s", getDriver(), getHost(), getPort(), getDb(), getEncoding());
     }
 
+    /**
+     * For getting system variables it's needed to set them before.
+     *
+     * @return
+     */
     public DataSource loadSystemEnvironments() {
         for (Field field : getClass().getDeclaredFields()) {
             try {
