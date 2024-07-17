@@ -4,41 +4,58 @@ import Book from "./book"
 
 import "./index.css"
 
-const book1 = {
+const books = [{
+    id: 0,
     image: "./images/book.jpg",
     title: "Hillbilly Elegy: A Memoir of a Family and Culture in Crisis",
     author: "J. D. Vance"
-}
-
-const book2 = {
+}, {
+    id: 1,
     image: "https://m.media-amazon.com/images/I/81mpSoJzv4L._SL1446_.jpg",
     title: "I Love You to the Moon and Back",
     author: "Amelia Hepworth"
-}
-
-const book3 = {
+}, {
+    id: 2,
     image: "https://m.media-amazon.com/images/I/9101MLPcFTL._SL1500_.jpg",
     title: "Onyx Storm (Deluxe Limited Edition)",
     author: "Rebecca Yarros"
-}
-
-const book4 = {
+}, {
+    id: 3,
     image: "https://m.media-amazon.com/images/I/81PIs7jhL0L._SL1500_.jpg",
     title: "Never Lie",
     author: "Freida McFadden"
-}
+}]
 
 const BookList = () => {
-    return <section className="bookList">
-        <Book image={book1.image} title={book1.title} author={book1.author}>
+    const firstBook = books[2]
+    return <div>
+        <Book {...firstBook}>
             <p>poznámka</p>
-            <button>click me</button>
         </Book>
-        <Book image={book2.image} title={book2.title} author={book2.author}/>
-        <Book image={book3.image} title={book3.title} author={book3.author}/>
-        <Book image={book4.image} title={book4.title} author={book4.author}/>
-        {console.log("knihy")}
-    </section>
+        <section className="bookList">
+            <EventExamples/>
+            {books.map(book => {
+                return <Book {...book} key={book.id}/>;
+            })}
+        </section>
+    </div>
+}
+
+const EventExamples = () => {
+    const handleButtonClick = () => {
+        alert("omfg");
+    }
+    return (
+        <section>
+            <form>
+                <h2>Typical Form</h2>
+                <input type={"text"} name={"example"} id={"textField"} onChange={() => {
+                    console.log("typed")
+                }}/>
+            </form>
+            <button onClick={handleButtonClick}>click</button>
+        </section>
+    )
 }
 
 const root = ReactDOM.createRoot(document.getElementById("root"))

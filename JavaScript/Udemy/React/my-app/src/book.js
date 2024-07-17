@@ -1,12 +1,13 @@
 import React from "react";
 
-const Book = ({image, title, author, children}) => {
+const Book = (props) => {
+    const {image, title, author} = props
     return (
         <article className={"book"}>
             <Image image={image} title={title}/>
             <Title title={title}/>
             <Author author={author}/>
-            {children}
+            {props.children}
         </article>
     )
 }
