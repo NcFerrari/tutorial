@@ -1,25 +1,25 @@
-function Book() {
+function Book(props) {
+    console.log(props)
     return (
         <article className={"book"}>
-            <Image/>
-            <Title/>
-            <Author/>
+            <Image image={props.image} title={props.title}/>
+            <Title title={props.title}/>
+            <Author author={props.author}/>
         </article>
     )
 }
 
-const Image = () => {
+const Image = (props) => {
     // return <img src={"https://images-na.ssl-images-amazon.com/images/I/81ytGlIkLoL._AC_UL900_SR900,600_.jpg"}
-    return <img src={"./images/book.jpg"}
-                alt={"Hillbilly Elegy: A Memoir of a Family and Culture in Crisis"}/>
+    return <img src={props.image} alt={props.title}/>
 }
 
-const Title = () => {
-    return <h2>Hillbilly Elegy: A Memoir of a Family and Culture in Crisis</h2>
+const Title = (props) => {
+    return <h2>{props.title}</h2>
 }
 
-const Author = () => {
-    return <h4 style={{color: '#617d98', fontSize: '0.75', marginTop: '0.5rem'}}>J. D. Vance</h4>
+const Author = (props) => {
+    return <h4 style={{color: '#617d98', fontSize: '0.75', marginTop: '0.5rem'}}>{props.author}</h4>
 }
 
 // druhý zápis stylu. Protože ty druhé složené závorky = objekt, můžeme si jej nejdřív připravit
@@ -31,5 +31,15 @@ const Author2 = () => {
     }
     return <h4 style={inlineStyle}>J. D. Vance</h4>
 }
+
+const pow = (x, y) => {
+    let sum = x;
+    for (let i = 1; i < y; i++) {
+        sum *= x;
+    }
+    console.log(sum)
+}
+
+pow(3, 2)
 
 export default Book
