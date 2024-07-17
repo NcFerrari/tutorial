@@ -1,10 +1,12 @@
-function Book(props) {
-    console.log(props)
+import React from "react";
+
+const Book = ({image, title, author, children}) => {
     return (
         <article className={"book"}>
-            <Image image={props.image} title={props.title}/>
-            <Title title={props.title}/>
-            <Author author={props.author}/>
+            <Image image={image} title={title}/>
+            <Title title={title}/>
+            <Author author={author}/>
+            {children}
         </article>
     )
 }
