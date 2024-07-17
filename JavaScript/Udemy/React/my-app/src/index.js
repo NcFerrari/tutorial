@@ -27,15 +27,17 @@ const books = [{
 }]
 
 const BookList = () => {
-    const firstBook = books[2]
     return <div>
-        <Book {...firstBook}>
-            <p>poznámka</p>
-        </Book>
         <section className="bookList">
             <EventExamples/>
             {books.map(book => {
-                return <Book {...book} key={book.id}/>;
+                if (book.id === 0) {
+                    return <Book {...book} key={book.id}>
+                        <p>Poznámka</p>
+                    </Book>
+                } else {
+                    return <Book {...book} key={book.id}/>
+                }
             })}
         </section>
     </div>
@@ -45,17 +47,15 @@ const EventExamples = () => {
     const handleButtonClick = () => {
         alert("omfg");
     }
-    return (
-        <section>
-            <form>
-                <h2>Typical Form</h2>
-                <input type={"text"} name={"example"} id={"textField"} onChange={() => {
-                    console.log("typed")
-                }}/>
-            </form>
-            <button onClick={handleButtonClick}>click</button>
-        </section>
-    )
+    return (<section>
+        <form>
+            <h2>Typical Form</h2>
+            <input type={"text"} name={"example"} id={"textField"} onChange={(evt) => {
+                console.log(evt.target.value)
+            }}/>
+        </form>
+        <button onClick={handleButtonClick}>click</button>
+    </section>)
 }
 
 const root = ReactDOM.createRoot(document.getElementById("root"))
