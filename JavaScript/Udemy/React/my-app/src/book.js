@@ -4,6 +4,7 @@ const Book = (props) => {
         <article className={"book"}>
             <Image image={image} title={title}/>
             <Title title={title}/>
+            <button onClick={() => {console.log(title)}}>display title</button>
             <Author author={author}/>
             {props.children}
         </article>
