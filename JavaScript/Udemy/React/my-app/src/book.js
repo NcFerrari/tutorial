@@ -1,5 +1,3 @@
-import React from "react";
-
 const Book = (props) => {
     const {image, title, author} = props
     return (

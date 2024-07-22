@@ -1,7 +1,5 @@
-import React from "react";
 import ReactDOM from "react-dom/client";
 import Book from "./book"
-
 import "./index.css"
 
 const books = [{
@@ -26,11 +24,14 @@ const books = [{
     author: "Freida McFadden"
 }]
 
-const BookList = () => {
-    return <div>
-        <section className="bookList">
-            <EventExamples/>
-            {books.map(book => {
+const root = ReactDOM.createRoot(document.getElementById("root"))
+root.render(<BookList/>)
+
+function BookList() {
+    return <section className="bookList">
+        <TypicalForm/>
+        {
+            books.map(book => {
                 if (book.id === 0) {
                     return <Book {...book} key={book.id}>
                         <p>Poznámka</p>
@@ -38,25 +39,36 @@ const BookList = () => {
                 } else {
                     return <Book {...book} key={book.id}/>
                 }
-            })}
-        </section>
-    </div>
+            })
+        }
+    </section>
 }
 
-const EventExamples = () => {
+const TypicalForm = () => {
     const handleButtonClick = () => {
         alert("omfg");
     }
-    return (<section>
-        <form>
+
+    function metodaZFormulare() {
+        console.log("z formuláře")
+    }
+
+    function submitEvent(evt) {
+        evt.preventDefault();
+        console.log("enter!")
+    }
+
+    return <section>
+        {/*Pokud je definován event na tlačítko typu submit
+        (to je důležité - aby bylo typu submit), tak potom se
+        tato metoda onSubmit na formuláři ignoruje a platí to,
+        co má tlačítko na metodu onClick (pozor, onClick!! ne onSubmit)*/}
+        <form onSubmit={metodaZFormulare}>
             <h2>Typical Form</h2>
-            <input type={"text"} name={"example"} id={"textField"} onChange={(evt) => {
+            <input type={"text"} onChange={(evt) => {
                 console.log(evt.target.value)
             }}/>
+            <button type={"submit"} onClick={submitEvent}>Button</button>
         </form>
-        <button onClick={handleButtonClick}>click</button>
-    </section>)
+    </section>
 }
-
-const root = ReactDOM.createRoot(document.getElementById("root"))
-root.render(<BookList/>)
