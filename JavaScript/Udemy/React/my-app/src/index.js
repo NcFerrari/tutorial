@@ -45,9 +45,6 @@ function BookList() {
 }
 
 const TypicalForm = () => {
-    const handleButtonClick = () => {
-        alert("omfg");
-    }
 
     function metodaZFormulare() {
         console.log("z formuláře")
@@ -63,12 +60,26 @@ const TypicalForm = () => {
         (to je důležité - aby bylo typu submit), tak potom se
         tato metoda onSubmit na formuláři ignoruje a platí to,
         co má tlačítko na metodu onClick (pozor, onClick!! ne onSubmit)*/}
+        {/* Pokud máme anonymní metodu, tak se to vyhodnotí tak, že submit nebyl proveden
+         a jde tedy k dalšímu. Tím bychom tedy mohli spustit i oba eventy (jak u tlačítka,
+         tak u formuláře a to tak, že v každém případě event u tlačítka bude mít
+         anonymní metodu.*/}
+        {/* pořadí tedy je následovné:
+        1. nejdřív se vyhodnotí metoda onClick u tlačítka typu submit. Pokud taková metoda
+        existuje, tak ji provede a zbytek ignoruje
+        2. pokud není definován onClick nebo je definován anonymní třídou, tak v případě
+        anonymní třídy se sice tato metoda provede, ale postupuje se dále k eventu
+        onSubmit na formuláři
+        3. ať už je tam metoda, nebo není definován nebo je definován anonymní třídou, tak se
+        provede onSubmit na fomuláři.*/}
         <form onSubmit={metodaZFormulare}>
+            {/*<form onSubmit={() => console.log("test")}>*/}
             <h2>Typical Form</h2>
             <input type={"text"} onChange={(evt) => {
                 console.log(evt.target.value)
             }}/>
             <button type={"submit"} onClick={submitEvent}>Button</button>
+            {/*<button type={"submit"} onClick={() => console.log(":)")}>Button</button>*/}
         </form>
     </section>
 }
