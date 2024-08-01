@@ -70,8 +70,7 @@ const TypicalForm = () => {
         2. pokud není definován onClick nebo je definován anonymní třídou, tak v případě
         anonymní třídy se sice tato metoda provede, ale postupuje se dále k eventu
         onSubmit na formuláři
-        3. ať už je tam metoda, nebo není definován nebo je definován anonymní třídou, tak se
-        provede onSubmit na fomuláři.*/}
+        3. pokud není metoda onClick, provede se onSubmit na fomuláři.*/}
         <form onSubmit={metodaZFormulare}>
             {/*<form onSubmit={() => console.log("test")}>*/}
             <h2>Typical Form</h2>
