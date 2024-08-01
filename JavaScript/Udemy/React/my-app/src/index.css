@@ -30,6 +30,20 @@ body {
     border-radius: 1rem;
     padding: 2rem;
     text-align: center;
+    position: relative;
+}
+
+.number::before {
+    content: "#"
+}
+
+.number {
+    background: linear-gradient(125deg, #bb4c08 70%, white 30%);
+    color: white;
+    padding: 5px 30px 5px 5px;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 .book img {

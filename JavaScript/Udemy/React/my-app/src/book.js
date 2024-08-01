@@ -1,13 +1,10 @@
 const Book = (props) => {
-    const {image, title, author} = props
+    const {image, title, author, number} = props
     return (
         <article className={"book"}>
+            <span className={"number"}>{number + 1}</span>
             <Image image={image} title={title}/>
             <Title title={title}/>
-            <button onClick={() => {
-                console.log(title)
-            }}>display title
-            </button>
             <Author author={author}/>
             {props.children}
         </article>

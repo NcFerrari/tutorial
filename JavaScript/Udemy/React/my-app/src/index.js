@@ -1,10 +1,11 @@
 import ReactDOM from "react-dom/client";
-import Book from "./book"
-import "./index.css"
+import Book from "./book";
+import "./index.css";
+import img from "./images/book.jpg";
 
 const books = [{
     id: 0,
-    image: "./images/book.jpg",
+    image: img,
     title: "Hillbilly Elegy: A Memoir of a Family and Culture in Crisis",
     author: "J. D. Vance"
 }, {
@@ -31,13 +32,13 @@ function BookList() {
     return <section className="bookList">
         <TypicalForm/>
         {
-            books.map(book => {
+            books.map((book, index) => {
                 if (book.id === 0) {
-                    return <Book {...book} key={book.id}>
+                    return <Book {...book} key={book.id} number={index}>
                         <p>Poznámka</p>
                     </Book>
                 } else {
-                    return <Book {...book} key={book.id}/>
+                    return <Book {...book} key={book.id} number={index}/>
                 }
             })
         }
