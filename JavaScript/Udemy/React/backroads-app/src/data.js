@@ -20,3 +20,9 @@ export const pageLinks = [
         text: "tours"
     },
 ]
+
+export const media = [
+    {href: "https://www.facebook.com", icon: "fab fa-facebook"},
+    {href: "https://www.twitter.com", icon: "fab fa-twitter"},
+    {href: "https://www.squarespace.com", icon: "fab fa-squarespace"}
+]
