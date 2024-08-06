@@ -1,36 +1,15 @@
-import {media, pageLinks} from "../data";
+import Links from "./Links";
 
 const Footer = () => {
-    return (
-        <footer className="section footer">
-            <ul className="footer-links">
-                {pageLinks.map((link) => {
-                    return (
-                        <li key={link.id}>
-                            <a href={link.href} className="footer-link">{link.text}</a>
-                        </li>
-                    )
-                })}
-            </ul>
-            <ul className="footer-icons">
-                {media.map((link) => {
-                    return (
-                        <li key={link.id}>
-                            <a href={link.href} target="_blank" className="footer-icon"
-                            ><i className={link.icon}></i
-                            ></a>
-                        </li>
-                    )
-                })}
-            </ul>
+    return <footer className="section footer">
+        <Links ulLinkStyle="footer-links" ulIconStyle="footer-icons" liLinkStyle="footer-link"
+               liIconStyle="footer-icon"/>
 
-
-            <p className="copyright">
-                copyright &copy; Backroads travel tours company
-                <span id="date">{new Date().getFullYear()}</span> all rights reserved
-            </p>
-        </footer>
-    )
+        <p className="copyright">
+            copyright &copy; Backroads travel tours company
+            <span id="date">{new Date().getFullYear()}</span> all rights reserved
+        </p>
+    </footer>
 }
 
 export default Footer
