@@ -5,16 +5,12 @@ const Links = ({ulLinkStyle, ulIconStyle, liLinkStyle, liIconStyle}) => {
     return <>
         <ul className={ulLinkStyle}>
             {pageLinks.map((link) => {
-                return <div key={link.id}>
-                    <Menu href={link.href} text={link.text} style={liLinkStyle}/>
-                </div>
+                return <Menu key={link.id} {...link} style={liLinkStyle}/>
             })}
         </ul>
         <ul className={ulIconStyle}>
             {media.map((link) => {
-                return <div key={link.id}>
-                    <Icons href={link.href} icon={link.icon} style={liIconStyle}/>
-                </div>
+                return <Icons key={link.id} {...link} style={liIconStyle}/>
             })}
         </ul>
     </>
