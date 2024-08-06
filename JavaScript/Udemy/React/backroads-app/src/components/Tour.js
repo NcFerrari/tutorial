@@ -1,7 +1,6 @@
 import PropTypes from "prop-types";
 
-const Tour = ({tour}) => {
-    const {image, date, title, text, country, days, price} = tour;
+const Tour = ({image, date, title, text, country, days, price}) => {
     return <article className="tour-card">
         <div className="tour-img-container">
             <img src={image} className="tour-img" alt={title} title={title.toUpperCase()}/>
@@ -22,10 +21,15 @@ const Tour = ({tour}) => {
         </div>
     </article>
 }
-
-//validation
+// validation
 Tour.propTypes = {
-    tour: PropTypes.object.isRequired
+    image: PropTypes.string.isRequired,
+    date: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    text: PropTypes.object.isRequired,
+    country: PropTypes.string.isRequired,
+    days: PropTypes.number.isRequired,
+    price: PropTypes.number.isRequired
 }
 
 export default Tour

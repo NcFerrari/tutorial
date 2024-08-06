@@ -8,7 +8,7 @@ const Services = () => {
             <Title firstName={"our"} secondName={"services"}/>
             <div className="section-center services-center">
                 {services.map((service) => {
-                    return <Service key={service.id} service={service}/>
+                    return <Service key={service.id} {...service}/>
                 })}
             </div>
         </section>

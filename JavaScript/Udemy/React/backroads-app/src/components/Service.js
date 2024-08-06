@@ -1,7 +1,6 @@
 import PropTypes from "prop-types";
 
-const Service = ({service}) => {
-    const {icon, title, text} = service
+const Service = ({icon, title, text}) => {
     return <article className="service">
         <span className="service-icon"><i className={icon}></i></span>
         <div className="service-info">
@@ -14,7 +13,9 @@ const Service = ({service}) => {
 
 //validation
 Service.propTypes = {
-    service: PropTypes.object.isRequired
+    icon: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    text: PropTypes.object.isRequired
 }
 
 export default Service
