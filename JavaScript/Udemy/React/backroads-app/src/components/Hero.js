@@ -5,7 +5,7 @@ const Hero = () => {
         <section className="hero" id="home">
             <div className="hero-banner">
                 <h1>Backroads app</h1>
-                <FakeParagraph/>
+                <p><FakeParagraph/></p>
                 <a href="#tours" className="btn hero-btn">explore tours</a>
             </div>
         </section>

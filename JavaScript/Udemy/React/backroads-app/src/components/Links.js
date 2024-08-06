@@ -6,29 +6,29 @@ const Links = ({ulLinkStyle, ulIconStyle, liLinkStyle, liIconStyle}) => {
         <ul className={ulLinkStyle}>
             {pageLinks.map((link) => {
                 return <div key={link.id}>
-                    <Menu id={link.id} href={link.href} text={link.text} style={liLinkStyle}/>
+                    <Menu href={link.href} text={link.text} style={liLinkStyle}/>
                 </div>
             })}
         </ul>
         <ul className={ulIconStyle}>
             {media.map((link) => {
                 return <div key={link.id}>
-                    <Icons id={link.id} href={link.href} icon={link.icon} style={liIconStyle}/>
+                    <Icons href={link.href} icon={link.icon} style={liIconStyle}/>
                 </div>
             })}
         </ul>
     </>
 }
 
-const Menu = ({id, href, text, style}) => {
-    return <li key={id}>
+const Menu = ({href, text, style}) => {
+    return <li>
         <a href={href} className={style}>{text}</a>
     </li>
 
 }
 
-const Icons = ({id, href, icon, style}) => {
-    return <li key={id}>
+const Icons = ({href, icon, style}) => {
+    return <li>
         <a href={href} target={"_blank"} className={style}>
             <i className={icon}></i>
         </a>
@@ -44,13 +44,11 @@ Links.propTypes = {
     liIconStyle: PropTypes.string.isRequired
 }
 Menu.propTypes = {
-    id: PropTypes.string.isRequired,
     href: PropTypes.string.isRequired,
     text: PropTypes.string.isRequired,
     style: PropTypes.string.isRequired
 }
 Icons.propTypes = {
-    id: PropTypes.string.isRequired,
     href: PropTypes.string.isRequired,
     icon: PropTypes.string.isRequired,
     style: PropTypes.string.isRequired

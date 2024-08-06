@@ -30,12 +30,12 @@ export const pageLinks = [
 ]
 
 export const media = [
-    {href: "https://www.facebook.com", icon: "fab fa-facebook"},
-    {href: "https://www.twitter.com", icon: "fab fa-twitter"},
-    {href: "https://www.squarespace.com", icon: "fab fa-squarespace"}
+    {id: 0, href: "https://www.facebook.com", icon: "fab fa-facebook"},
+    {id: 1, href: "https://www.twitter.com", icon: "fab fa-twitter"},
+    {id: 2, href: "https://www.squarespace.com", icon: "fab fa-squarespace"}
 ]
 
-export const service = [
+export const services = [
     {
         id: 0,
         icon: "fas fa-wallet fa-fw",

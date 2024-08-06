@@ -17,8 +17,8 @@ const About = () => {
                 </div>
                 <article className="about-info">
                     <h3>explore the difference</h3>
-                    <FakeParagraph/>
-                    <FakeParagraph/>
+                    <p><FakeParagraph/></p>
+                    <p><FakeParagraph/></p>
                     <div className="btn">read more</div>
                 </article>
             </div>
