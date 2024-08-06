@@ -4,6 +4,7 @@ import img3 from "./images/tour-3.jpeg"
 import img4 from "./images/tour-4.jpeg"
 import img5 from "./images/tour-5.jpeg"
 import img6 from "./images/tour-6.jpeg"
+import {FakeParagraph} from "./components/MockData";
 
 export const pageLinks = [
     {
@@ -39,19 +40,19 @@ export const service = [
         id: 0,
         icon: "fas fa-wallet fa-fw",
         title: "saving money",
-        text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, officia."
+        text: <FakeParagraph/>
     },
     {
         id: 1,
         icon: "fas fa-tree fa-fw",
         title: "endless hiking",
-        text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, officia."
+        text: <FakeParagraph/>
     },
     {
         id: 2,
         icon: "fas fa-socks fa-fw",
         title: "amazing comfort",
-        text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, officia."
+        text: <FakeParagraph/>
     }
 ]
 
@@ -61,7 +62,7 @@ export const tours = [
         image: img1,
         date: "august 26th, 2020",
         title: "Tibet Adventure",
-        text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque vitae tempore voluptatum maxime reprehenderit eum quod exercitationem fugit, qui corporis.",
+        text: <FakeParagraph/>,
         country: "china",
         days: 6,
         price: 2100
@@ -71,7 +72,7 @@ export const tours = [
         image: img2,
         date: "october 1th, 2020",
         title: "best of java",
-        text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque vitae tempore voluptatum maxime reprehenderit eum quod exercitationem fugit, qui corporis.",
+        text: <FakeParagraph/>,
         country: "indonesia",
         days: 11,
         price: 1400
@@ -81,7 +82,7 @@ export const tours = [
         image: img3,
         date: "september 15th, 2020",
         title: "explore hong kong",
-        text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque vitae tempore voluptatum maxime reprehenderit eum quod exercitationem fugit, qui corporis.",
+        text: <FakeParagraph/>,
         country: "hong kong",
         days: 8,
         price: 5000
@@ -91,7 +92,7 @@ export const tours = [
         image: img4,
         date: "december 5th, 2019",
         title: "kenya highlights",
-        text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque vitae tempore voluptatum maxime reprehenderit eum quod exercitationem fugit, qui corporis.",
+        text: <FakeParagraph/>,
         country: "kenya",
         days: 20,
         price: 3300
@@ -101,7 +102,7 @@ export const tours = [
         image: img5,
         date: "?",
         title: "?",
-        text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque vitae tempore voluptatum maxime reprehenderit eum quod exercitationem fugit, qui corporis.",
+        text: <FakeParagraph/>,
         country: "?",
         days: 0,
         price: 0
@@ -111,7 +112,7 @@ export const tours = [
         image: img6,
         date: "?",
         title: "?",
-        text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque vitae tempore voluptatum maxime reprehenderit eum quod exercitationem fugit, qui corporis.",
+        text: <FakeParagraph/>,
         country: "?",
         days: 0,
         price: 0
