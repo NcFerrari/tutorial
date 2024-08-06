@@ -6,8 +6,8 @@ const Footer = () => {
                liIconStyle="footer-icon"/>
 
         <p className="copyright">
-            copyright &copy; Backroads travel tours company
-            <span id="date">{new Date().getFullYear()}</span> all rights reserved
+            copyright &copy; Backroads travel tours company <span id="date">{new Date().getFullYear()}</span> all rights
+            reserved
         </p>
     </footer>
 }
