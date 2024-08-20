@@ -1,6 +1,8 @@
+import ErrorExample from "./tutorial/01-useState/starter/01-error-example.jsx"
+
 function App() {
     return <div className={"container"}>
-        <h2>advanced react</h2>
+        <ErrorExample/>
     </div>
 }
 
