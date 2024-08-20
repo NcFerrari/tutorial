@@ -1,11 +1,11 @@
 import {data} from "../../../data.js";
-import React, {useEffect} from "react";
+import React from "react";
 
 const UseStateArray = () => {
 
-    const [people, setPeople] = React.useState([]);
+    const [people, setPeople] = React.useState(data);
 
-    const removing = (id) => {
+    const removeItem = (id) => {
         setPeople(people.filter((person) => person.id !== id))
     }
 
@@ -14,12 +14,8 @@ const UseStateArray = () => {
     }
 
     function resetItems() {
-        setPeople(data)
+        setPeople([...data])
     }
-
-    useEffect(() => {
-        resetItems();
-    }, []);
 
     return <div>
         {people.map((person) => {
@@ -27,7 +23,7 @@ const UseStateArray = () => {
             return <div key={id}>
                 <h4>{name}</h4>
                 <button
-                    onClick={() => removing(id)}>
+                    onClick={() => removeItem(id)}>
                     remove
                 </button>
             </div>
