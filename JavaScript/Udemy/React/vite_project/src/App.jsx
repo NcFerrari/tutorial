@@ -1,8 +1,8 @@
-import ErrorExample from "./tutorial/01-useState/starter/01-error-example.jsx"
+import Starter from "./tutorial/01-useState/starter/02-useState-basics.jsx"
 
 function App() {
     return <div className={"container"}>
-        <ErrorExample/>
+        <Starter/>
     </div>
 }
 
