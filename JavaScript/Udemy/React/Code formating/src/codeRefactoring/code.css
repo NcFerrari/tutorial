@@ -1,0 +1,16 @@
+code pre {
+    color: white;
+    background-color: black;
+}
+
+code pre kw {
+    color: brown;
+}
+
+code pre text {
+    color: darkgreen;
+}
+
+code pre number {
+    color: #6565e8;
+}
