@@ -32,11 +32,12 @@ const MultipleReturnsFetchData = () => {
     } else if (isError) {
         return <h2>there was an error...</h2>
     }
+    const {avatar_url, name, company, bio} = user;
     return <div>
-        <img style={{width: "150px", borderRadius: "25px"}} src={user.avatar_url} alt={user.name}/>
-        <h2>{user.name}</h2>
-        <h4>works at {user.company}</h4>
-        <p>{user.bio}</p>
+        <img style={{width: "150px", borderRadius: "25px"}} src={avatar_url} alt={name}/>
+        <h2>{name}</h2>
+        <h4>works at {company}</h4>
+        <p>{bio}</p>
     </div>
 };
 export default MultipleReturnsFetchData;
