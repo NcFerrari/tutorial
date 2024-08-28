@@ -1,5 +1,5 @@
-import Starter from "./tutorial/03-conditional-rendering/starter/04-short-circuit-overview.jsx"
-import Final from "./tutorial/03-conditional-rendering/final/04-short-circuit-overview.jsx"
+import Starter from "./tutorial/03-conditional-rendering/starter/05-short-circuit-examples.jsx"
+import Final from "./tutorial/03-conditional-rendering/final/05-short-circuit-examples.jsx"
 
 function App() {
     return <div className={"container"}>
