@@ -16,7 +16,6 @@ const Thread = () => {
         }, 1000);
         return () => clearInterval(loop);
     }, []);
-    
     return <div>
         <h1>hello there</h1>
     </div>

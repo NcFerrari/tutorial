@@ -1,5 +1,5 @@
-import Starter from "./tutorial/03-conditional-rendering/starter/05-short-circuit-examples.jsx"
-import Final from "./tutorial/03-conditional-rendering/final/05-short-circuit-examples.jsx"
+import Starter from "./tutorial/02-useEffect/starter/05-cleanup-function.jsx"
+import Final from "./tutorial/02-useEffect/final/05-cleanup-function.jsx"
 
 function App() {
     return <div className={"container"}>
