@@ -1,9 +1,10 @@
-import {List} from "./tutorial/05-leverage-javascript/starter";
-import Final from "./tutorial/05-leverage-javascript/final/List.jsx"
+import Start from "./tutorial/06-forms/starter/02-user-challenge.jsx"
+import Final from "./tutorial/06-forms/final/02-user-challenge.jsx"
+
 
 function App() {
     return <div className={"container"}>
-        <List/>
+        <Start/>
         <hr/>
         <Final/>
     </div>
