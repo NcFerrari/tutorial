@@ -1,8 +1,10 @@
-# React + Vite
-
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Pro reactí aplikaci je potřeba:
+- javascript/typescript
+- nodejs (které obsahuje npm)
+  - ideálně mít nvm (node version manager), kterým si managujete verze node
+- react development tools v prohlížeči
+- IDEčko (třeba webstorm)
+- vytvořit init project přes node:
+  - buď přes CRA (create react application)
+  - nebo ještě lépe přes Vite
+- 

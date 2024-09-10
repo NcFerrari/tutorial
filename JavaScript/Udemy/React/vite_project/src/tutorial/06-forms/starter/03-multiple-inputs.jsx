@@ -1,5 +1,7 @@
 import {useState} from "react";
 
+const id = Date.now();
+
 const formElements = [
     {id: 0, title: "Name", type: "text"},
     {id: 1, title: "Email", type: "email"},
@@ -7,7 +9,6 @@ const formElements = [
 ]
 
 const DefaultForm = ({title, type, callback}) => {
-    const id = Date.now();
     return <div className={"form-row"}>
         <label className={"form-label"} htmlFor={title?.toLowerCase() + id}>{title}</label>
         <input className={"form-input"} name={title?.toLowerCase()} type={type} id={title?.toLowerCase() + id}

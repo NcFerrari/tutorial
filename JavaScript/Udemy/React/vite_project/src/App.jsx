@@ -1,5 +1,5 @@
-import Start from "./tutorial/06-forms/starter/03-multiple-inputs.jsx"
-import Final from "./tutorial/06-forms/final/03-multiple-inputs.jsx"
+import Start from "./tutorial/06-forms/starter/04-other-inputs.jsx"
+import Final from "./tutorial/06-forms/final/04-other-inputs.jsx"
 
 
 function App() {
