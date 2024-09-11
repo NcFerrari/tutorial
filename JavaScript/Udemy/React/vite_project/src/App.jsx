@@ -1,5 +1,5 @@
-import Start from "./tutorial/07-useRef/starter/01-useRef-basics.jsx"
-import Final from "./tutorial/07-useRef/final/01-useRef-basics.jsx"
+import Start from "./tutorial/08-custom-hooks/starter/01-toggle.jsx"
+import Final from "./tutorial/08-custom-hooks/final/01-toggle.jsx"
 
 
 function App() {
