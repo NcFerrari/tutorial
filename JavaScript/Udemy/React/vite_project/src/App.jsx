@@ -1,5 +1,5 @@
-import Start from "./tutorial/08-custom-hooks/starter/01-toggle.jsx"
-import Final from "./tutorial/08-custom-hooks/final/01-toggle.jsx"
+import Start from "./tutorial/08-custom-hooks/starter/02-fetch-data.jsx"
+import Final from "./tutorial/08-custom-hooks/final/02-fetch-data.jsx"
 
 
 function App() {
