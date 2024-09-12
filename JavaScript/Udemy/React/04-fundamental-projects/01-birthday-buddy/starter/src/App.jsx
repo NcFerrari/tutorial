@@ -7,7 +7,7 @@ const App = () => {
 
     return <main>
         <div className={"container"}>
-            <h2>{data.length === 0 ? "no" : data.length} birthday{data.length > 1 ? "s" : ""} today</h2>
+            <h3>{data.length === 0 ? "no" : data.length} birthday{data.length > 1 ? "s" : ""} today</h3>
             <List data={data}/>
             <button type={"button"} className={"btn btn-block"} onClick={() => setData([])}>clear all</button>
         </div>
@@ -27,8 +27,10 @@ const List = ({data}) => {
 const Person = ({name, age, image}) => {
     return <article className={"person"}>
         <img src={image}/>
-        <h4>{name}</h4>
-        <p>{age} year{age > 1 ? "s" : ""}</p>
+        <div>
+            <h4>{name}</h4>
+            <p>{age} year{age > 1 ? "s" : ""}</p>
+        </div>
     </article>
 }
 export default App;
