@@ -1,22 +1,34 @@
-import data from "./data.js"
+import users from "./data.js"
+import {useState} from "react";
 
 const App = () => {
+
+    const [data, setData] = useState(users);
 
     const getBirthdaysCount = () => {
         const count = data.length;
         return count > 1 ? count + " birthdays" : (count === 0 ? "no birthday" : count + " birthday");
     }
 
+    const removeData = () => {
+        setData([])
+    }
+
     return <div>
         <h2>{getBirthdaysCount()} today</h2>
-        {data.map((personData) => {
-            return <div key={personData.id}>
-                <Person {...personData}/>
-            </div>
-        })}
-        <button className={"btn btn-block"}>clear all</button>
+        <List data={data}/>
+        <button className={"btn btn-block"} onClick={removeData}>clear all</button>
     </div>
 };
+
+const List = ({data}) => {
+    return <div>{data.map((personData) => {
+        return <div key={personData.id}>
+            <Person {...personData}/>
+        </div>
+    })
+    }</div>
+}
 
 const Person = ({name, age, image}) => {
     return <div>
