@@ -5,36 +5,30 @@ const App = () => {
 
     const [data, setData] = useState(users);
 
-    const getBirthdaysCount = () => {
-        const count = data.length;
-        return count > 1 ? count + " birthdays" : (count === 0 ? "no birthday" : count + " birthday");
-    }
-
-    const removeData = () => {
-        setData([])
-    }
-
-    return <div>
-        <h2>{getBirthdaysCount()} today</h2>
-        <List data={data}/>
-        <button className={"btn btn-block"} onClick={removeData}>clear all</button>
-    </div>
+    return <main>
+        <div className={"container"}>
+            <h2>{data.length === 0 ? "no" : data.length} birthday{data.length > 1 ? "s" : ""} today</h2>
+            <List data={data}/>
+            <button type={"button"} className={"btn btn-block"} onClick={() => setData([])}>clear all</button>
+        </div>
+    </main>
 };
 
 const List = ({data}) => {
-    return <div>{data.map((personData) => {
-        return <div key={personData.id}>
-            <Person {...personData}/>
-        </div>
-    })
-    }</div>
+    return <div>
+        {data.map((personData) => {
+            return <div key={personData.id}>
+                <Person {...personData}/>
+            </div>
+        })
+        }</div>
 }
 
 const Person = ({name, age, image}) => {
-    return <div>
-        <img src={image} style={{width: "56px", height: "56px"}}/>
-        <h5>{name}</h5>
-        <p>{age} {age > 1 ? "years" : "year"}</p>
-    </div>
+    return <article className={"person"}>
+        <img src={image}/>
+        <h4>{name}</h4>
+        <p>{age} year{age > 1 ? "s" : ""}</p>
+    </article>
 }
 export default App;
