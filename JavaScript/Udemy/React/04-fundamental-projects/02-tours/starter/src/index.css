@@ -231,11 +231,11 @@ ul {
 .loading {
   width: 6rem;
   height: 6rem;
-  border: 5px solid var(--grey-400);
-  border-radius: 50%;
+  border: 15px solid var(--grey-300);
+  border-radius: 33%;
   margin: 0 auto;
-  border-top-color: var(--primary-500);
-  animation: spinner 0.3s linear infinite;
+  border-top-color: var(--primary-900);
+  animation: spinner 1s linear infinite;
 }
 /* title */
 
@@ -338,4 +338,12 @@ main {
   .tours {
     grid-template-columns: 1fr 1fr 1fr;
   }
+}
+.test {
+  transform: scale(1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.test:hover {
+  transform: scale(2) rotate(360deg);
 }

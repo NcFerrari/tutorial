@@ -1,6 +1,5 @@
 const Loading = () => {
-    return <div>
-
+    return <div className={"loading"}>
     </div>
 }
 
